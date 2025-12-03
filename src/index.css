@@ -373,3 +373,7 @@ body {
     display: none; /* Hide 3D card on very small screens to save space */
   }
 }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
