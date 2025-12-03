@@ -7,6 +7,22 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [logoText, setLogoText] = useState('');
+  const fullText = "POOJAN SHRIVASTAV";
+
+  useEffect(() => {
+    let index = 0;
+    const typeInterval = setInterval(() => {
+      if (index <= fullText.length) {
+        setLogoText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typeInterval);
+      }
+    }, 150); // Typing speed
+
+    return () => clearInterval(typeInterval);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -120,7 +136,7 @@ const Navbar = () => {
               {/* Logo */}
               <a href="#" className="code-font" style={styles.logo} onClick={(e) => scrollToSection(e, '#home')}>
                 <span style={{ fontFamily: '"Fira Code", monospace', fontWeight: '700', fontSize: '1.5rem', letterSpacing: '-1px', color: '#fff' }}>
-                  POOJAN
+                  {logoText}
                   <span style={{ color: 'var(--accent-primary)', animation: 'blink 1s step-end infinite' }}>_</span>
                 </span>
               </a>

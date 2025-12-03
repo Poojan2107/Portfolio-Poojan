@@ -24,7 +24,7 @@ const itemVariants = {
 
 const TechStack = () => {
   return (
-    <section id="skills" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '8rem 0' }}>
+    <section id="skills" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '8rem 0', background: 'var(--bg-secondary)' }}>
       {/* Ambient Background Glow */}
       <div style={{
         position: 'absolute',
@@ -100,12 +100,13 @@ const TechStack = () => {
                       justifyContent: 'center',
                       padding: '2rem',
                       cursor: 'default',
-                      border: '1px solid rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.05)',
                       transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
-                      background: 'rgba(20, 20, 20, 0.4)',
+                      background: 'rgba(20, 20, 20, 0.6)',
                       position: 'relative',
                       overflow: 'hidden',
-                      borderRadius: '20px'
+                      borderRadius: '20px',
+                      boxShadow: '0 0 40px rgba(0,0,0,0.3)'
                     }}
                   >
                     <div style={{ 
