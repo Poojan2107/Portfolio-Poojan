@@ -2,85 +2,145 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SKILL_CATEGORIES } from '../constants';
 
-const MarqueeRow = ({ skills, direction = 1, speed = 20 }) => {
+const PipelineRow = ({ title, skills, direction = 1, speed = 25, color }) => {
   return (
-    <div style={{ display: 'flex', overflow: 'hidden', width: '100%', marginBottom: '2rem', maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
-      <motion.div
-        initial={{ x: direction === 1 ? 0 : '-50%' }}
-        animate={{ x: direction === 1 ? '-50%' : 0 }}
-        transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
-        style={{ display: 'flex', gap: '2rem', flexShrink: 0, paddingRight: '2rem' }}
+    <div style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      marginBottom: '3rem',
+      position: 'relative'
+    }}>
+      {/* Category Label */}
+      <motion.div 
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        style={{ 
+          marginBottom: '1rem', 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: '1rem',
+          paddingLeft: '1rem'
+        }}
       >
-        {[...skills, ...skills, ...skills, ...skills].map((skill, index) => (
-          <div 
-            key={`${skill.name}-${index}`}
-            className="glass-card"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1rem',
-              padding: '1rem 2rem',
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.05)',
-              borderRadius: '50px',
-              whiteSpace: 'nowrap',
-              minWidth: 'max-content'
-            }}
-          >
-            <span style={{ color: skill.color, fontSize: '1.5rem', display: 'flex' }}><skill.icon /></span>
-            <span style={{ color: 'var(--text-primary)', fontWeight: '600', fontSize: '1.1rem' }}>{skill.name}</span>
-          </div>
-        ))}
+        <div style={{ 
+          width: '4px', 
+          height: '24px', 
+          background: color,
+          boxShadow: `0 0 15px ${color}`
+        }}></div>
+        <h3 style={{ 
+          fontSize: '1.5rem', 
+          fontWeight: '700', 
+          color: '#fff', 
+          letterSpacing: '1px',
+          textTransform: 'uppercase'
+        }}>
+          {title}
+        </h3>
+        <div style={{ height: '1px', flex: 1, background: `linear-gradient(to right, ${color}40, transparent)` }}></div>
       </motion.div>
+
+      {/* Scrolling Track */}
+      <div 
+        className="glass-card"
+        style={{ 
+          overflow: 'hidden', 
+          width: '100%', 
+          padding: '1.5rem 0',
+          background: 'rgba(20, 20, 20, 0.4)',
+          border: '1px solid rgba(255, 255, 255, 0.05)',
+          borderRadius: '16px',
+          position: 'relative',
+          maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)'
+        }}
+      >
+        <motion.div
+          initial={{ x: direction === 1 ? 0 : '-50%' }}
+          animate={{ x: direction === 1 ? '-50%' : 0 }}
+          transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
+          style={{ display: 'flex', gap: '2rem', flexShrink: 0, paddingLeft: '2rem' }}
+        >
+          {[...skills, ...skills, ...skills, ...skills].map((skill, index) => (
+            <div 
+              key={`${skill.name}-${index}`}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.8rem',
+                padding: '0.8rem 1.5rem',
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: `1px solid ${skill.color}30`,
+                borderRadius: '50px',
+                whiteSpace: 'nowrap',
+                minWidth: 'max-content',
+                boxShadow: `0 0 10px ${skill.color}10`
+              }}
+            >
+              <span style={{ color: skill.color, fontSize: '1.2rem', display: 'flex' }}><skill.icon /></span>
+              <span style={{ color: 'var(--text-secondary)', fontWeight: '500', fontSize: '1rem' }}>{skill.name}</span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </div>
   );
 };
 
 const TechStack = () => {
-  // Flatten skills for a mixed "Chaos" mode or keep categorized for structure.
-  // Let's do categorized rows for structure but moving.
-  
   return (
     <section id="skills" className="section" style={{ padding: '8rem 0', overflow: 'hidden', position: 'relative' }}>
        {/* Background Elements */}
        <div style={{
         position: 'absolute',
-        top: '20%',
-        right: '-10%',
-        width: '600px',
-        height: '600px',
-        background: 'radial-gradient(circle, rgba(112, 0, 255, 0.05) 0%, transparent 70%)',
-        filter: 'blur(80px)',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+        height: '100%',
+        background: 'radial-gradient(circle at center, rgba(0, 242, 255, 0.02) 0%, transparent 70%)',
         pointerEvents: 'none'
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '10%',
-        left: '-10%',
-        width: '500px',
-        height: '500px',
-        background: 'radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%)',
-        filter: 'blur(80px)',
-        pointerEvents: 'none'
-      }} />
+      }}></div>
 
-      <div className="container" style={{ marginBottom: '4rem', textAlign: 'center' }}>
-        <motion.h2 
+      <div className="container">
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          style={{ fontSize: '3.5rem', fontWeight: '800', marginBottom: '1rem' }}
+          style={{ textAlign: 'center', marginBottom: '5rem' }}
         >
-          TECH <span className="gradient-text">ECOSYSTEM</span>
-        </motion.h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}>Always moving, always evolving.</p>
-      </div>
+          <h2 style={{ fontSize: '3.5rem', fontWeight: '800', marginBottom: '1rem' }}>
+            MY <span className="gradient-text">ARSENAL</span>
+          </h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}>
+            Categorized proficiency across the full stack.
+          </p>
+        </motion.div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <MarqueeRow skills={SKILL_CATEGORIES[0].skills} direction={1} speed={25} />
-        <MarqueeRow skills={SKILL_CATEGORIES[1].skills} direction={-1} speed={30} />
-        <MarqueeRow skills={SKILL_CATEGORIES[2].skills} direction={1} speed={20} />
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <PipelineRow 
+            title="Frontend Architecture" 
+            skills={SKILL_CATEGORIES[0].skills} 
+            direction={1} 
+            speed={30} 
+            color="#61DAFB"
+          />
+          <PipelineRow 
+            title="Backend & Database" 
+            skills={SKILL_CATEGORIES[1].skills} 
+            direction={-1} 
+            speed={35} 
+            color="#47A248"
+          />
+          <PipelineRow 
+            title="DevOps & Tools" 
+            skills={SKILL_CATEGORIES[2].skills} 
+            direction={1} 
+            speed={40} 
+            color="#F05032"
+          />
+        </div>
       </div>
     </section>
   );
