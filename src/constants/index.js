@@ -1,5 +1,5 @@
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai } from 'react-icons/si';
 
 export const PERSONAL_DETAILS = {
   name: "POOJAN SHRIVASTAV",
@@ -25,6 +25,8 @@ export const SKILL_CATEGORIES = [
       { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6' },
       { name: 'Redux', icon: SiRedux, color: '#764ABC' },
       { name: 'Tailwind', icon: SiTailwindcss, color: '#38B2AC' },
+      { name: 'Bootstrap', icon: FaBootstrap, color: '#7952B3' },
+      { name: 'jQuery', icon: SiJquery, color: '#0769AD' },
     ]
   },
   {
@@ -33,6 +35,7 @@ export const SKILL_CATEGORIES = [
       { name: 'Node.js', icon: FaNodeJs, color: '#339933' },
       { name: 'Express', icon: SiExpress, color: '#ffffff' },
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+      { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
     ]
   },
   {
@@ -40,6 +43,7 @@ export const SKILL_CATEGORIES = [
     skills: [
       { name: 'Git', icon: FaGitAlt, color: '#F05032' },
       { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
+      { name: 'Gen AI / ChatGPT', icon: SiOpenai, color: '#412991' },
     ]
   }
 ];

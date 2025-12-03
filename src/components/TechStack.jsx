@@ -46,7 +46,7 @@ const TechStack = () => {
           style={{ textAlign: 'center', marginBottom: '5rem' }}
         >
           <h2 style={{ fontSize: '3.5rem', fontWeight: '800', marginBottom: '1rem' }}>
-            MY <span className="gradient-text">ARSENAL</span>
+            TECH <span className="gradient-text">ARSENAL</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
             The comprehensive toolkit I use to architect digital realities.
