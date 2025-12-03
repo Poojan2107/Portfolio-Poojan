@@ -119,9 +119,9 @@ const Navbar = () => {
             >
               {/* Logo */}
               <a href="#" className="code-font" style={styles.logo} onClick={(e) => scrollToSection(e, '#home')}>
-                <span style={{ fontFamily: '"Fira Code", monospace', color: 'var(--accent-primary)', fontSize: '1.4rem', fontWeight: 'bold', textShadow: '0 0 10px rgba(0, 242, 255, 0.3)' }}>&lt;</span>
-                <span style={{ letterSpacing: '1px' }}>POOJAN</span>
-                <span style={{ fontFamily: '"Fira Code", monospace', color: 'var(--accent-primary)', fontSize: '1.4rem', fontWeight: 'bold', textShadow: '0 0 10px rgba(0, 242, 255, 0.3)' }}>/&gt;</span>
+                <span style={{ fontFamily: '"Fira Code", monospace', color: 'var(--accent-primary)', fontWeight: '600', fontSize: '1.4rem', marginRight: '4px' }}>&lt;</span>
+                <span style={{ fontFamily: '"Outfit", sans-serif', fontWeight: '700', letterSpacing: '0.5px', color: '#fff' }}>POOJAN SHRIVASTAV</span>
+                <span style={{ fontFamily: '"Fira Code", monospace', color: 'var(--accent-primary)', fontWeight: '600', fontSize: '1.4rem', marginLeft: '4px' }}>/&gt;</span>
               </a>
 
               {/* Desktop Menu */}
