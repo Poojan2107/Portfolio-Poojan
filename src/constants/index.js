@@ -1,4 +1,4 @@
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap, FaRobot } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai } from 'react-icons/si';
 
 export const PERSONAL_DETAILS = {
@@ -44,6 +44,7 @@ export const SKILL_CATEGORIES = [
       { name: 'Git', icon: FaGitAlt, color: '#F05032' },
       { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
       { name: 'Gen AI / ChatGPT', icon: SiOpenai, color: '#412991' },
+      { name: 'Agentic IDEs', icon: FaRobot, color: '#FFD700' },
     ]
   }
 ];
