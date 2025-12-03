@@ -119,9 +119,9 @@ const Navbar = () => {
             >
               {/* Logo */}
               <a href="#" className="code-font" style={styles.logo} onClick={(e) => scrollToSection(e, '#home')}>
-                <span style={{ color: 'var(--accent-primary)' }}>&lt;</span>
-                POOJAN SHRIVASTAV
-                <span style={{ color: 'var(--accent-primary)' }}>/&gt;</span>
+                <span style={{ fontFamily: '"Fira Code", monospace', color: 'var(--accent-primary)', fontSize: '1.4rem', fontWeight: 'bold', textShadow: '0 0 10px rgba(0, 242, 255, 0.3)' }}>&lt;</span>
+                <span style={{ letterSpacing: '1px' }}>POOJAN</span>
+                <span style={{ fontFamily: '"Fira Code", monospace', color: 'var(--accent-primary)', fontSize: '1.4rem', fontWeight: 'bold', textShadow: '0 0 10px rgba(0, 242, 255, 0.3)' }}>/&gt;</span>
               </a>
 
               {/* Desktop Menu */}
