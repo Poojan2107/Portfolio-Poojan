@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
+import Education from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ReactiveBackground from './components/ReactiveBackground';
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Hero />
       <TechStack />
+      <Education />
       <Projects />
       <Contact />
       

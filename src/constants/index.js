@@ -1,5 +1,5 @@
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap, FaRobot } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai, SiTypescript } from 'react-icons/si';
 
 export const PERSONAL_DETAILS = {
   name: "POOJAN SHRIVASTAV",
@@ -27,6 +27,7 @@ export const SKILL_CATEGORIES = [
       { name: 'Tailwind', icon: SiTailwindcss, color: '#38B2AC' },
       { name: 'Bootstrap', icon: FaBootstrap, color: '#7952B3' },
       { name: 'jQuery', icon: SiJquery, color: '#0769AD' },
+      { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
     ]
   },
   {
