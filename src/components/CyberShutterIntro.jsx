@@ -2,22 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const CyberShutterIntro = ({ onComplete }) => {
-  const [phase, setPhase] = useState('sealed'); // sealed, scanning, opening
+  const [phase, setPhase] = useState('locked'); // locked, scanning, unlocking, opening
 
   useEffect(() => {
-    const scanTimer = setTimeout(() => setPhase('scanning'), 500);
-    const openTimer = setTimeout(() => setPhase('opening'), 1800);
-    const completeTimer = setTimeout(onComplete, 2600);
+    const scanTimer = setTimeout(() => setPhase('scanning'), 800);
+    const unlockTimer = setTimeout(() => setPhase('unlocking'), 2000); // Lock turns green
+    const openTimer = setTimeout(() => setPhase('opening'), 2400); // Shutters move
+    const completeTimer = setTimeout(onComplete, 3200); // Unmount
 
     return () => {
       clearTimeout(scanTimer);
+      clearTimeout(unlockTimer);
       clearTimeout(openTimer);
       clearTimeout(completeTimer);
     };
   }, [onComplete]);
 
   const shutterVariants = {
-    sealed: { x: 0, y: 0 },
+    locked: { x: 0, y: 0 },
+    scanning: { x: 0, y: 0 },
+    unlocking: { x: 0, y: 0 },
     opening: (custom) => {
         switch(custom) {
             case 'tl': return { x: '-100%', y: '-100%' };
@@ -29,6 +33,17 @@ const CyberShutterIntro = ({ onComplete }) => {
     }
   };
 
+  const plateStyle = {
+    position: 'absolute',
+    background: '#050505',
+    zIndex: 2,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundImage: 'radial-gradient(circle at center, #111 0%, #000 100%)', // Subtle gradient
+    boxShadow: 'inset 0 0 50px rgba(0,0,0,0.8)'
+  };
+
   return (
     <div
       style={{
@@ -38,134 +53,142 @@ const CyberShutterIntro = ({ onComplete }) => {
         width: '100vw',
         height: '100vh',
         zIndex: 99999,
-        display: 'flex',
-        flexWrap: 'wrap',
-        overflow: 'hidden',
-        pointerEvents: 'none' // Let clicks pass through after animation
+        pointerEvents: phase === 'opening' ? 'none' : 'auto', // Block clicks until open
       }}
     >
-      {/* Top Left Shutter */}
+      {/* Top Left Plate */}
       <motion.div
         custom="tl"
-        initial="sealed"
-        animate={phase === 'opening' ? "opening" : "sealed"}
+        initial="locked"
+        animate={phase === 'opening' ? "opening" : "locked"}
         variants={shutterVariants}
-        transition={{ duration: 0.8, ease: [0.7, 0, 0.3, 1] }}
+        transition={{ duration: 0.8, ease: "circIn" }}
         style={{
-            width: '50vw',
-            height: '50vh',
-            background: '#050505',
-            borderRight: '1px solid #333',
-            borderBottom: '1px solid #333',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: 2,
-            display: 'flex',
-            alignItems: 'flex-end',
-            justifyContent: 'flex-end',
-            padding: '2rem'
+            ...plateStyle,
+            top: 0, left: 0, width: '50vw', height: '50vh',
+            borderRight: '1px solid rgba(255,255,255,0.1)',
+            borderBottom: '1px solid rgba(255,255,255,0.1)',
         }}
       >
-        {phase === 'scanning' && <motion.div initial={{ width: 0 }} animate={{ width: '100px' }} style={{ height: '2px', background: 'var(--accent-primary)' }} />}
+          {/* Tech decoration */}
+          <div style={{ position: 'absolute', bottom: '10px', right: '10px', fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>SEC-01</div>
       </motion.div>
 
-      {/* Top Right Shutter */}
+      {/* Top Right Plate */}
       <motion.div
         custom="tr"
-        initial="sealed"
-        animate={phase === 'opening' ? "opening" : "sealed"}
+        initial="locked"
+        animate={phase === 'opening' ? "opening" : "locked"}
         variants={shutterVariants}
-        transition={{ duration: 0.8, ease: [0.7, 0, 0.3, 1] }}
+        transition={{ duration: 0.8, ease: "circIn" }}
         style={{
-            width: '50vw',
-            height: '50vh',
-            background: '#090909',
-            borderLeft: '1px solid #333',
-            borderBottom: '1px solid #333',
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            zIndex: 2
-        }}
-      />
-
-       {/* Bottom Left Shutter */}
-       <motion.div
-        custom="bl"
-        initial="sealed"
-        animate={phase === 'opening' ? "opening" : "sealed"}
-        variants={shutterVariants}
-        transition={{ duration: 0.8, ease: [0.7, 0, 0.3, 1] }}
-        style={{
-            width: '50vw',
-            height: '50vh',
-            background: '#090909',
-            borderRight: '1px solid #333',
-            borderTop: '1px solid #333',
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            zIndex: 2
-        }}
-      />
-
-       {/* Bottom Right Shutter */}
-       <motion.div
-        custom="br"
-        initial="sealed"
-        animate={phase === 'opening' ? "opening" : "sealed"}
-        variants={shutterVariants}
-        transition={{ duration: 0.8, ease: [0.7, 0, 0.3, 1] }}
-        style={{
-            width: '50vw',
-            height: '50vh',
-            background: '#050505',
-            borderLeft: '1px solid #333',
-            borderTop: '1px solid #333',
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-            zIndex: 2,
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-start',
-            padding: '2rem'
+            ...plateStyle,
+            top: 0, right: 0, width: '50vw', height: '50vh',
+            borderLeft: '1px solid rgba(255,255,255,0.1)',
+            borderBottom: '1px solid rgba(255,255,255,0.1)',
         }}
       >
-         {phase === 'scanning' && <motion.div initial={{ width: 0 }} animate={{ width: '100px' }} style={{ height: '2px', background: 'var(--accent-secondary)' }} />}
+          <div style={{ position: 'absolute', bottom: '10px', left: '10px', fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>SEC-02</div>
       </motion.div>
 
-      {/* Center Target Rect (The Lock) */}
+       {/* Bottom Left Plate */}
+       <motion.div
+        custom="bl"
+        initial="locked"
+        animate={phase === 'opening' ? "opening" : "locked"}
+        variants={shutterVariants}
+        transition={{ duration: 0.8, ease: "circIn" }}
+        style={{
+            ...plateStyle,
+            bottom: 0, left: 0, width: '50vw', height: '50vh',
+            borderRight: '1px solid rgba(255,255,255,0.1)',
+            borderTop: '1px solid rgba(255,255,255,0.1)',
+        }}
+      >
+          <div style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>SEC-03</div>
+      </motion.div>
+
+       {/* Bottom Right Plate */}
+       <motion.div
+        custom="br"
+        initial="locked"
+        animate={phase === 'opening' ? "opening" : "locked"}
+        variants={shutterVariants}
+        transition={{ duration: 0.8, ease: "circIn" }}
+        style={{
+            ...plateStyle,
+            bottom: 0, right: 0, width: '50vw', height: '50vh',
+            borderLeft: '1px solid rgba(255,255,255,0.1)',
+            borderTop: '1px solid rgba(255,255,255,0.1)',
+        }}
+      >
+          <div style={{ position: 'absolute', top: '10px', left: '10px', fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>SEC-04</div>
+      </motion.div>
+
+
+      {/* CENTRAL LOCK MECHANISM */}
       <motion.div
-        animate={phase === 'opening' ? { scale: 5, opacity: 0 } : { scale: 1, opacity: 1 }}
+        animate={phase === 'opening' ? { opacity: 0, scale: 0.5 } : { opacity: 1, scale: 1 }}
         style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '100px',
-            height: '100px',
-            border: '1px solid rgba(255,255,255,0.1)',
             zIndex: 10,
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center'
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            pointerEvents: 'none'
         }}
       >
-         {phase === 'scanning' && (
-             <motion.div 
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+          {/* Outer Ring */}
+          <motion.div
+            animate={
+                phase === 'scanning' ? { rotate: 360, borderStyle: 'dashed' } 
+                : phase === 'unlocking' ? { rotate: 0, borderColor: '#4ade80', scale: 1.1 }
+                : {}
+            }
+            transition={{ duration: 1.5, ease: "linear" }}
+            style={{
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                border: '2px solid',
+                borderColor: phase === 'unlocking' ? '#4ade80' : 'var(--accent-primary)',
+                borderStyle: 'solid',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}
+          >
+              {/* Inner Dot */}
+              <motion.div 
+                animate={phase === 'unlocking' ? { backgroundColor: '#4ade80', scale: [1, 1.5, 1] } : {}}
                 style={{
-                    width: '60px',
-                    height: '60px',
-                    borderTop: '2px solid var(--accent-primary)',
-                    borderRight: '2px solid transparent',
+                    width: '10px',
+                    height: '10px',
+                    backgroundColor: phase === 'unlocking' ? '#4ade80' : 'var(--accent-primary)',
                     borderRadius: '50%'
                 }}
-             />
-         )}
+              />
+          </motion.div>
+
+          {/* Text Status */}
+          <div style={{
+              position: 'absolute',
+              top: '120%',
+              width: '200px',
+              textAlign: 'center',
+              color: phase === 'unlocking' ? '#4ade80' : 'var(--text-secondary)',
+              fontFamily: '"Fira Code", monospace',
+              fontSize: '0.9rem',
+              letterSpacing: '2px'
+          }}>
+              {phase === 'locked' && "SYSTEM LOCKED"}
+              {phase === 'scanning' && "SCANNING..."}
+              {phase === 'unlocking' && "OPENS ACCESS"}
+          </div>
+
       </motion.div>
     </div>
   );
