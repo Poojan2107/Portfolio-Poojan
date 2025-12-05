@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
@@ -9,6 +9,24 @@ import ReactiveBackground from './components/ReactiveBackground';
 
 function App() {
   const [activeTech, setActiveTech] = useState(null);
+
+  useEffect(() => {
+    const originalTitle = document.title;
+    
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        document.title = "Come back to the future! 🚀";
+      } else {
+        document.title = originalTitle;
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
 
   return (
     <div className="App">

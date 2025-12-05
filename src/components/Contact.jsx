@@ -63,6 +63,16 @@ const Contact = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
           
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(PERSONAL_DETAILS.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+ 
+  // ... existing code ...
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,13 +85,25 @@ const Contact = () => {
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div 
+                onClick={handleCopyEmail}
+                style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '1rem', 
+                  cursor: 'pointer',
+                  position: 'relative'
+                }}
+                title="Click to copy"
+              >
                 <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(0, 242, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-primary)', fontSize: '1.2rem' }}>
                   <FaEnvelope />
                 </div>
                 <div>
                   <h4 style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Email</h4>
-                  <p>{PERSONAL_DETAILS.email}</p>
+                  <p style={{ transition: 'color 0.2s', color: copied ? '#4ade80' : 'inherit' }}>
+                    {copied ? 'Copied to clipboard! ✅' : PERSONAL_DETAILS.email}
+                  </p>
                 </div>
               </div>
 
