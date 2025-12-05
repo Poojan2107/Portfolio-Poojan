@@ -10,6 +10,13 @@ const Contact = () => {
     message: ''
   });
   const [status, setStatus] = React.useState(''); // '', 'sending', 'success', 'error'
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(PERSONAL_DETAILS.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,15 +70,7 @@ const Contact = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
           
-  const [copied, setCopied] = React.useState(false);
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(PERSONAL_DETAILS.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
- 
-  // ... existing code ...
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
