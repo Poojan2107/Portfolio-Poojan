@@ -80,21 +80,7 @@ const Education = () => {
                     </div>
                 </div>
 
-                {/* Progress Bar Visual */}
-                <div style={{ width: '100%', maxWidth: '400px', marginTop: '1rem' }}>
-                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
-                        <span>Start</span>
-                        <span>Completion</span>
-                    </div>
-                    <div style={{ width: '100%', height: '6px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '10px', overflow: 'hidden' }}>
-                        <motion.div 
-                            initial={{ width: 0 }}
-                            whileInView={{ width: '25%' }} // Approx progress for 1st year (2024-2028)
-                            transition={{ duration: 1.5, ease: "easeInOut" }}
-                            style={{ height: '100%', background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-secondary))', borderRadius: '10px' }}
-                        ></motion.div>
-                    </div>
-                </div>
+
 
             </motion.div>
         </div>
