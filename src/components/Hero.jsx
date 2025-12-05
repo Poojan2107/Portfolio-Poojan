@@ -1,46 +1,31 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useSpring, useMotionValue, useTransform } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useSpring, useMotionValue } from 'framer-motion';
 import { PERSONAL_DETAILS } from '../constants';
 
-const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;':,./<>?";
-
-const CipherText = ({ text, className }) => {
-  const [displayText, setDisplayText] = useState(text);
-  const [iterations, setIterations] = useState(0);
-
-  useEffect(() => {
-    let interval = null;
-
-    // Start slightly delayed
-    const startTimeout = setTimeout(() => {
-      interval = setInterval(() => {
-        setDisplayText((prev) => {
-          return text
-            .split("")
-            .map((letter, index) => {
-              if (index < iterations) {
-                return text[index];
-              }
-              return LETTERS[Math.floor(Math.random() * LETTERS.length)];
-            })
-            .join("");
-        });
-
-        if (iterations >= text.length) {
-          clearInterval(interval);
-        }
-
-        setIterations((prev) => prev + 1 / 3); // Decryption speed
-      }, 30);
-    }, 500);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(startTimeout);
-    };
-  }, [iterations, text]);
-
-  return <span className={className}>{displayText}</span>;
+const PrismaticText = ({ text, className }) => {
+  return (
+    <div style={{ overflow: 'hidden', display: 'inline-block', paddingBottom: '0.2em', marginBottom: '-0.2em' }}>
+      <motion.span
+        className={className}
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: [0.2, 0.65, 0.3, 0.9] }}
+        style={{ 
+          display: 'inline-block',
+          background: 'linear-gradient(to right, #fff, #fff 50%, var(--accent-primary) 50%, var(--accent-secondary))',
+          backgroundSize: '200% auto',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+        whileInView={{ 
+            backgroundPosition: ['0% center', '-200% center'],
+        }}
+        viewport={{ once: true }}
+      >
+        {text}
+      </motion.span>
+    </div>
+  );
 };
 
 const MagneticButton = ({ children, href, className, style }) => {
@@ -158,11 +143,9 @@ const Hero = () => {
           <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-code)', fontSize: '1.1rem', marginBottom: '0.5rem', letterSpacing: '2px' }}>
             HELLO, WORLD! I AM
           </motion.h2>
-          <motion.h1 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} style={{ fontSize: '4.5rem', fontWeight: '800', lineHeight: '1.1', marginBottom: '1rem', letterSpacing: '-2px' }}>
-            <CipherText text={PERSONAL_DETAILS.name.split(' ')[0]} /> <br />
-            <span className="gradient-text">
-                <CipherText text={PERSONAL_DETAILS.name.split(' ')[1]} />
-            </span>
+          <motion.h1 style={{ fontSize: '4.5rem', fontWeight: '800', lineHeight: '1.1', marginBottom: '1rem', letterSpacing: '-2px' }}>
+            <PrismaticText text={PERSONAL_DETAILS.name.split(' ')[0]} /> <br />
+            <PrismaticText text={PERSONAL_DETAILS.name.split(' ')[1]} className="gradient-text" />
           </motion.h1>
           <motion.h3 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} style={{ fontSize: '2rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: '400' }}>
             {PERSONAL_DETAILS.role}
@@ -221,6 +204,5 @@ const Hero = () => {
     </section>
   );
 };
-
 
 export default Hero;
