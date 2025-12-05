@@ -3,9 +3,13 @@ import { FaGithub, FaExternalLinkAlt, FaTerminal, FaCampground, FaLanguage } fro
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { PROJECTS } from '../constants';
 
-const Project3DCard = ({ project, index }) => {
+const Project3DCard = ({ project, index, activeTech }) => {
   const ref = useRef(null);
   const [hovered, setHovered] = useState(false);
+
+  // Check if this project uses the active tech
+  const isMatch = activeTech && project.tags.includes(activeTech.name);
+  const isDimmed = activeTech && !isMatch;
 
   // Motion values for tilt effect
   const x = useMotionValue(0);
@@ -65,7 +69,10 @@ const Project3DCard = ({ project, index }) => {
       viewport={{ once: true, margin: "-100px" }}
       style={{
         perspective: 1000,
-        marginBottom: '5rem'
+        marginBottom: '5rem',
+        opacity: isDimmed ? 0.3 : 1,
+        scale: isMatch ? 1.05 : 1,
+        transition: 'all 0.4s ease'
       }}
     >
       <motion.div
@@ -76,13 +83,15 @@ const Project3DCard = ({ project, index }) => {
           display: 'flex',
           flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
           background: 'rgba(20, 20, 20, 0.6)',
-          border: '1px solid rgba(255, 255, 255, 0.05)',
+          border: isMatch ? `2px solid ${activeTech.color}` : '1px solid rgba(255, 255, 255, 0.05)',
           borderRadius: '24px',
           minHeight: '450px',
           position: 'relative',
-          boxShadow: hovered 
-            ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)' 
-            : '0 10px 30px -10px rgba(0, 0, 0, 0.3)'
+          boxShadow: isMatch 
+            ? `0 0 40px ${activeTech.color}40` 
+            : hovered 
+              ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)' 
+              : '0 10px 30px -10px rgba(0, 0, 0, 0.3)'
         }}
         className="project-card-3d"
       >
@@ -149,11 +158,12 @@ const Project3DCard = ({ project, index }) => {
                   fontSize: '0.85rem', 
                   padding: '0.5rem 1rem', 
                   borderRadius: '50px', 
-                  background: 'rgba(255, 255, 255, 0.05)', 
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  color: 'var(--accent-primary)',
+                  background: isMatch && tag === activeTech.name ? activeTech.color : 'rgba(255, 255, 255, 0.05)', 
+                  border: isMatch && tag === activeTech.name ? `1px solid ${activeTech.color}` : '1px solid rgba(255, 255, 255, 0.1)',
+                  color: isMatch && tag === activeTech.name ? '#000' : 'var(--accent-primary)',
                   fontFamily: '"Fira Code", monospace',
-                  fontWeight: '600'
+                  fontWeight: '600',
+                  boxShadow: isMatch && tag === activeTech.name ? `0 0 15px ${activeTech.color}` : 'none'
                 }}>
                   {tag}
                 </span>
@@ -186,7 +196,7 @@ const Project3DCard = ({ project, index }) => {
   );
 };
 
-const Projects = () => {
+const Projects = ({ activeTech }) => {
   return (
     <section id="projects" className="section" style={{ position: 'relative', perspective: '2000px' }}>
       <div className="container">
@@ -207,7 +217,7 @@ const Projects = () => {
 
         <div>
           {PROJECTS.map((project, index) => (
-            <Project3DCard key={index} project={project} index={index} />
+            <Project3DCard key={index} project={project} index={index} activeTech={activeTech} />
           ))}
         </div>
       </div>

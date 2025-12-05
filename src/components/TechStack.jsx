@@ -22,7 +22,7 @@ const itemVariants = {
   }
 };
 
-const TechStack = () => {
+const TechStack = ({ setActiveTech }) => {
   return (
     <section id="skills" className="section" style={{ position: 'relative', overflow: 'hidden', padding: '8rem 0', background: 'var(--bg-secondary)' }}>
       {/* Ambient Background Glow */}
@@ -86,6 +86,8 @@ const TechStack = () => {
                   <motion.div
                     key={skill.name}
                     variants={itemVariants}
+                    onMouseEnter={() => setActiveTech({ name: skill.name, color: skill.color })}
+                    onMouseLeave={() => setActiveTech(null)}
                     whileHover={{ 
                       y: -8, 
                       borderColor: skill.color, 

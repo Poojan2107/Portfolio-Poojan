@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
@@ -8,6 +8,8 @@ import Contact from './components/Contact';
 import ReactiveBackground from './components/ReactiveBackground';
 
 function App() {
+  const [activeTech, setActiveTech] = useState(null);
+
   return (
     <div className="App">
       <div className="ambient-light ambient-light-1"></div>
@@ -15,9 +17,9 @@ function App() {
       <ReactiveBackground />
       <Navbar />
       <Hero />
-      <TechStack />
+      <TechStack setActiveTech={setActiveTech} />
       <Education />
-      <Projects />
+      <Projects activeTech={activeTech} />
       <Contact />
       
       <footer style={{ 
