@@ -136,7 +136,7 @@ const Navbar = () => {
               {/* Logo */}
               <a href="#" className="code-font" style={styles.logo} onClick={(e) => scrollToSection(e, '#home')}>
                 <span style={{ fontFamily: '"Fira Code", monospace', fontWeight: '700', fontSize: '1.5rem', letterSpacing: '-1px', color: '#fff' }}>
-                  {logoText}
+                  {logoText}      
                   <span style={{ color: 'var(--accent-primary)', animation: 'blink 1s step-end infinite' }}>_</span>
                 </span>
               </a>
