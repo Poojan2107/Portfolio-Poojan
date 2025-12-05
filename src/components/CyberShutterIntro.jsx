@@ -140,9 +140,10 @@ const CyberShutterIntro = ({ onComplete }) => {
            <div style={{
                position: 'absolute',
                fontFamily: '"Fira Code", monospace',
-               fontSize: '0.8rem',
+               fontSize: '1rem',
                color: 'var(--accent-primary)',
-               letterSpacing: '2px'
+               letterSpacing: '4px',
+               fontWeight: '600'
            }}>
                SYSTEM.INIT
            </div>

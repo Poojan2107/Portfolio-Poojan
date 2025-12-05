@@ -32,9 +32,25 @@ body {
   color: var(--text-primary);
   font-family: var(--font-main);
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.7;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+h1 { letter-spacing: -2px; }
+h2 { letter-spacing: -0.5px; }
+
+::selection {
+    background: var(--accent-glow);
+    color: #fff;
+}
+/* ... existing code ... */
 
 /* Global Ambient Lights */
 .ambient-light {
