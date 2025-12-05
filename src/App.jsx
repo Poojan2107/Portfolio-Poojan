@@ -7,7 +7,7 @@ import Education from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ReactiveBackground from './components/ReactiveBackground';
-import BigBangIntro from './components/BigBangIntro';
+import CyberShutterIntro from './components/CyberShutterIntro';
 
 function App() {
   const [activeTech, setActiveTech] = useState(null);
@@ -35,7 +35,7 @@ function App() {
     <div className="App">
        <AnimatePresence mode='wait'>
         {showIntro && (
-          <BigBangIntro onComplete={() => setShowIntro(false)} />
+          <CyberShutterIntro onComplete={() => setShowIntro(false)} />
         )}
       </AnimatePresence>
 
