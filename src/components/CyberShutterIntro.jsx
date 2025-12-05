@@ -2,46 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const CyberShutterIntro = ({ onComplete }) => {
-  const [phase, setPhase] = useState('locked'); // locked, scanning, unlocking, opening
+  const [phase, setPhase] = useState('closed'); // closed, activating, opening
 
   useEffect(() => {
-    const scanTimer = setTimeout(() => setPhase('scanning'), 800);
-    const unlockTimer = setTimeout(() => setPhase('unlocking'), 2000); // Lock turns green
-    const openTimer = setTimeout(() => setPhase('opening'), 2400); // Shutters move
-    const completeTimer = setTimeout(onComplete, 3200); // Unmount
+    const activeTimer = setTimeout(() => setPhase('activating'), 500);
+    const openTimer = setTimeout(() => setPhase('opening'), 1500);
+    const completeTimer = setTimeout(onComplete, 2500);
 
     return () => {
-      clearTimeout(scanTimer);
-      clearTimeout(unlockTimer);
+      clearTimeout(activeTimer);
       clearTimeout(openTimer);
       clearTimeout(completeTimer);
     };
   }, [onComplete]);
 
-  const shutterVariants = {
-    locked: { x: 0, y: 0 },
-    scanning: { x: 0, y: 0 },
-    unlocking: { x: 0, y: 0 },
-    opening: (custom) => {
-        switch(custom) {
-            case 'tl': return { x: '-100%', y: '-100%' };
-            case 'tr': return { x: '100%', y: '-100%' };
-            case 'bl': return { x: '-100%', y: '100%' };
-            case 'br': return { x: '100%', y: '100%' };
-            default: return {};
-        }
-    }
-  };
-
-  const plateStyle = {
-    position: 'absolute',
-    background: '#050505',
-    zIndex: 2,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundImage: 'radial-gradient(circle at center, #111 0%, #000 100%)', // Subtle gradient
-    boxShadow: 'inset 0 0 50px rgba(0,0,0,0.8)'
+  // Iris Blade Variants
+  const bladeVariants = {
+    closed: { height: '55vh' },
+    activating: { height: '50vh', filter: 'brightness(1.5)' }, // Pulse
+    opening: { height: '0vh' }
   };
 
   return (
@@ -53,143 +32,99 @@ const CyberShutterIntro = ({ onComplete }) => {
         width: '100vw',
         height: '100vh',
         zIndex: 99999,
-        pointerEvents: phase === 'opening' ? 'none' : 'auto', // Block clicks until open
+        background: 'transparent', // We only draw the blades
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        pointerEvents: 'none'
       }}
     >
-      {/* Top Left Plate */}
-      <motion.div
-        custom="tl"
-        initial="locked"
-        animate={phase === 'opening' ? "opening" : "locked"}
-        variants={shutterVariants}
-        transition={{ duration: 0.8, ease: "circIn" }}
-        style={{
-            ...plateStyle,
-            top: 0, left: 0, width: '50vw', height: '50vh',
-            borderRight: '1px solid rgba(255,255,255,0.1)',
-            borderBottom: '1px solid rgba(255,255,255,0.1)',
-        }}
-      >
-          {/* Tech decoration */}
-          <div style={{ position: 'absolute', bottom: '10px', right: '10px', fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>SEC-01</div>
-      </motion.div>
+        {/* Background blocker (fades out first) */}
+        <motion.div 
+            animate={phase === 'opening' ? { opacity: 0 } : { opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: '#000', zIndex: 0 }}
+        />
 
-      {/* Top Right Plate */}
-      <motion.div
-        custom="tr"
-        initial="locked"
-        animate={phase === 'opening' ? "opening" : "locked"}
-        variants={shutterVariants}
-        transition={{ duration: 0.8, ease: "circIn" }}
-        style={{
-            ...plateStyle,
-            top: 0, right: 0, width: '50vw', height: '50vh',
-            borderLeft: '1px solid rgba(255,255,255,0.1)',
-            borderBottom: '1px solid rgba(255,255,255,0.1)',
-        }}
-      >
-          <div style={{ position: 'absolute', bottom: '10px', left: '10px', fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>SEC-02</div>
-      </motion.div>
-
-       {/* Bottom Left Plate */}
-       <motion.div
-        custom="bl"
-        initial="locked"
-        animate={phase === 'opening' ? "opening" : "locked"}
-        variants={shutterVariants}
-        transition={{ duration: 0.8, ease: "circIn" }}
-        style={{
-            ...plateStyle,
-            bottom: 0, left: 0, width: '50vw', height: '50vh',
-            borderRight: '1px solid rgba(255,255,255,0.1)',
-            borderTop: '1px solid rgba(255,255,255,0.1)',
-        }}
-      >
-          <div style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>SEC-03</div>
-      </motion.div>
-
-       {/* Bottom Right Plate */}
-       <motion.div
-        custom="br"
-        initial="locked"
-        animate={phase === 'opening' ? "opening" : "locked"}
-        variants={shutterVariants}
-        transition={{ duration: 0.8, ease: "circIn" }}
-        style={{
-            ...plateStyle,
-            bottom: 0, right: 0, width: '50vw', height: '50vh',
-            borderLeft: '1px solid rgba(255,255,255,0.1)',
-            borderTop: '1px solid rgba(255,255,255,0.1)',
-        }}
-      >
-          <div style={{ position: 'absolute', top: '10px', left: '10px', fontSize: '10px', color: '#333', fontFamily: 'monospace' }}>SEC-04</div>
-      </motion.div>
-
-
-      {/* CENTRAL LOCK MECHANISM */}
-      <motion.div
-        animate={phase === 'opening' ? { opacity: 0, scale: 0.5 } : { opacity: 1, scale: 1 }}
-        style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 10,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            pointerEvents: 'none'
-        }}
-      >
-          {/* Outer Ring */}
-          <motion.div
-            animate={
-                phase === 'scanning' ? { rotate: 360, borderStyle: 'dashed' } 
-                : phase === 'unlocking' ? { rotate: 0, borderColor: '#4ade80', scale: 1.1 }
-                : {}
-            }
-            transition={{ duration: 1.5, ease: "linear" }}
+        {/* The Iris Assembly */}
+        <div style={{ position: 'relative', width: '100vw', height: '100vh', zIndex: 1 }}>
+            {[...Array(6)].map((_, i) => (
+                <motion.div
+                    key={i}
+                    custom={i}
+                    initial="closed"
+                    animate={phase}
+                    variants={bladeVariants}
+                    transition={{ 
+                        duration: 0.8, 
+                        ease: [0.4, 0, 0.2, 1], // Custom bezier for mechanical feel
+                        delay: phase === 'opening' ? i * 0.05 : 0 // Staggered opening
+                    }}
+                    style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        width: '30vw', // Width of blade base
+                        background: `linear-gradient(${i * 60}deg, #0a0a0a, #111)`,
+                        border: '1px solid rgba(255,255,255,0.05)',
+                        boxShadow: '0 0 20px rgba(0,0,0,0.8)',
+                        transformOrigin: 'top center',
+                        transform: `translate(-50%, 0) rotate(${i * 60}deg)`,
+                        zIndex: 10
+                    }}
+                >
+                    {/* Glowing Edge */}
+                    <motion.div 
+                        animate={{ opacity: [0.2, 0.5, 0.2] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                        style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '2px',
+                            background: 'var(--accent-primary)',
+                            boxShadow: '0 0 10px var(--accent-primary)'
+                        }}
+                    />
+                </motion.div>
+            ))}
+        </div>
+        
+        {/* Center Ring (The Pupil) */}
+        <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={phase === 'activating' ? { scale: 1, opacity: 1, rotate: 180 } : phase === 'opening' ? { scale: 0, opacity: 0 } : { scale: 0.8, opacity: 1 }}
+            transition={{ duration: 0.8 }}
             style={{
-                width: '80px',
-                height: '80px',
+                position: 'absolute',
+                zIndex: 20,
+                width: '150px',
+                height: '150px',
                 borderRadius: '50%',
-                border: '2px solid',
-                borderColor: phase === 'unlocking' ? '#4ade80' : 'var(--accent-primary)',
-                borderStyle: 'solid',
+                border: '2px solid var(--accent-secondary)',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                boxShadow: '0 0 30px var(--accent-secondary)'
             }}
-          >
-              {/* Inner Dot */}
-              <motion.div 
-                animate={phase === 'unlocking' ? { backgroundColor: '#4ade80', scale: [1, 1.5, 1] } : {}}
+        >
+             <motion.div 
+                animate={{ rotate: -360 }}
+                transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
                 style={{
-                    width: '10px',
-                    height: '10px',
-                    backgroundColor: phase === 'unlocking' ? '#4ade80' : 'var(--accent-primary)',
+                    width: '70%',
+                    height: '70%',
+                    borderTop: '4px solid #fff',
                     borderRadius: '50%'
                 }}
-              />
-          </motion.div>
+             />
+             <div style={{ position: 'absolute', fontFamily: 'monospace', fontSize: '10px', letterSpacing: '2px', color: '#fff' }}>
+                 LOADING
+             </div>
+        </motion.div>
 
-          {/* Text Status */}
-          <div style={{
-              position: 'absolute',
-              top: '120%',
-              width: '200px',
-              textAlign: 'center',
-              color: phase === 'unlocking' ? '#4ade80' : 'var(--text-secondary)',
-              fontFamily: '"Fira Code", monospace',
-              fontSize: '0.9rem',
-              letterSpacing: '2px'
-          }}>
-              {phase === 'locked' && "SYSTEM LOCKED"}
-              {phase === 'scanning' && "SCANNING..."}
-              {phase === 'unlocking' && "OPENS ACCESS"}
-          </div>
-
-      </motion.div>
     </div>
   );
 };
