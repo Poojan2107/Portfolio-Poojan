@@ -6,6 +6,8 @@ import Education from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ReactiveBackground from './components/ReactiveBackground';
+import CustomCursor from './components/CustomCursor';
+import TerminalFooter from './components/TerminalFooter';
 
 function App() {
   const [activeTech, setActiveTech] = useState(null);
@@ -30,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <CustomCursor />
       <div className="ambient-light ambient-light-1"></div>
       <div className="ambient-light ambient-light-2"></div>
       <ReactiveBackground />
@@ -40,15 +43,7 @@ function App() {
       <Projects activeTech={activeTech} />
       <Contact />
       
-      <footer style={{ 
-        padding: '2rem 0', 
-        textAlign: 'center', 
-        borderTop: '1px solid rgba(255,255,255,0.05)',
-        color: 'var(--text-secondary)'
-      }}>
-        <p>Designed & Built by <span style={{ color: 'var(--accent-primary)' }}>POOJAN SHRIVASTAV</span></p>
-        <p style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}>© {new Date().getFullYear()} All rights reserved.</p>
-      </footer>
+      <TerminalFooter />
     </div>
   );
 }

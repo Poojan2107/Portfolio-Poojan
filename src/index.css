@@ -377,3 +377,25 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+@media (min-width: 992px) {
+  /* Hide default cursor only on large screens (desktop) */
+  body, a, button, input, textarea {
+    cursor: none;
+  }
+}
+
+/* Terminal Scrollbar */
+.terminal-window::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-window::-webkit-scrollbar-track {
+  background: #000;
+}
+.terminal-window::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+.terminal-window::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
