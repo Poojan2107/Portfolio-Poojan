@@ -1,205 +1,178 @@
-import React, { useRef } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
-import { PERSONAL_DETAILS } from '../constants';
-
-const PrismaticText = ({ text, className }) => {
-  return (
-    <div style={{ overflow: 'hidden', display: 'inline-block', paddingBottom: '0.2em', marginBottom: '-0.2em' }}>
-      <motion.span
-        className={className}
-        initial={{ y: "100%" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: [0.2, 0.65, 0.3, 0.9] }}
-        style={{ 
-          display: 'inline-block',
-          background: 'linear-gradient(to right, #fff, #fff 50%, var(--accent-primary) 50%, var(--accent-secondary))',
-          backgroundSize: '200% auto',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        }}
-        whileInView={{ 
-            backgroundPosition: ['0% center', '-200% center'],
-        }}
-        viewport={{ once: true }}
-      >
-        {text}
-      </motion.span>
-    </div>
-  );
-};
-
-const MagneticButton = ({ children, href, className, style }) => {
-  const ref = useRef(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 15 });
-  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 15 });
-
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const { left, top, width, height } = ref.current.getBoundingClientRect();
-    
-    // Calculate distance from center
-    const centerX = left + width / 2;
-    const centerY = top + height / 2;
-    
-    const distanceX = clientX - centerX;
-    const distanceY = clientY - centerY;
-
-    // Magnetic pull strength (max 20px movement)
-    x.set(distanceX * 0.3);
-    y.set(distanceY * 0.3);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  return (
-    <motion.a
-      ref={ref}
-      href={href}
-      className={className}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        ...style,
-        x: mouseXSpring,
-        y: mouseYSpring,
-        display: 'inline-block'
-      }}
-    >
-      {children}
-    </motion.a>
-  );
-};
+import { motion } from 'framer-motion';
+import MagneticButton from './MagneticButton';
 
 const Hero = () => {
   return (
     <section id="home" style={{ 
       minHeight: '100vh', 
       display: 'flex', 
-      alignItems: 'center', // Center vertically
+      alignItems: 'center', 
       justifyContent: 'center',
       position: 'relative',
       overflow: 'hidden',
-      paddingTop: '110px',
-      paddingBottom: '4rem'
+      paddingTop: '80px',
+      background: 'var(--bg-primary)'
     }}>
-      {/* ... background elements ... */}
+      {/* Abstract Background Grid */}
       <div style={{
         position: 'absolute',
-        top: '20%',
-        right: '10%',
-        width: '300px',
-        height: '300px',
-        background: 'var(--accent-primary)',
-        filter: 'blur(150px)',
-        opacity: '0.2',
-        borderRadius: '50%'
-      }}></div>
-      <div style={{
-        position: 'absolute',
-        bottom: '10%',
-        left: '5%',
-        width: '200px',
-        height: '200px',
-        background: 'var(--accent-secondary)',
-        filter: 'blur(120px)',
-        opacity: '0.2',
-        borderRadius: '50%'
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundImage: 'linear-gradient(var(--border-light) 1px, transparent 1px), linear-gradient(90deg, var(--border-light) 1px, transparent 1px)',
+        backgroundSize: '100px 100px',
+        opacity: 0.05,
+        pointerEvents: 'none'
       }}></div>
 
       <div className="container" style={{ 
-        display: 'flex', 
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '2rem', 
         position: 'relative', 
         zIndex: 1,
-        flexWrap: 'wrap',
-        marginTop: '0' 
+        width: '100%',
+        maxWidth: '1400px',
+        padding: '0 2rem'
       }}>
         
-        <motion.div 
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { 
-              opacity: 1, 
-              x: 0,
-              transition: { 
-                staggerChildren: 0.1,
-                duration: 0.8
-              }
-            }
-          }}
-          style={{ flex: '1 1 500px', maxWidth: '600px' }}
-        >
-          <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-code)', fontSize: '1.1rem', marginBottom: '0.5rem', letterSpacing: '2px' }}>
-            HELLO, WORLD! I AM
-          </motion.h2>
-          <motion.h1 style={{ fontSize: '4.5rem', fontWeight: '800', lineHeight: '1.1', marginBottom: '1rem', letterSpacing: '-2px' }}>
-            <PrismaticText text={PERSONAL_DETAILS.name.split(' ')[0]} /> <br />
-            <PrismaticText text={PERSONAL_DETAILS.name.split(' ')[1]} className="gradient-text" />
-          </motion.h1>
-          <motion.h3 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} style={{ fontSize: '2rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: '400' }}>
-            {PERSONAL_DETAILS.role}
-          </motion.h3>
-          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} style={{ maxWidth: '550px', color: 'var(--text-secondary)', marginBottom: '2.5rem', fontSize: '1.1rem', lineHeight: '1.8' }}>
-            {PERSONAL_DETAILS.bio}
-          </motion.p>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
           
-          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} style={{ display: 'flex', gap: '1.5rem' }}>
-            <MagneticButton href="#projects" className="btn btn-primary" style={{ textDecoration: 'none', color: '#000', padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
-                View Projects
-            </MagneticButton>
-            <MagneticButton href="#contact" className="btn btn-outline" style={{ textDecoration: 'none', padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
-                Contact Me
-            </MagneticButton>
+          {/* Text Content */}
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { 
+                opacity: 1,
+                transition: { staggerChildren: 0.15 }
+              }
+            }}
+          >
+            <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }}>
+               <span style={{ 
+                 fontFamily: 'var(--font-code)', 
+                 color: 'var(--accent-secondary)', 
+                 fontSize: '0.9rem',
+                 letterSpacing: '0.2em',
+                 textTransform: 'uppercase'
+               }}>
+                 // Full Stack Developer
+               </span>
+            </motion.div>
+            
+            <motion.h1 
+              variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+              style={{ 
+                fontSize: 'clamp(3rem, 8vw, 7rem)', 
+                fontWeight: '900', 
+                lineHeight: '0.9', 
+                margin: '1.5rem 0',
+                letterSpacing: '-0.02em',
+                color: '#fff'
+              }}
+            >
+              POOJAN <br />
+              <span style={{ 
+                color: 'transparent', 
+                WebkitTextStroke: '2px var(--text-tertiary)',
+                opacity: 0.7
+              }}>SHRIVASTAV</span>
+            </motion.h1>
+
+            <motion.p 
+              variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }} 
+              style={{ 
+                maxWidth: '500px', 
+                color: 'var(--text-secondary)', 
+                marginBottom: '3rem', 
+                fontSize: '1.1rem',
+                borderLeft: '2px solid var(--text-tertiary)',
+                paddingLeft: '1.5rem'
+              }}
+            >
+              Building digital experiences with precision and elegance. 
+              Turning complex logic into clean, minimal, and high-performance applications.
+            </motion.p>
+            
+            <motion.div variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }} style={{ display: 'flex', gap: '2rem' }}>
+              <MagneticButton href="#projects" 
+                style={{ 
+                  background: '#fff', 
+                  color: '#000', 
+                  padding: '1rem 2.5rem', 
+                  fontWeight: '600',
+                  textDecoration: 'none',
+                  fontSize: '1rem'
+                }}
+              >
+                 VIEW WORK
+              </MagneticButton>
+              <MagneticButton href="#contact" 
+                style={{ 
+                  background: 'transparent',
+                  border: '1px solid var(--border-light)',
+                  color: '#fff', 
+                  padding: '1rem 2.5rem', 
+                  textDecoration: 'none',
+                  fontSize: '1rem'
+                }}
+              >
+                 CONTACT
+              </MagneticButton>
+            </motion.div>
           </motion.div>
-        </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="floating"
-          style={{ display: 'flex', justifyContent: 'center', perspective: '1000px' }}
-        >
-          {/* Abstract Code Visual */}
-          <div className="glass-card" style={{ 
-            width: '100%', 
-            maxWidth: '450px', 
-            padding: '2.5rem', 
-            background: 'rgba(10, 10, 10, 0.6)',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            transform: 'rotateY(-10deg) rotateX(5deg)', // 3D Tilt
-            boxShadow: '20px 20px 50px rgba(0,0,0,0.5)'
-          }}>
-            <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem' }}>
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56' }}></div>
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }}></div>
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27c93f' }}></div>
-            </div>
-            <div className="code-font" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-              <p><span style={{ color: '#c678dd' }}>const</span> <span style={{ color: '#e5c07b' }}>developer</span> = <span style={{ color: '#c678dd' }}>{'{'}</span></p>
-              <p style={{ paddingLeft: '1.5rem' }}>name: <span style={{ color: '#98c379' }}>'{PERSONAL_DETAILS.name}'</span>,</p>
-              <p style={{ paddingLeft: '1.5rem' }}>role: <span style={{ color: '#98c379' }}>'MERN Stack'</span>,</p>
-              <p style={{ paddingLeft: '1.5rem' }}>skills: <span style={{ color: '#c678dd' }}>[</span></p>
-              <p style={{ paddingLeft: '3rem' }}><span style={{ color: '#98c379' }}>'React'</span>, <span style={{ color: '#98c379' }}>'Node.js'</span>,</p>
-              <p style={{ paddingLeft: '3rem' }}><span style={{ color: '#98c379' }}>'MongoDB'</span>, <span style={{ color: '#98c379' }}>'Express'</span></p>
-              <p style={{ paddingLeft: '1.5rem' }}><span style={{ color: '#c678dd' }}>]</span>,</p>
-              <p style={{ paddingLeft: '1.5rem' }}>passion: <span style={{ color: '#98c379' }}>'infinite'</span></p>
-              <p><span style={{ color: '#c678dd' }}>{'}'}</span>;</p>
-            </div>
-          </div>
-        </motion.div>
+          {/* Minimalist Graphic / Code Block */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}
+          >
+            {/* Background Circle */}
+            <div style={{
+              position: 'absolute',
+              width: '80%',
+              paddingBottom: '80%',
+              borderRadius: '50%',
+              border: '1px solid var(--border-light)',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: -1
+            }}></div>
 
+             <div className="dapper-card" style={{ 
+              width: '100%', 
+              maxWidth: '480px', 
+              padding: '2rem', 
+              borderRadius: '0', /* Proper tech look is often sharp */
+              background: '#0a0a0a',
+              position: 'relative',
+              boxShadow: '0 20px 50px -20px #000'
+             }}>
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '2rem' }}>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#333' }}></div>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#333' }}></div>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#333' }}></div>
+                </div>
+                
+                <code style={{ fontFamily: 'var(--font-code)', fontSize: '0.9rem', color: 'var(--text-secondary)', display: 'block' }}>
+                  <span style={{ color: '#fff' }}>class</span> <span style={{ color: '#fff' }}>Developer</span> <span style={{ color: '#666' }}>{`{`}</span><br/>
+                  &nbsp;&nbsp;<span style={{ color: '#fff' }}>constructor</span>() <span style={{ color: '#666' }}>{`{`}</span><br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#888' }}>this</span>.name = <span style={{ color: '#fff' }}>'Poojan'</span>;<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#888' }}>this</span>.vision = <span style={{ color: '#fff' }}>'Minimalist'</span>;<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#888' }}>this</span>.stack = [<span style={{ color: '#fff' }}>'MERN'</span>, <span style={{ color: '#fff' }}>'3D'</span>];<br/>
+                  &nbsp;&nbsp;<span style={{ color: '#666' }}>{`}`}</span><br/><br/>
+                  &nbsp;&nbsp;<span style={{ color: '#fff' }}>buildFuture</span>() <span style={{ color: '#666' }}>{`{`}</span><br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#888' }}>return</span> <span style={{ color: '#fff' }}>new Reality()</span>;<br/>
+                  &nbsp;&nbsp;<span style={{ color: '#666' }}>{`}`}</span><br/>
+                  <span style={{ color: '#666' }}>{`}`}</span>
+                </code>
+             </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

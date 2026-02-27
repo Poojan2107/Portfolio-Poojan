@@ -52,6 +52,14 @@ export const SKILL_CATEGORIES = [
 
 export const PROJECTS = [
   {
+    title: 'NeuralCredit_',
+    description: 'An enterprise-grade Fintech architecture featuring a Python ML Random Forest classifier, Express/SQLite backend, and a high-fidelity React dashboard. Engineered with Explainable AI (XAI) Radar Charts, Framer Motion animations, and complex Joint Applicant state merging.',
+    tags: ['React', 'Node.js', 'Python', 'Machine Learning', 'SQLite', 'Recharts'],
+    github: 'https://github.com/Poojan2107/NeuralCredit_',
+    live: 'https://neuralcredit.onrender.com/',
+    image: 'https://via.placeholder.com/600x400/000000/ffffff?text=NeuralCredit_' 
+  },
+  {
     title: 'ProductNexus',
     description: 'A full-stack MERN application that re-imagines inventory management with a high-fidelity, terminal-inspired UI. Features a global CLI, real-time "Holographic" analytics, and an extreme Black & White aesthetic. Secured with JWT/Bcrypt and optimized with Optimistic UI.',
     tags: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],

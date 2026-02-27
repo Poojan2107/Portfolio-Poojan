@@ -27,8 +27,8 @@ const ReactiveBackground = () => {
           height: '100%',
           zIndex: -2,
           background: `
-            radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%),
-            radial-gradient(800px at ${window.innerWidth - mousePosition.x}px ${window.innerHeight - mousePosition.y}px, rgba(124, 58, 237, 0.15), transparent 80%)
+            radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.05), transparent 80%),
+            radial-gradient(800px at ${window.innerWidth - mousePosition.x}px ${window.innerHeight - mousePosition.y}px, rgba(100, 100, 100, 0.05), transparent 80%)
           `,
           pointerEvents: 'none'
         }}
@@ -46,8 +46,8 @@ const ReactiveBackground = () => {
           pointerEvents: 'none',
           // The Pattern: A high-tech grid + digital noise
           backgroundImage: `
-            linear-gradient(rgba(0, 242, 255, 0.07) 1px, transparent 1px), 
-            linear-gradient(90deg, rgba(0, 242, 255, 0.07) 1px, transparent 1px),
+            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
             radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px, 40px 40px, 4px 4px', // Grid size + dots
@@ -69,8 +69,8 @@ const ReactiveBackground = () => {
             width: '300px',
             height: '300px',
             borderRadius: '50%',
-            border: '1px solid rgba(0, 242, 255, 0.1)',
-            boxShadow: '0 0 50px rgba(0, 242, 255, 0.05), inset 0 0 20px rgba(0, 242, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            boxShadow: '0 0 50px rgba(255, 255, 255, 0.02), inset 0 0 20px rgba(255, 255, 255, 0.02)',
             zIndex: -1,
             pointerEvents: 'none',
             transition: 'transform 0.1s ease-out'
