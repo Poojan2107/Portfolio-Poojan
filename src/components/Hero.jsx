@@ -1,178 +1,287 @@
 import { motion } from 'framer-motion';
-import MagneticButton from './MagneticButton';
 
 const Hero = () => {
   return (
     <section id="home" style={{ 
-      minHeight: '100vh', 
+      minHeight: '100vh', /* Shrunk vertically just a bit to pull next section closer */
       display: 'flex', 
       alignItems: 'center', 
       justifyContent: 'center',
       position: 'relative',
       overflow: 'hidden',
-      paddingTop: '80px',
       background: 'var(--bg-primary)'
     }}>
-      {/* Abstract Background Grid */}
+      
+      {/* Massive Abstract Typography Background */}
       <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        backgroundImage: 'linear-gradient(var(--border-light) 1px, transparent 1px), linear-gradient(90deg, var(--border-light) 1px, transparent 1px)',
-        backgroundSize: '100px 100px',
-        opacity: 0.05,
-        pointerEvents: 'none'
-      }}></div>
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '100vw',
+          zIndex: 0,
+          pointerEvents: 'none',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          opacity: 0.05
+      }}>
+          <h1 style={{ fontSize: '25vw', margin: '-5vw 0', fontWeight: '900', lineHeight: 0.8, color: '#ffffff', fontFamily: 'var(--font-display)', whiteSpace: 'nowrap' }}>POOJAN</h1>
+          <h1 style={{ fontSize: '25vw', margin: '-5vw 0', fontWeight: '900', lineHeight: 0.8, fontFamily: 'var(--font-display)', whiteSpace: 'nowrap', WebkitTextStroke: '2px #fff', color: 'transparent' }}>SHRIVASTAV</h1>
+      </div>
 
       <div className="container" style={{ 
         position: 'relative', 
-        zIndex: 1,
+        zIndex: 2,
         width: '100%',
-        maxWidth: '1400px',
-        padding: '0 2rem'
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        marginTop: '6rem' /* Added margin to completely clear the floating navbar */
       }}>
+        {/* Background Glitch Ribbons */}
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
+            {[...Array(3)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ 
+                      x: ['-100%', '200%'],
+                      opacity: [0, 0.15, 0],
+                      height: [2, 10, 2]
+                  }}
+                  transition={{ 
+                      duration: 0.8, 
+                      repeat: Infinity, 
+                      repeatDelay: Math.random() * 5 + 2,
+                      delay: i * 2 
+                  }}
+                  style={{
+                      position: 'absolute',
+                      top: (20 + (i * 25)) + '%',
+                      width: '50%',
+                      background: 'linear-gradient(90deg, transparent, var(--accent-primary), transparent)',
+                      filter: 'blur(1px)'
+                  }}
+                />
+            ))}
+        </div>
         
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
-          
-          {/* Text Content */}
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { 
-                opacity: 1,
-                transition: { staggerChildren: 0.15 }
-              }
-            }}
-          >
-            <motion.div variants={{ hidden: { x: -20, opacity: 0 }, visible: { x: 0, opacity: 1 } }}>
-               <span style={{ 
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { 
+              opacity: 1, 
+              transition: { staggerChildren: 0.1, delayChildren: 0.3 }
+            }
+          }}
+        >
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } } }}>
+             <h2 style={{ 
                  fontFamily: 'var(--font-code)', 
-                 color: 'var(--accent-secondary)', 
-                 fontSize: '0.9rem',
-                 letterSpacing: '0.2em',
-                 textTransform: 'uppercase'
-               }}>
-                 // Full Stack Developer
-               </span>
-            </motion.div>
-            
-            <motion.h1 
-              variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-              style={{ 
-                fontSize: 'clamp(3rem, 8vw, 7rem)', 
-                fontWeight: '900', 
-                lineHeight: '0.9', 
-                margin: '1.5rem 0',
-                letterSpacing: '-0.02em',
-                color: '#fff'
-              }}
-            >
-              POOJAN <br />
-              <span style={{ 
-                color: 'transparent', 
-                WebkitTextStroke: '2px var(--text-tertiary)',
-                opacity: 0.7
-              }}>SHRIVASTAV</span>
-            </motion.h1>
-
-            <motion.p 
-              variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }} 
-              style={{ 
-                maxWidth: '500px', 
-                color: 'var(--text-secondary)', 
-                marginBottom: '3rem', 
-                fontSize: '1.1rem',
-                borderLeft: '2px solid var(--text-tertiary)',
-                paddingLeft: '1.5rem'
-              }}
-            >
-              Building digital experiences with precision and elegance. 
-              Turning complex logic into clean, minimal, and high-performance applications.
-            </motion.p>
-            
-            <motion.div variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }} style={{ display: 'flex', gap: '2rem' }}>
-              <MagneticButton href="#projects" 
-                style={{ 
-                  background: '#fff', 
-                  color: '#000', 
-                  padding: '1rem 2.5rem', 
-                  fontWeight: '600',
-                  textDecoration: 'none',
-                  fontSize: '1rem'
-                }}
-              >
-                 VIEW WORK
-              </MagneticButton>
-              <MagneticButton href="#contact" 
-                style={{ 
-                  background: 'transparent',
-                  border: '1px solid var(--border-light)',
-                  color: '#fff', 
-                  padding: '1rem 2.5rem', 
-                  textDecoration: 'none',
-                  fontSize: '1rem'
-                }}
-              >
-                 CONTACT
-              </MagneticButton>
-            </motion.div>
-          </motion.div>
-
-          {/* Minimalist Graphic / Code Block */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}
-          >
-            {/* Background Circle */}
-            <div style={{
-              position: 'absolute',
-              width: '80%',
-              paddingBottom: '80%',
-              borderRadius: '50%',
-              border: '1px solid var(--border-light)',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: -1
-            }}></div>
-
-             <div className="dapper-card" style={{ 
-              width: '100%', 
-              maxWidth: '480px', 
-              padding: '2rem', 
-              borderRadius: '0', /* Proper tech look is often sharp */
-              background: '#0a0a0a',
-              position: 'relative',
-              boxShadow: '0 20px 50px -20px #000'
+                 color: 'var(--accent-primary)', 
+                 fontSize: '0.8rem',
+                 letterSpacing: '0.4em',
+                 textTransform: 'uppercase',
+                 marginBottom: '1rem',
+                 display: 'flex',
+                 alignItems: 'center',
+                 justifyContent: 'center',
+                 gap: '1rem'
              }}>
-                <div style={{ display: 'flex', gap: '8px', marginBottom: '2rem' }}>
-                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#333' }}></div>
-                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#333' }}></div>
-                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#333' }}></div>
-                </div>
+                 <span style={{ color: 'var(--text-secondary)' }}>//</span> 
+                 Full Stack Architect 
+                 <span style={{ color: 'var(--text-secondary)' }}>•</span> 
+                 AI Integrator
+                 <span style={{ color: 'var(--text-secondary)' }}>//</span>
+             </h2>
+          </motion.div>
+          
+          {/* Main Title - Split into words for masking effect */}
+          <div style={{ overflow: 'hidden', padding: '0 1rem', position: 'relative' }}>
+              <motion.h1 
+                variants={{ hidden: { y: '100%', opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } } }}
+                style={{ 
+                  fontSize: 'clamp(4rem, 12vw, 10rem)', 
+                  fontWeight: '900', 
+                  lineHeight: '0.9', 
+                  margin: '0',
+                  letterSpacing: '-0.03em',
+                  fontFamily: 'var(--font-display)',
+                  position: 'relative',
+                  textTransform: 'uppercase',
+                  WebkitTextStroke: '1.5px rgba(255,255,255,0.4)',
+                  color: 'transparent',
+                  display: 'flex',
+                  justifyContent: 'center'
+                }}
+              >
+                {/* The 'Live' Shine Layer - Clipped to Text */}
+                <motion.span
+                  animate={{ backgroundPosition: ['200% 0%', '-200% 0%'] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), rgba(255,255,255,0.5), rgba(255,255,255,0.2), transparent)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    WebkitTextStroke: '0px',
+                    zIndex: 2,
+                    pointerEvents: 'none'
+                  }}
+                >
+                    POOJAN
+                </motion.span>
                 
-                <code style={{ fontFamily: 'var(--font-code)', fontSize: '0.9rem', color: 'var(--text-secondary)', display: 'block' }}>
-                  <span style={{ color: '#fff' }}>class</span> <span style={{ color: '#fff' }}>Developer</span> <span style={{ color: '#666' }}>{`{`}</span><br/>
-                  &nbsp;&nbsp;<span style={{ color: '#fff' }}>constructor</span>() <span style={{ color: '#666' }}>{`{`}</span><br/>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#888' }}>this</span>.name = <span style={{ color: '#fff' }}>'Poojan'</span>;<br/>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#888' }}>this</span>.vision = <span style={{ color: '#fff' }}>'Minimalist'</span>;<br/>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#888' }}>this</span>.stack = [<span style={{ color: '#fff' }}>'MERN'</span>, <span style={{ color: '#fff' }}>'3D'</span>];<br/>
-                  &nbsp;&nbsp;<span style={{ color: '#666' }}>{`}`}</span><br/><br/>
-                  &nbsp;&nbsp;<span style={{ color: '#fff' }}>buildFuture</span>() <span style={{ color: '#666' }}>{`{`}</span><br/>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#888' }}>return</span> <span style={{ color: '#fff' }}>new Reality()</span>;<br/>
-                  &nbsp;&nbsp;<span style={{ color: '#666' }}>{`}`}</span><br/>
-                  <span style={{ color: '#666' }}>{`}`}</span>
-                </code>
+                {/* Static Base Stroke */}
+                POOJAN
+              </motion.h1>
+          </div>
+          <div style={{ overflow: 'hidden', padding: '0 1rem', position: 'relative' }}>
+              {/* High-Fidelity Liquid Mask Shine */}
+              <motion.div
+                animate={{ 
+                    x: ['-150%', '150%'],
+                    opacity: [0, 1, 0]
+                }}
+                transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    ease: "easeInOut",
+                    repeatDelay: 2
+                }}
+                style={{
+                  position: 'absolute',
+                  top: '-20%',
+                  left: 0,
+                  width: '40%',
+                  height: '140%',
+                  background: 'linear-gradient(110deg, transparent, rgba(255,255,255,0.2), rgba(255,255,255,0.4), rgba(255,255,255,0.2), transparent)',
+                  zIndex: 3,
+                  pointerEvents: 'none',
+                  skewX: -25,
+                  filter: 'blur(5px)'
+                }}
+              />
+              <motion.h1 
+                variants={{ hidden: { y: '100%' }, visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } } }}
+                style={{ 
+                  fontSize: 'clamp(3rem, 7vw, 6rem)', 
+                  fontWeight: '900', 
+                  lineHeight: '0.9', 
+                  margin: '0',
+                  letterSpacing: '-2px',
+                  color: '#ffffff',
+                  fontFamily: 'var(--font-display)',
+                  position: 'relative',
+                  display: 'inline-block'
+                }}
+              >
+                {/* Dynamic Ghost Interference Layer */}
+                <motion.span 
+                    animate={{ 
+                        opacity: [0.1, 0.3, 0.1],
+                        x: [-1, 1, -1]
+                    }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                    style={{ 
+                        position: 'absolute', 
+                        top: '4px', 
+                        left: '4px', 
+                        zIndex: -1, 
+                        color: 'transparent',
+                        WebkitTextStroke: '1px rgba(255,255,255,0.15)',
+                        width: '100%',
+                        pointerEvents: 'none',
+                        userSelect: 'none'
+                    }}
+                >
+                    P. SHRIVASTAV
+                </motion.span>
+                P. SHRIVASTAV
+              </motion.h1>
+          </div>
+
+          <motion.div 
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 1, delay: 0.8 } } }}
+            style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}
+          >
+             <p style={{ 
+                maxWidth: '600px', 
+                color: '#aaaaaa', 
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                fontFamily: 'var(--font-main)'
+             }}>
+                Fusing MERN stack precision with Artificial Intelligence to architect the next generation of web-based experiences. Every line of code is a brushstroke on the digital canvas.
+             </p>
+
+             {/* Scroll Indicator */}
+             <div style={{
+                 width: '1px',
+                 height: '60px',
+                 background: 'rgba(255,255,255,0.1)',
+                 position: 'relative',
+                 marginTop: '1rem',
+                 overflow: 'hidden'
+             }}>
+                <motion.div
+                    animate={{ y: ['-100%', '100%'] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: 'linear' }}
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        background: '#ffffff'
+                    }}
+                />
              </div>
           </motion.div>
+        </motion.div>
 
-        </div>
+      </div>
+
+      {/* Dynamic Gap Filler: Horizontal Scrolling Tech Tape */}
+      <div style={{
+          position: 'absolute',
+          bottom: '0',
+          width: '100%',
+          overflow: 'hidden',
+          background: 'rgba(255,255,255,0.01)',
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+          padding: '1rem 0',
+          display: 'flex',
+          whiteSpace: 'nowrap',
+          zIndex: 1
+      }}>
+          <motion.div
+            animate={{ x: [0, '-50%'] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            style={{ display: 'flex', gap: '6rem', paddingRight: '6rem' }}
+          >
+              {[...Array(8)].map((_, i) => (
+                  <span key={i} style={{ 
+                      fontFamily: 'var(--font-code)', 
+                      fontSize: '0.65rem', 
+                      color: 'rgba(255,255,255,0.2)', 
+                      letterSpacing: '3px',
+                      textTransform: 'uppercase'
+                  }}>
+                      MERN_STACK_STABLE // ARCHITECTING_V4 // AI_MODEL_LOADED // POOJAN_P_SHRIVASTAV // SYSTEM_NORMAL
+                  </span>
+              ))}
+          </motion.div>
       </div>
     </section>
   );

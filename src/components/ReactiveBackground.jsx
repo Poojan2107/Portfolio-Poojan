@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const ReactiveBackground = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [particles, setParticles] = useState([]);
 
   useEffect(() => {
+    // Generate static random particles for depth only once on mount
+    const generatedParticles = Array.from({ length: 40 }).map((_, i) => ({
+      id: i,
+      x: Math.random() * 100, // vw
+      y: Math.random() * 100, // vh
+      size: Math.random() * 3 + 1, // 1px to 4px
+      duration: Math.random() * 20 + 10, // 10s to 30s float speed
+      delay: Math.random() * -20 // random start phase
+    }));
+    setParticles(generatedParticles);
+
     const handleMouseMove = (e) => {
-      // Use requestAnimationFrame for smoother performance
       requestAnimationFrame(() => {
         setMousePosition({ x: e.clientX, y: e.clientY });
       });
@@ -17,63 +29,82 @@ const ReactiveBackground = () => {
 
   return (
     <>
-      {/* 1. Base Ambient Glow (Existing) */}
+      {/* 1. Base Ambient Engine Void */}
       <div 
         style={{
           position: 'fixed',
           top: 0,
           left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -2,
-          background: `
-            radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.05), transparent 80%),
-            radial-gradient(800px at ${window.innerWidth - mousePosition.x}px ${window.innerHeight - mousePosition.y}px, rgba(100, 100, 100, 0.05), transparent 80%)
-          `,
+          width: '100vw',
+          height: '100vh',
+          zIndex: -3,
+          background: 'var(--bg-primary)',
           pointerEvents: 'none'
         }}
       />
 
-      {/* 2. The X-Ray "Hidden Tech" Layer */}
+      {/* 2. Floating Deep Space Particles */}
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -2, pointerEvents: 'none' }}>
+        {particles.map((p) => (
+          <motion.div
+            key={p.id}
+            initial={{ y: `${p.y}vh`, x: `${p.x}vw`, opacity: 0 }}
+            animate={{ 
+                y: [`${p.y}vh`, `${p.y - 10}vh`, `${p.y}vh`],
+                opacity: [0.1, 0.4, 0.1]
+            }}
+            transition={{
+                duration: p.duration,
+                delay: p.delay,
+                repeat: Infinity,
+                ease: "linear"
+            }}
+            style={{
+                position: 'absolute',
+                width: `${p.size}px`,
+                height: `${p.size}px`,
+                background: '#ffffff',
+                borderRadius: '50%',
+                boxShadow: `0 0 ${p.size * 2}px rgba(255,255,255,0.8)`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* 3. The X-Ray "Hidden Tech Grid" Layer revealed by mouse */}
       <div
         style={{
           position: 'fixed',
           top: 0,
           left: 0,
-          width: '100%',
-          height: '100%',
+          width: '100vw',
+          height: '100vh',
           zIndex: -1,
           pointerEvents: 'none',
-          // The Pattern: A high-tech grid + digital noise
           backgroundImage: `
             linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
             linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
             radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
           `,
-          backgroundSize: '40px 40px, 40px 40px, 4px 4px', // Grid size + dots
+          backgroundSize: '4vw 4vw, 4vw 4vw, 4px 4px', // Responsive grid sizing
           
-          // The Magic: Masking it to the mouse
-          maskImage: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, black 0%, transparent 100%)`,
-          WebkitMaskImage: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, black 0%, transparent 100%)`,
+          maskImage: `radial-gradient(circle 400px at ${mousePosition.x}px ${mousePosition.y}px, black 0%, transparent 100%)`,
+          WebkitMaskImage: `radial-gradient(circle 400px at ${mousePosition.x}px ${mousePosition.y}px, black 0%, transparent 100%)`,
         }}
-      >
-        {/* Optional: Add random tech data points or decoration inside if needed later */}
-      </div>
+      />
 
-      {/* 3. A subtle "Cursor Spotlight" ring to emphasize the torch */}
+      {/* 4. Mouse Follower Torch/Spotlight */}
       <div 
         style={{
             position: 'fixed',
-            top: mousePosition.y - 150, // Center the 300px circle
-            left: mousePosition.x - 150,
-            width: '300px',
-            height: '300px',
+            top: mousePosition.y - 200, 
+            left: mousePosition.x - 200,
+            width: '400px',
+            height: '400px',
             borderRadius: '50%',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            boxShadow: '0 0 50px rgba(255, 255, 255, 0.02), inset 0 0 20px rgba(255, 255, 255, 0.02)',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)',
             zIndex: -1,
             pointerEvents: 'none',
-            transition: 'transform 0.1s ease-out'
         }}
       />
     </>

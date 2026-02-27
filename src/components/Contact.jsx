@@ -1,27 +1,16 @@
-import React from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaArrowRight } from 'react-icons/fa';
 import { PERSONAL_DETAILS } from '../constants';
 
 const Contact = () => {
-  const [formData, setFormData] = React.useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [status, setStatus] = React.useState(''); // '', 'sending', 'success', 'error'
-  const [copied, setCopied] = React.useState(false);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(PERSONAL_DETAILS.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('');
+  const [coords, setCoords] = useState({ lat: '28.6139', lng: '77.2090' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-
     try {
       const response = await fetch(`https://formsubmit.co/ajax/${PERSONAL_DETAILS.email}`, {
         method: "POST",
@@ -40,7 +29,7 @@ const Contact = () => {
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setStatus(''), 5000); // Reset status after 5 seconds
+        setTimeout(() => setStatus(''), 5000);
       } else {
         setStatus('error');
       }
@@ -53,246 +42,192 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleMouseMove = (e) => {
+    const xSkew = (e.clientX / window.innerWidth - 0.5) * 0.01;
+    const ySkew = (e.clientY / window.innerHeight - 0.5) * 0.01;
+    setCoords({
+        lat: (28.6139 + ySkew).toFixed(4),
+        lng: (77.2090 + xSkew).toFixed(4)
+    });
+  };
+
+  const inputStyle = {
+    width: '100%',
+    padding: '1.5rem 0',
+    background: 'transparent',
+    border: 'none',
+    borderBottom: '1px solid rgba(255,255,255,0.1)',
+    color: '#fff',
+    fontSize: '1.5rem',
+    fontFamily: 'var(--font-code)',
+    outline: 'none',
+    transition: 'all 0.4s',
+    letterSpacing: '-1px'
+  };
+
   return (
-    <section id="contact" className="section" style={{ background: 'var(--bg-secondary)' }}>
-      <div className="container">
-        {/* ... header ... */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          style={{ textAlign: 'center', marginBottom: '4rem' }}
-        >
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Get In <span className="gradient-text">Touch</span></h2>
-          <p style={{ color: 'var(--text-secondary)' }}>Have a project in mind? Let's build something together.</p>
-        </motion.div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+    <section 
+        id="contact" 
+        onMouseMove={handleMouseMove}
+        style={{ 
+            position: 'relative', 
+            padding: '10rem 0 5rem 0', 
+            background: 'var(--bg-primary)', 
+            minHeight: 'auto',
+            display: 'flex',
+            alignItems: 'center'
+        }}
+    >
+      
+      <div className="container" style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '1400px' }}>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '6rem', alignItems: 'start' }}>
           
-
-
+          {/* Typographic Header / Details */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8 }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}
           >
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>Let's Talk</h3>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-              I'm open to freelance opportunities and full-time roles. Feel free to reach out if you have any questions or just want to say hi!
-            </p>
+            <div style={{ position: 'relative' }}>
+                {/* Live Uplink Coordinates */}
+                <div style={{ position: 'absolute', top: '-4rem', left: 0, fontFamily: 'var(--font-code)', fontSize: '0.7rem', color: 'var(--accent-primary)', display: 'flex', gap: '2rem', opacity: 0.6 }}>
+                    <span>UP-LINKED: {coords.lat}° N / {coords.lng}° E</span>
+                    <span>SIGNAL: STABLE</span>
+                </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div 
-                onClick={handleCopyEmail}
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '1rem', 
-                  cursor: 'pointer',
-                  position: 'relative'
-                }}
-                title="Click to copy"
-              >
-                <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(0, 242, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-primary)', fontSize: '1.2rem' }}>
-                  <FaEnvelope />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Email</h4>
-                  <p style={{ transition: 'color 0.2s', color: copied ? '#4ade80' : 'inherit' }}>
-                    {copied ? 'Copied to clipboard! ✅' : PERSONAL_DETAILS.email}
-                  </p>
-                </div>
-              </div>
+               <h2 style={{ fontSize: 'clamp(3rem, 6vw, 7rem)', fontWeight: '900', color: '#fff', lineHeight: 0.9, letterSpacing: '-4px', fontFamily: 'var(--font-display)', marginBottom: '2rem' }}>
+                  SECURE <br/>
+                  <span style={{ color: 'transparent', WebkitTextStroke: '1px #666' }}>UPLINK</span>
+               </h2>
+               <p style={{ color: '#888', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '400px', borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '1.5rem' }}>
+                  Transmission initiation requested. Deploy your message to re-establish coordination for new digital architecture.
+               </p>
+            </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(112, 0, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-secondary)', fontSize: '1.2rem' }}>
-                  <FaPhone />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Phone</h4>
-                  <p>{PERSONAL_DETAILS.phone}</p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(0, 242, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-primary)', fontSize: '1.2rem' }}>
-                  <FaMapMarkerAlt />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Location</h4>
-                  <p>{PERSONAL_DETAILS.location}</p>
-                </div>
-              </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontFamily: 'var(--font-code)' }}>
+               <div style={{ fontSize: '0.7rem', color: '#444' }}>// NODE_ADDRESS</div>
+               <a href={`mailto:${PERSONAL_DETAILS.email}`} style={{ fontSize: '1.5rem', color: '#fff', textDecoration: 'none', position: 'relative', display: 'inline-block', width: 'fit-content' }} className="hover-underline">
+                 {PERSONAL_DETAILS.email}
+               </a>
+               <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem' }}>
+                   <div>
+                        <div style={{ fontSize: '0.6rem', color: '#444' }}>[ LOCATION ]</div>
+                        <p style={{ fontSize: '1rem', color: '#666' }}>{PERSONAL_DETAILS.location}</p>
+                   </div>
+                   <div>
+                        <div style={{ fontSize: '0.6rem', color: '#444' }}>[ STATUS ]</div>
+                        <p style={{ fontSize: '1rem', color: '#666' }}>OPEN_FOR_COLLAB</p>
+                   </div>
+               </div>
             </div>
           </motion.div>
 
+          {/* Minimal Form */}
           <motion.form 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="glass-card"
             onSubmit={handleSubmit}
-            style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              gap: '1.5rem',
-              background: 'rgba(20, 20, 20, 0.6)',
-              border: '1px solid rgba(255, 255, 255, 0.05)',
-              boxShadow: '0 0 40px rgba(0,0,0,0.3)'
-            }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingTop: '2rem' }}
           >
-            <div>
-              <label style={{ display: 'block', marginBottom: '0.8rem', color: 'var(--text-secondary)', fontSize: '0.9rem', letterSpacing: '1px' }}>NAME</label>
-              <input 
-                type="text" 
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Enter your name" 
-                required
-                disabled={status === 'sending'}
-                style={{ 
-                  width: '100%', 
-                  padding: '1.2rem', 
-                  background: 'rgba(0,0,0,0.2)', 
-                  border: '1px solid rgba(255,255,255,0.1)', 
-                  borderRadius: '12px',
-                  color: '#fff',
-                  outline: 'none',
-                  transition: 'all 0.3s',
-                  fontFamily: 'var(--font-main)'
-                }} 
-                onFocus={(e) => {
-                  e.target.style.borderColor = 'var(--accent-primary)';
-                  e.target.style.boxShadow = '0 0 15px rgba(0, 242, 255, 0.1)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = 'rgba(255,255,255,0.1)';
-                  e.target.style.boxShadow = 'none';
-                }}
-              />
-            </div>
-            <div>
-              <label style={{ display: 'block', marginBottom: '0.8rem', color: 'var(--text-secondary)', fontSize: '0.9rem', letterSpacing: '1px' }}>EMAIL</label>
-              <input 
-                type="email" 
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Enter your email" 
-                required
-                disabled={status === 'sending'}
-                style={{ 
-                  width: '100%', 
-                  padding: '1.2rem', 
-                  background: 'rgba(0,0,0,0.2)', 
-                  border: '1px solid rgba(255,255,255,0.1)', 
-                  borderRadius: '12px',
-                  color: '#fff',
-                  outline: 'none',
-                  transition: 'all 0.3s',
-                  fontFamily: 'var(--font-main)'
-                }} 
-                onFocus={(e) => {
-                  e.target.style.borderColor = 'var(--accent-primary)';
-                  e.target.style.boxShadow = '0 0 15px rgba(0, 242, 255, 0.1)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = 'rgba(255,255,255,0.1)';
-                  e.target.style.boxShadow = 'none';
-                }}
-              />
-            </div>
-            <div>
-              <label style={{ display: 'block', marginBottom: '0.8rem', color: 'var(--text-secondary)', fontSize: '0.9rem', letterSpacing: '1px' }}>MESSAGE</label>
-              <textarea 
-                rows="5" 
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell me about your project..." 
-                required
-                disabled={status === 'sending'}
-                style={{ 
-                  width: '100%', 
-                  padding: '1.2rem', 
-                  background: 'rgba(0,0,0,0.2)', 
-                  border: '1px solid rgba(255,255,255,0.1)', 
-                  borderRadius: '12px',
-                  color: '#fff',
-                  outline: 'none',
-                  resize: 'none',
-                  transition: 'all 0.3s',
-                  fontFamily: 'var(--font-main)'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = 'var(--accent-primary)';
-                  e.target.style.boxShadow = '0 0 15px rgba(0, 242, 255, 0.1)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = 'rgba(255,255,255,0.1)';
-                  e.target.style.boxShadow = 'none';
-                }}
-              ></textarea>
-            </div>
-            
-            <button 
-              type="submit" 
-              className="btn btn-primary" 
-              disabled={status === 'sending'}
-              style={{ 
-                width: '100%', 
-                padding: '1.2rem', 
-                fontSize: '1.1rem', 
-                marginTop: '1rem',
-                opacity: status === 'sending' ? 0.7 : 1,
-                cursor: status === 'sending' ? 'not-allowed' : 'pointer'
-              }}
-            >
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
-            </button>
+             <div style={{ position: 'relative' }}>
+                <input 
+                  type="text" 
+                  name="name" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                  placeholder="WHAT'S YOUR NAME?" 
+                  required 
+                  style={inputStyle}
+                  onFocus={(e) => e.target.style.borderColor = '#fff'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                />
+             </div>
+             
+             <div style={{ position: 'relative' }}>
+                <input 
+                  type="email" 
+                  name="email" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                  placeholder="EMAIL ADDRESS" 
+                  required 
+                  style={inputStyle}
+                  onFocus={(e) => e.target.style.borderColor = '#fff'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                />
+             </div>
 
-            {status === 'success' && (
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                style={{ 
-                  color: '#4ade80', 
-                  textAlign: 'center', 
-                  marginTop: '1rem',
-                  background: 'rgba(74, 222, 128, 0.1)',
-                  padding: '0.8rem',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(74, 222, 128, 0.2)'
-                }}
-              >
-                Message sent successfully! I'll get back to you soon.
-              </motion.div>
-            )}
+             <div style={{ position: 'relative' }}>
+                <textarea 
+                  name="message" 
+                  rows="3"
+                  value={formData.message} 
+                  onChange={handleChange} 
+                  placeholder="TELL ME ABOUT IT..." 
+                  required 
+                  style={{ ...inputStyle, resize: 'none' }}
+                  onFocus={(e) => e.target.style.borderColor = '#fff'}
+                  onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}
+                />
+             </div>
 
-            {status === 'error' && (
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                style={{ 
-                  color: '#ef4444', 
-                  textAlign: 'center', 
-                  marginTop: '1rem',
-                  background: 'rgba(239, 68, 68, 0.1)',
-                  padding: '0.8rem',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(239, 68, 68, 0.2)'
+             <motion.button 
+                whileHover={{ scale: 1.05, backgroundColor: '#f0f0f0' }}
+                whileTap={{ scale: 0.95 }}
+                type="submit" 
+                disabled={status === 'sending'}
+                style={{
+                    alignSelf: 'flex-start',
+                    background: '#fff',
+                    color: '#000',
+                    border: 'none',
+                    padding: '1.5rem 3rem',
+                    borderRadius: '50px',
+                    fontSize: '1.2rem',
+                    fontWeight: '900',
+                    fontFamily: 'var(--font-display)',
+                    cursor: status === 'sending' ? 'not-allowed' : 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    marginTop: '2rem',
+                    transition: 'background 0.3s'
                 }}
-              >
-                Something went wrong. Please try again or email me directly.
-              </motion.div>
-            )}
+             >
+                {status === 'sending' ? 'TRANSMITTING...' : 'SEND MESSAGE'} 
+                <motion.div
+                   whileHover={{ rotate: 45, x: 5 }}
+                   transition={{ type: 'spring', stiffness: 300 }}
+                   style={{ display: 'flex', alignItems: 'center' }}
+                >
+                    <FaArrowRight style={{ transform: 'rotate(-45deg)' }} />
+                </motion.div>
+             </motion.button>
+
+             {status === 'success' && (
+                 <p style={{ color: '#aaa', fontFamily: 'var(--font-code)' }}>[ SYSTEM ] Message delivered successfully.</p>
+             )}
+             {status === 'error' && (
+                 <p style={{ color: '#ff4444', fontFamily: 'var(--font-code)' }}>[ ERROR ] Transmission failed. Please contact me via email.</p>
+             )}
+
           </motion.form>
+
         </div>
       </div>
+      
+      {/* CSS For the hover links */}
+      <style>{`
+        ::-webkit-input-placeholder { color: #333; }
+        :-moz-placeholder { color: #333; }
+        ::-moz-placeholder { color: #333; }
+        :-ms-input-placeholder { color: #333; }
+      `}</style>
     </section>
   );
 };

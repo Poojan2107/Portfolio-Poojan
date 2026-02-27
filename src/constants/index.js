@@ -1,10 +1,10 @@
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap, FaRobot } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai, SiTypescript } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap, FaRobot, FaBrain } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai, SiTypescript, SiPython } from 'react-icons/si';
 
 export const PERSONAL_DETAILS = {
-  name: "POOJAN SHRIVASTAV",
+  name: "POOJAN P SHRIVASTAV",
   role: "MERN Stack Developer",
-  bio: "Architecting digital realities where code meets creativity. I don't just build applications; I engineer immersive experiences using the MERN stack, turning complex logic into elegant, user-centric solutions.",
+  bio: "Fusing MERN stack precision with Artificial Intelligence to architect the next generation of web-based experiences. Every line of code is a brushstroke on the digital canvas.",
   email: "poojanshrivastav21@gmail.com",
   phone: "+91 9023362134",
   location: "Ahmedabad",
@@ -37,15 +37,17 @@ export const SKILL_CATEGORIES = [
       { name: 'Express', icon: SiExpress, color: '#ffffff' },
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
       { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
+      { name: 'Python', icon: SiPython, color: '#3776AB' },
     ]
   },
   {
-    title: "Tools & DevOps",
+    title: "Tools & AI",
     skills: [
       { name: 'Git', icon: FaGitAlt, color: '#F05032' },
       { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
-      { name: 'Gen AI / ChatGPT', icon: SiOpenai, color: '#412991' },
-      { name: 'Agentic IDEs', icon: FaRobot, color: '#FFD700' },
+      { name: 'Gen AI', icon: SiOpenai, color: '#412991' },
+      { name: 'Machine Learning', icon: FaBrain, color: '#FF9900' },
+      { name: 'Robotics', icon: FaRobot, color: '#FFD700' },
     ]
   }
 ];
@@ -69,17 +71,17 @@ export const PROJECTS = [
   },
   {
     title: 'Travelling Tent',
-    description: 'Adventure travel and camping organizer website featuring a gear services showcase, visual trip portfolio, and contact form. Designed for lead generation and brand trust.',
-    tags: ['HTML', 'CSS'],
-    github: '#', // User didn't provide specific repo link
+    description: 'An immersive expedition platform engineered for high-adventure camping and gear logistics. Features a modular React architecture with a high-fidelity visual trip portfolio, optimized asset delivery, and a streamlined lead-generation funnel.',
+    tags: ['React', 'CSS', 'Framer Motion', 'Responsive Design'],
+    github: 'https://github.com/Poojan2107/Travelling-Website', 
     live: 'https://poojan2107.github.io/Travelling-Website/',
     image: 'https://via.placeholder.com/600x400/228B22/ffffff?text=Travelling+Tent' 
   },
   {
     title: 'Translator App',
-    description: 'Real-time language translator application developed with ReactJS and RapidAPI to translate English text into multiple languages instantly.',
-    tags: ['React', 'RapidAPI', 'HTML', 'CSS', 'JS'],
-    github: '#', // User didn't provide specific repo link
+    description: 'A real-time linguistic processing engine built with ReactJS. Leverages RapidAPI for low-latency multi-language translation, featuring an intuitive UI, global state management for instant result delivery, and a robust error-handling layer.',
+    tags: ['React', 'RapidAPI', 'Axios', 'JS'],
+    github: 'https://github.com/Poojan2107/Translator-App', 
     live: 'https://poojan2107.github.io/Translator-App/',
     image: 'https://via.placeholder.com/600x400/007bff/ffffff?text=Translator+App' 
   }

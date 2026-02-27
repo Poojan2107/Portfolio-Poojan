@@ -2,86 +2,105 @@ import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const CustomCursor = () => {
-    const [isHovering, setIsHovering] = useState(false);
-    
-    // Mouse position
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  // High-performance springs for the core
+  const springConfig = { stiffness: 1000, damping: 50, mass: 0.1 };
+  const cursorX = useSpring(mouseX, springConfig);
+  const cursorY = useSpring(mouseY, springConfig);
 
-    // Smooth spring animation for the cursor follower
-    const springConfig = { damping: 20, stiffness: 300, mass: 0.5 };
-    const cursorX = useSpring(mouseX, springConfig);
-    const cursorY = useSpring(mouseY, springConfig);
+  // Softer springs for the ghost ring (the trail)
+  const trailX = useSpring(mouseX, { stiffness: 250, damping: 30, mass: 0.8 });
+  const trailY = useSpring(mouseY, { stiffness: 250, damping: 30, mass: 0.8 });
 
-    useEffect(() => {
-        const moveMouse = (e) => {
-            mouseX.set(e.clientX);
-            mouseY.set(e.clientY);
-        };
+  const [targetType, setTargetType] = useState('default'); // 'default', 'link', 'project', 'text'
 
-        const handleMouseDown = () => setIsHovering(true);
-        const handleMouseUp = () => setIsHovering(false);
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
 
-        // Add hover effect listeners to clickable elements
-        const handleLinkHoverStart = () => setIsHovering(true);
-        const handleLinkHoverEnd = () => setIsHovering(false);
+    const handleMouseOver = (e) => {
+      const target = e.target;
+      if (target.closest('a') || target.closest('button')) {
+        setTargetType('link');
+      } else if (target.closest('.group')) {
+        setTargetType('project');
+      } else if (target.tagName === 'P' || target.tagName === 'H1' || target.tagName === 'H2' || target.tagName === 'H3') {
+        setTargetType('text');
+      } else {
+        setTargetType('default');
+      }
+    };
 
-        window.addEventListener('mousemove', moveMouse);
-        window.addEventListener('mousedown', handleMouseDown);
-        window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('mouseover', handleMouseOver);
 
-        // Attach listeners to all standard clickable elements
-        const clickables = document.querySelectorAll('a, button, .clickable');
-        clickables.forEach(el => {
-            el.addEventListener('mouseenter', handleLinkHoverStart);
-            el.addEventListener('mouseleave', handleLinkHoverEnd);
-        });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseover', handleMouseOver);
+    };
+  }, [mouseX, mouseY]);
 
-        return () => {
-            window.removeEventListener('mousemove', moveMouse);
-            window.removeEventListener('mousedown', handleMouseDown);
-            window.removeEventListener('mouseup', handleMouseUp);
-            clickables.forEach(el => {
-                el.removeEventListener('mouseenter', handleLinkHoverStart);
-                el.removeEventListener('mouseleave', handleLinkHoverEnd);
-            });
-        };
-    }, []);
+  return (
+    <>
+      {/* Ghost Trail Ring - Now uses decoupled springs */}
+      <motion.div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          x: trailX,
+          y: trailY,
+          width: '40px',
+          height: '40px',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: targetType === 'project' ? '10%' : '50%',
+          rotate: targetType === 'project' ? 45 : 0,
+          pointerEvents: 'none',
+          zIndex: 9998,
+          translateX: '-50%',
+          translateY: '-50%',
+          transition: 'border-radius 0.3s, rotate 0.3s',
+          willChange: 'transform'
+        }}
+      />
 
-    return (
-        <motion.div
-            style={{
-                position: 'fixed',
-                left: 0,
-                top: 0,
-                translateX: cursorX,
-                translateY: cursorY,
-                x: '-50%',
-                y: '-50%',
-                pointerEvents: 'none',
-                zIndex: 9999,
-                width: isHovering ? '40px' : '20px',
-                height: isHovering ? '40px' : '20px',
-                border: '1px solid var(--accent-primary)',
-                borderRadius: '50%',
-                backgroundColor: isHovering ? 'rgba(0, 242, 255, 0.1)' : 'transparent',
-                transition: 'width 0.2s, height 0.2s, background-color 0.2s',
-                mixBlendMode: 'screen'
-            }}
-        >
-            {/* Center Dot */}
-            <div style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '4px',
-                height: '4px',
-                backgroundColor: 'var(--accent-secondary)',
-                borderRadius: '50%'
-            }} />
-        </motion.div>
-    );
+      {/* Main Core Cursor - Optimized with MotionValues */}
+      <motion.div
+        animate={{
+          scale: targetType !== 'default' ? 1.5 : 1,
+          width: targetType === 'text' ? '2px' : '8px',
+          height: targetType === 'text' ? '24px' : '8px',
+          borderRadius: targetType === 'text' ? '0%' : '50%',
+        }}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          x: cursorX,
+          y: cursorY,
+          backgroundColor: '#fff',
+          pointerEvents: 'none',
+          zIndex: 9999,
+          translateX: '-50%',
+          translateY: '-50%',
+          mixBlendMode: 'difference',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          willChange: 'transform'
+        }}
+      >
+      </motion.div>
+      {/* Hide default cursor globally */}
+      <style>{`
+        * { cursor: none !important; }
+      `}</style>
+    </>
+  );
 };
 
 export default CustomCursor;
