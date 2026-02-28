@@ -62,10 +62,10 @@ export const PROJECTS = [
     image: 'https://via.placeholder.com/600x400/000000/ffffff?text=NeuralCredit_' 
   },
   {
-    title: 'ProductNexus',
-    description: 'A full-stack MERN application that re-imagines inventory management with a high-fidelity, terminal-inspired UI. Features a global CLI, real-time "Holographic" analytics, and an extreme Black & White aesthetic. Secured with JWT/Bcrypt and optimized with Optimistic UI.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
-    github: '#', // User didn't provide specific repo link for this, assuming generic or waiting for update
+    title: 'ProductNexus (Nexus OS)',
+    description: 'An Enterprise IT Asset Management (EAM) platform engineered for secure hardware tracking. Features a keyboard-first Command Palette (Ctrl+K), real-time Redux synchronization, a robust Mongoose activity Audit Trail, and client-side CSV reporting.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Redux', 'Vitest'],
+    github: 'https://github.com/Poojan2107/Product-Nexus',
     live: 'https://product-nexus-poojan.vercel.app/',
     image: 'https://via.placeholder.com/600x400/000000/ffffff?text=ProductNexus' 
   },
