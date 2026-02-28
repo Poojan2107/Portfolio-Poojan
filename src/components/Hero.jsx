@@ -222,7 +222,7 @@ const Hero = () => {
                 lineHeight: '1.6',
                 fontFamily: 'var(--font-main)'
              }}>
-                Fusing MERN stack precision with Artificial Intelligence to architect the next generation of web-based experiences. Every line of code is a brushstroke on the digital canvas.
+                Engineering sophisticated digital ecosystems by fusing Full Stack architecture with Neural Intelligence. Every line of code is a strategic component in a larger digital masterpiece.
              </p>
 
              {/* Scroll Indicator */}
@@ -278,7 +278,7 @@ const Hero = () => {
                       letterSpacing: '3px',
                       textTransform: 'uppercase'
                   }}>
-                      MERN_STACK_STABLE // ARCHITECTING_V4 // AI_MODEL_LOADED // POOJAN_P_SHRIVASTAV // SYSTEM_NORMAL
+                      CORE_ARCHITECTURE_STABLE // ARCHITECTING_V4 // NEURAL_MODEL_LOADED // POOJAN_P_SHRIVASTAV // SYSTEM_NORMAL
                   </span>
               ))}
           </motion.div>

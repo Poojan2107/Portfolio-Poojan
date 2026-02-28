@@ -255,7 +255,7 @@ const HeroicIntro = ({ onComplete }) => {
                        }}
                     >
                        <span>{'>'} INITIALIZING_KERNEL... [OK]</span>
-                       <span>{'>'} ESTABLISHING_MERN_LINK... [100%]</span>
+                       <span>{'>'} ESTABLISHING_CORE_UPLINK... [100%]</span>
                        <span>{'>'} OPTIMIZING_AI_PROTOCOLS... [ACTIVE]</span>
                        <span style={{ color: '#ffffff', marginTop: '0.3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.3rem' }}>{'>'} ACCESS_GRANTED: POOJAN_P_SHRIVASTAV</span>
                     </motion.div>

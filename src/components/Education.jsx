@@ -104,7 +104,7 @@ const Education = () => {
                         textTransform: 'uppercase',
                         lineHeight: 1
                   }}>
-                      Full Stack Development (MERN)
+                      Full Stack Software Architecture
                   </h3>
                   
                   <p style={{ color: '#888', fontSize: '1.2rem', lineHeight: 1.6, maxWidth: '600px', marginTop: '1rem' }}>

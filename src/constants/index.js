@@ -3,8 +3,8 @@ import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMy
 
 export const PERSONAL_DETAILS = {
   name: "POOJAN P SHRIVASTAV",
-  role: "MERN Stack Developer",
-  bio: "Fusing MERN stack precision with Artificial Intelligence to architect the next generation of web-based experiences. Every line of code is a brushstroke on the digital canvas.",
+  role: "Full Stack Architect & AI Integrator",
+  bio: "Engineering sophisticated digital ecosystems by fusing Full Stack architecture with Neural Intelligence. Every line of code is a strategic component in a larger digital masterpiece.",
   email: "poojanshrivastav21@gmail.com",
   phone: "+91 9023362134",
   location: "Ahmedabad",

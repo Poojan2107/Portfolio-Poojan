@@ -200,7 +200,7 @@ function App() {
                     }}
                  >
                     {/* Creative Dev Student Oriented Text */}
-                    <span>MERN STACK ALCHEMIST</span>
+                    <span>FULL STACK ARCHITECT</span>
                     <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
                     <span>AI INTEGRATOR</span>
                     <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
@@ -208,7 +208,7 @@ function App() {
                     <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
                     <span>DEV STUDENT</span>
                     <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
-                    <span>MERN STACK ALCHEMIST</span>
+                    <span>FULL STACK ARCHITECT</span>
                     <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
                     <span>AI INTEGRATOR</span>
                     <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
