@@ -69,13 +69,14 @@ const SkillPill = ({ skill, categoryTitle, isHovered, onMouseEnter, onMouseLeave
               borderRadius: '4px',
               zIndex: 100,
               pointerEvents: 'none',
-              width: '180px',
+              width: '240px',
               boxShadow: '0 10px 30px rgba(0,0,0,0.8)'
             }}
           >
-             <div style={{ fontFamily: 'var(--font-code)', fontSize: '0.6rem', color: 'var(--accent-primary)', display: 'flex', flexDirection: 'column', gap: '2px' }}>
+             <div style={{ fontFamily: 'var(--font-code)', fontSize: '0.65rem', color: 'var(--accent-primary)', display: 'flex', flexDirection: 'column', gap: '3px' }}>
                 <span style={{ opacity: 0.5 }}>// SCANNING_METADATA...</span>
-                <span>TYPE: {categoryTitle.replace(' ', '_')}</span>
+                <span>TYPE: {categoryTitle.replace(' ', '_').toUpperCase()}</span>
+                <span>USE: {skill.description || 'General Integration'}</span>
                 <span>EFFICIENCY: {(90 + Math.random() * 9).toFixed(1)}%</span>
                 <span>READY: TRUE</span>
              </div>

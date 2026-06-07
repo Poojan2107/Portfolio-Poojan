@@ -127,9 +127,27 @@ const Projects = () => {
                         transition={{ duration: 0.4, ease: "easeOut" }}
                         style={{ overflow: 'hidden', maxWidth: '800px', paddingLeft: isHovered ? '20px' : '0px' }}
                     >
-                       <p style={{ color: '#aaa', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '2rem', marginTop: '1rem' }}>
+                       <p style={{ color: '#ccc', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '1.5rem', marginTop: '1rem', fontWeight: '500' }}>
                           {project.description}
                        </p>
+                       {project.highlights && (
+                         <ul style={{ 
+                             color: '#999', 
+                             fontSize: '0.95rem', 
+                             lineHeight: '1.7', 
+                             marginBottom: '2rem', 
+                             paddingLeft: '20px', 
+                             listStyleType: 'square',
+                             display: 'flex',
+                             flexDirection: 'column',
+                             gap: '0.5rem',
+                             fontFamily: 'var(--font-main)'
+                         }}>
+                            {project.highlights.map((highlight, idx) => (
+                               <li key={idx}>{highlight}</li>
+                            ))}
+                         </ul>
+                       )}
                        <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
                           {project.tags.map(tag => (
                              <span key={tag} style={{ padding: '6px 16px', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.8rem', letterSpacing: '1px', borderRadius: '40px', textTransform: 'uppercase' }}>
