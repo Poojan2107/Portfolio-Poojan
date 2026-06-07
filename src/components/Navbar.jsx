@@ -94,7 +94,7 @@ const Navbar = () => {
                       top: 0,
                       width: '30px',
                       height: '100%',
-                      background: 'linear-gradient(90deg, transparent, var(--accent-primary), transparent)',
+                      background: 'linear-gradient(90deg, transparent, var(--accent-cyber), transparent)',
                       opacity: 0.3,
                       zIndex: 0,
                       pointerEvents: 'none',
@@ -107,7 +107,7 @@ const Navbar = () => {
               >
                   <motion.span 
                       variants={{ hover: { x: -2, skewX: -10, color: '#fff' } }}
-                      style={{ color: 'var(--accent-primary)', zIndex: 1, letterSpacing: '-2px' }}
+                      style={{ color: 'var(--accent-cyber)', zIndex: 1, letterSpacing: '-2px' }}
                   >
                       POOJAN
                   </motion.span>
@@ -118,7 +118,7 @@ const Navbar = () => {
                       P.
                   </motion.span>
                   <motion.span 
-                      variants={{ hover: { x: 2, skewX: 10, color: 'var(--accent-primary)' } }}
+                      variants={{ hover: { x: 2, skewX: 10, color: 'var(--accent-cyber)' } }}
                       style={{ color: '#fff', zIndex: 1, letterSpacing: '-2px', opacity: 0.8 }}
                   >
                       SHRIVASTAV
@@ -126,7 +126,7 @@ const Navbar = () => {
                   <motion.div 
                       animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
-                      style={{ width: '6px', height: '6px', background: 'var(--accent-primary)', borderRadius: '50%', marginLeft: '6px', zIndex: 1 }}
+                      style={{ width: '6px', height: '6px', background: 'var(--accent-cyber)', borderRadius: '50%', marginLeft: '6px', zIndex: 1 }}
                   />
               </motion.div>
           </a>

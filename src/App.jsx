@@ -201,21 +201,21 @@ function App() {
                  >
                     {/* Creative Dev Student Oriented Text */}
                     <span>MERN STACK DEVELOPER</span>
-                    <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
+                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>AI INTEGRATOR</span>
-                    <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
+                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>CREATING DIGITAL MASTERPIECES</span>
-                    <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
+                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>DEV STUDENT</span>
-                    <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
+                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>MERN STACK DEVELOPER</span>
-                    <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
+                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>AI INTEGRATOR</span>
-                    <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
+                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>CREATING DIGITAL MASTERPIECES</span>
-                    <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
+                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>DEV STUDENT</span>
-                    <span style={{ color: 'var(--accent-primary)', WebkitTextStroke: '0' }}>//</span>
+                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                  </motion.div>
               </div>
 
