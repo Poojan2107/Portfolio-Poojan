@@ -3,8 +3,8 @@ import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMy
 
 export const PERSONAL_DETAILS = {
   name: "POOJAN P SHRIVASTAV",
-  role: "Full Stack Architect & AI Integrator",
-  bio: "Engineering sophisticated digital ecosystems by fusing Full Stack architecture with Neural Intelligence. Every line of code is a strategic component in a larger digital masterpiece.",
+  role: "MERN Stack Developer & AI Integrator",
+  bio: "B.Tech AI student & Full-Stack MERN Developer passionate about building functional web applications, clean database tools, and practical Gemini AI-powered integrations.",
   email: "poojanshrivastav21@gmail.com",
   phone: "+91 9023362134",
   location: "Ahmedabad",
@@ -54,19 +54,43 @@ export const SKILL_CATEGORIES = [
 
 export const PROJECTS = [
   {
-    title: 'NeuralCredit_',
-    description: 'An enterprise-grade Fintech architecture featuring a Python ML Random Forest classifier, Express/SQLite backend, and a high-fidelity React dashboard. Engineered with Explainable AI (XAI) Radar Charts, Framer Motion animations, and complex Joint Applicant state merging.',
+    title: 'OpenBridge (AI Onboarding Portal)',
+    description: 'An AI-native developer onboarding companion that bridges the gap to open-source contributions. Integrates Google Gemini 3.5 Flash for personalized repo matching, automated issue translations, and an interactive sandbox providing maintainer-grade code reviews.',
+    tags: ['React 19', 'Node.js', 'Express', 'Prisma', 'SQLite', 'Gemini AI', 'PWA'],
+    github: 'https://github.com/Poojan2107/OpenBridge',
+    live: 'https://github.com/Poojan2107/OpenBridge',
+    image: '/assets/openbridge.png'
+  },
+  {
+    title: 'Product Nexus (Inventory Command)',
+    description: 'A high-fidelity hardware asset management engine built on the MERN stack. Orchestrates real-time inventory tracking, multi-role user authentication, secure stock coordination, and predictive fiscal analytics with high-speed data flow.',
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Recharts'],
+    github: 'https://github.com/Poojan2107/Product-Nexus',
+    live: 'https://product-nexus-poojan.vercel.app/',
+    image: '/assets/product_nexus.png'
+  },
+  {
+    title: 'NeuralCredit_ (Explainable AI FinTech)',
+    description: 'An enterprise-grade Fintech architecture featuring a Python ML Random Forest classifier, Express backend, and a high-fidelity React dashboard. Engineered for Explainable AI (XAI) with Radar Charts, providing detailed insights into automated creditworthiness predictions.',
     tags: ['React', 'Node.js', 'Python', 'Machine Learning', 'SQLite', 'Recharts'],
     github: 'https://github.com/Poojan2107/NeuralCredit_',
     live: 'https://neuralcredit.onrender.com/',
-    image: 'https://via.placeholder.com/600x400/000000/ffffff?text=NeuralCredit_' 
+    image: '/assets/neural_credit.png'
   },
   {
-    title: 'Traveling Tent',
-    description: 'Developed a full-stack integrated Booking Engine (React, Vite, Node). Features include dynamic routing, geospatial map rendering (Leaflet), E-Commerce Shopping cart integrations, State Management (Framer Motion), and a simulated Auth flow.',
+    title: 'Traveling Tent (Geospatial Booking)',
+    description: 'A full-stack booking engine featuring dynamic routing and geospatial map rendering (React-Leaflet). Architected a complete E-commerce flow with Razorpay payment integration, secure auth flows, and mobile-first responsive design.',
     tags: ['React', 'Vite', 'Firebase Auth', 'React-Router', 'Razorpay', 'React-Leaflet'],
-    github: 'https://github.com/Poojan2107/Travelling-Website', 
+    github: 'https://github.com/Poojan2107/Travelling-Website',
     live: 'https://travelling-tent.vercel.app/',
-    image: 'https://via.placeholder.com/600x400/228B22/ffffff?text=Traveling+Tent' 
+    image: '/assets/traveling_tent.png'
+  },
+  {
+    title: 'LedgerAI (Automated B2B Invoicing)',
+    description: 'An AI-powered MERN SaaS designed to automate manual invoicing for micro-SMEs in India. Replaces hours of manual administrative work with an automated "Snap & Reconcile" feature that leverages AI Vision for document parsing into structured JSON financial ledgers.',
+    tags: ['React', 'Node.js', 'Google Gemini AI', 'TypeScript', 'Framer Motion', 'MongoDB'],
+    github: 'https://github.com/Poojan2107/ITCH',
+    live: 'https://ledgerai.vercel.app/',
+    image: '/assets/nexus_pos.png'
   }
 ];

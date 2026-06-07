@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { PERSONAL_DETAILS } from '../constants';
 
 const Hero = () => {
   return (
@@ -82,22 +83,22 @@ const Hero = () => {
         >
           <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } } }}>
              <h2 style={{ 
-                 fontFamily: 'var(--font-code)', 
-                 color: 'var(--accent-primary)', 
-                 fontSize: '0.8rem',
-                 letterSpacing: '0.4em',
-                 textTransform: 'uppercase',
-                 marginBottom: '1rem',
-                 display: 'flex',
-                 alignItems: 'center',
-                 justifyContent: 'center',
-                 gap: '1rem'
+                  fontFamily: 'var(--font-code)', 
+                  color: 'var(--accent-primary)', 
+                  fontSize: '0.8rem',
+                  letterSpacing: '0.4em',
+                  textTransform: 'uppercase',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '1rem'
              }}>
-                 <span style={{ color: 'var(--text-secondary)' }}>//</span> 
-                 Full Stack Architect 
-                 <span style={{ color: 'var(--text-secondary)' }}>•</span> 
-                 AI Integrator
-                 <span style={{ color: 'var(--text-secondary)' }}>//</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>//</span> 
+                  {PERSONAL_DETAILS.role.split(' & ')[0]} 
+                  <span style={{ color: 'var(--text-secondary)' }}>•</span> 
+                  {PERSONAL_DETAILS.role.split(' & ')[1]}
+                  <span style={{ color: 'var(--text-secondary)' }}>//</span>
              </h2>
           </motion.div>
           
@@ -222,7 +223,7 @@ const Hero = () => {
                 lineHeight: '1.6',
                 fontFamily: 'var(--font-main)'
              }}>
-                Engineering sophisticated digital ecosystems by fusing Full Stack architecture with Neural Intelligence. Every line of code is a strategic component in a larger digital masterpiece.
+                {PERSONAL_DETAILS.bio}
              </p>
 
              {/* Scroll Indicator */}
