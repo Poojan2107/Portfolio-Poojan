@@ -6,7 +6,7 @@ import { PERSONAL_DETAILS } from '../constants';
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
-  const [coords, setCoords] = useState({ lat: '28.6139', lng: '77.2090' });
+  const [coords, setCoords] = useState({ lat: '23.0225', lng: '72.5714' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,8 +46,8 @@ const Contact = () => {
     const xSkew = (e.clientX / window.innerWidth - 0.5) * 0.01;
     const ySkew = (e.clientY / window.innerHeight - 0.5) * 0.01;
     setCoords({
-        lat: (28.6139 + ySkew).toFixed(4),
-        lng: (77.2090 + xSkew).toFixed(4)
+        lat: (23.0225 + ySkew).toFixed(4),
+        lng: (72.5714 + xSkew).toFixed(4)
     });
   };
 
