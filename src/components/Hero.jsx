@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { PERSONAL_DETAILS } from '../constants';
+import { PERSONAL_DETAILS, SOCIAL_PROOF_BADGES } from '../constants';
 
 const Hero = () => {
   return (
@@ -226,27 +226,161 @@ const Hero = () => {
                 {PERSONAL_DETAILS.bio}
              </p>
 
+             {/* Immediate Social Proof Badges */}
+             <div style={{
+                 display: 'flex',
+                 flexWrap: 'wrap',
+                 justifyContent: 'center',
+                 gap: '1rem',
+                 maxWidth: '800px',
+                 marginTop: '0.5rem'
+             }}>
+                 {SOCIAL_PROOF_BADGES.map((badge, idx) => (
+                     <motion.div
+                         key={idx}
+                         whileHover={{ scale: 1.02, borderColor: 'rgba(255, 255, 255, 0.2)' }}
+                         style={{
+                             padding: '0.6rem 1.2rem',
+                             background: 'rgba(255, 255, 255, 0.02)',
+                             border: '1px solid rgba(255, 255, 255, 0.08)',
+                             borderRadius: '5px',
+                             color: '#ccc',
+                             fontFamily: 'var(--font-code)',
+                             fontSize: '0.8rem',
+                             display: 'flex',
+                             alignItems: 'center',
+                             gap: '0.5rem',
+                             boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
+                             transition: 'all 0.3s',
+                             cursor: 'default'
+                         }}
+                     >
+                         <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-cyber)', display: 'inline-block' }}></span>
+                         {badge.text}
+                     </motion.div>
+                 ))}
+             </div>
+
+             {/* Call To Actions */}
+             <div style={{
+                 display: 'flex',
+                 gap: '1.2rem',
+                 marginTop: '1rem',
+                 flexWrap: 'wrap',
+                 justifyContent: 'center'
+             }}>
+                 <motion.a
+                     href="/resume.pdf"
+                     download
+                     whileHover={{ scale: 1.05, backgroundColor: '#fff', color: '#000' }}
+                     whileTap={{ scale: 0.95 }}
+                     style={{
+                         padding: '0.8rem 2rem',
+                         background: 'transparent',
+                         border: '1px solid #fff',
+                         borderRadius: '30px',
+                         color: '#fff',
+                         fontSize: '0.85rem',
+                         fontWeight: 'bold',
+                         fontFamily: 'var(--font-code)',
+                         letterSpacing: '1px',
+                         textDecoration: 'none',
+                         cursor: 'pointer',
+                         transition: 'background 0.3s, color 0.3s'
+                     }}
+                 >
+                     DOWNLOAD RESUME
+                 </motion.a>
+                 <motion.a
+                     href={PERSONAL_DETAILS.social.github}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     whileHover={{ scale: 1.05, borderColor: 'var(--accent-cyber)', color: '#fff' }}
+                     whileTap={{ scale: 0.95 }}
+                     style={{
+                         padding: '0.8rem 2rem',
+                         background: 'rgba(255,255,255,0.03)',
+                         border: '1px solid rgba(255,255,255,0.1)',
+                         borderRadius: '30px',
+                         color: '#aaa',
+                         fontSize: '0.85rem',
+                         fontWeight: 'bold',
+                         fontFamily: 'var(--font-code)',
+                         letterSpacing: '1px',
+                         textDecoration: 'none',
+                         cursor: 'pointer',
+                         transition: 'all 0.3s'
+                     }}
+                 >
+                     GITHUB
+                 </motion.a>
+                 <motion.a
+                     href={PERSONAL_DETAILS.social.linkedin}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     whileHover={{ scale: 1.05, borderColor: 'var(--accent-cyber)', color: '#fff' }}
+                     whileTap={{ scale: 0.95 }}
+                     style={{
+                         padding: '0.8rem 2rem',
+                         background: 'rgba(255,255,255,0.03)',
+                         border: '1px solid rgba(255,255,255,0.1)',
+                         borderRadius: '30px',
+                         color: '#aaa',
+                         fontSize: '0.85rem',
+                         fontWeight: 'bold',
+                         fontFamily: 'var(--font-code)',
+                         letterSpacing: '1px',
+                         textDecoration: 'none',
+                         cursor: 'pointer',
+                         transition: 'all 0.3s'
+                     }}
+                 >
+                     LINKEDIN
+                 </motion.a>
+                 <motion.a
+                     href={`mailto:${PERSONAL_DETAILS.email}`}
+                     whileHover={{ scale: 1.05, borderColor: 'var(--accent-cyber)', color: '#fff' }}
+                     whileTap={{ scale: 0.95 }}
+                     style={{
+                         padding: '0.8rem 2rem',
+                         background: 'rgba(255,255,255,0.03)',
+                         border: '1px solid rgba(255,255,255,0.1)',
+                         borderRadius: '30px',
+                         color: '#aaa',
+                         fontSize: '0.85rem',
+                         fontWeight: 'bold',
+                         fontFamily: 'var(--font-code)',
+                         letterSpacing: '1px',
+                         textDecoration: 'none',
+                         cursor: 'pointer',
+                         transition: 'all 0.3s'
+                     }}
+                 >
+                     GET IN TOUCH
+                 </motion.a>
+             </div>
+
              {/* Scroll Indicator */}
              <div style={{
                  width: '1px',
                  height: '60px',
                  background: 'rgba(255,255,255,0.1)',
                  position: 'relative',
-                 marginTop: '1rem',
+                 marginTop: '2rem',
                  overflow: 'hidden'
              }}>
-                <motion.div
-                    animate={{ y: ['-100%', '100%'] }}
-                    transition={{ repeat: Infinity, duration: 1.5, ease: 'linear' }}
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        background: '#ffffff'
-                    }}
-                />
+                 <motion.div
+                     animate={{ y: ['-100%', '100%'] }}
+                     transition={{ repeat: Infinity, duration: 1.5, ease: 'linear' }}
+                     style={{
+                         position: 'absolute',
+                         top: 0,
+                         left: 0,
+                         width: '100%',
+                         height: '100%',
+                         background: '#ffffff'
+                     }}
+                 />
              </div>
           </motion.div>
         </motion.div>

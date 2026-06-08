@@ -5,7 +5,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
 import Education from './components/Education';
+import Missions from './components/Missions';
 import Projects from './components/Projects';
+import Impact from './components/Impact';
 import Contact from './components/Contact';
 import ReactiveBackground from './components/ReactiveBackground';
 import HeroicIntro from './components/HeroicIntro';
@@ -165,7 +167,15 @@ function App() {
               </div>
 
               <div style={{ position: 'relative' }}>
+                <Missions />
+              </div>
+
+              <div style={{ position: 'relative' }}>
                 <Projects activeTech={activeTech} />
+              </div>
+
+              <div style={{ position: 'relative' }}>
+                <Impact />
               </div>
 
               <div style={{ position: 'relative' }}>
@@ -199,14 +209,14 @@ function App() {
                         WebkitTextStroke: '1px rgba(255,255,255,0.4)',
                     }}
                  >
-                    {/* Creative Dev Student Oriented Text */}
+                    {/* Creative Dev Builder Oriented Text */}
                     <span>MERN STACK DEVELOPER</span>
                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>AI INTEGRATOR</span>
                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>CREATING DIGITAL MASTERPIECES</span>
                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>DEV STUDENT</span>
+                    <span>AI PRODUCT BUILDER</span>
                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>MERN STACK DEVELOPER</span>
                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
@@ -214,7 +224,7 @@ function App() {
                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                     <span>CREATING DIGITAL MASTERPIECES</span>
                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>DEV STUDENT</span>
+                    <span>AI PRODUCT BUILDER</span>
                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                  </motion.div>
               </div>

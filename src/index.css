@@ -74,11 +74,60 @@ body {
 .ambient-light-1 { top: -30%; left: -20%; }
 .ambient-light-2 { bottom: -30%; right: -20%; opacity: 0.02; }
 
-/* Media Queries */
+/* Media Queries & Responsive Grid Layouts */
 @media (max-width: 768px) {
   .container { padding: 0 1.5rem; }
   
   #home h1 {
      font-size: 15vw !important;
+  }
+}
+
+/* Projects & Sections Responsive Utilities */
+@media (max-width: 900px) {
+  .project-row-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1.5rem;
+  }
+  
+  .project-row-actions {
+    width: 100%;
+    justify-content: flex-start !important;
+    margin-top: 1rem;
+  }
+  
+  .project-drawer-content {
+    padding-left: 0 !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  .project-drawer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .modal-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .modal-grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .modal-grid-5 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .case-study-modal {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .modal-ctas {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

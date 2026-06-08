@@ -21,7 +21,9 @@ const Navbar = () => {
     { name: 'INDEX', href: '#home' },
     { name: 'ARSENAL', href: '#skills' },
     { name: 'ORIGIN', href: '#education' },
+    { name: 'MISSIONS', href: '#missions' },
     { name: 'ARCHIVE', href: '#projects' },
+    { name: 'IMPACT', href: '#impact' },
     { name: 'CONTACT', href: '#contact' },
   ];
 
