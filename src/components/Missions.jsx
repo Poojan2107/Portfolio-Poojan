@@ -5,23 +5,23 @@ const Missions = () => {
     {
       symbol: "🚀",
       title: "OpenBridge",
-      role: "Founder & Lead Developer",
-      status: "Active Beta Prep",
-      description: "Building an AI-powered open-source onboarding ecosystem designed to help beginners bridge the technical gap and contribute cleanly to major packages.",
+      role: "AI Onboarding Project",
+      status: "Active Dev",
+      description: "AI-powered open-source onboarding project designed to help beginners bridge the technical gap and contribute cleanly to major packages.",
     },
     {
       symbol: "🏢",
       title: "Oneverce",
-      role: "Core Builder",
-      status: "Production Phase",
-      description: "Developing modern software architectures, clean interfaces, and client integrations to deliver reliable web platforms and scaling solutions.",
+      role: "Product Building Initiative",
+      status: "Experimentation Phase",
+      description: "Software and product-building initiative aiming to design modern, functional, and user-centric web applications.",
     },
     {
       symbol: "⚡",
       title: "Trio Labs",
-      role: "Co-Founder & Tech Lead",
-      status: "Active Innovation",
-      description: "Directing a student-led development initiative focusing on experimental projects, AI utilities, and rapid prototype deployments.",
+      role: "Student-Led Dev Initiative",
+      status: "Experimentation Phase",
+      description: "Student-led development and experimentation initiative focusing on exploring new technologies and deploying practical prototypes.",
     }
   ];
 

@@ -32,8 +32,8 @@ const Projects = () => {
           height: '60vh',
           zIndex: 0,
           pointerEvents: 'none',
-          opacity: 0.15,
-          filter: 'grayscale(100%) contrast(150%) brightness(0.5)',
+          opacity: 0.1,
+          filter: 'grayscale(100%) contrast(150%) brightness(0.4)',
           transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
       }}>
           <AnimatePresence mode="wait">
@@ -96,8 +96,8 @@ const Projects = () => {
                   cursor: 'pointer',
                   position: 'relative',
                   transition: 'all 0.4s ease',
-                  background: isFlagship ? 'rgba(0, 230, 254, 0.01)' : 'transparent',
-                  border: isFlagship ? '1px solid rgba(0, 230, 254, 0.1)' : 'none',
+                  background: isFlagship ? 'rgba(255, 255, 255, 0.01)' : 'transparent',
+                  border: isFlagship ? '1px solid rgba(255, 255, 255, 0.08)' : 'none',
                   paddingLeft: isFlagship ? '2rem' : '0',
                   paddingRight: isFlagship ? '2rem' : '0',
                   borderRadius: isFlagship ? '15px' : '0',
@@ -137,9 +137,9 @@ const Projects = () => {
                           <span style={{
                               fontSize: '0.65rem',
                               fontFamily: 'var(--font-code)',
-                              background: project.status === 'Completed' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 230, 254, 0.1)',
-                              border: `1px solid ${project.status === 'Completed' ? 'rgba(255, 255, 255, 0.2)' : 'var(--accent-cyber)'}`,
-                              color: project.status === 'Completed' ? '#fff' : 'var(--accent-cyber)',
+                              background: project.status === 'Completed' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.02)',
+                              border: `1px solid ${project.status === 'Completed' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)'}`,
+                              color: '#fff',
                               padding: '4px 10px',
                               borderRadius: '20px',
                               marginLeft: '1.5rem',
@@ -198,7 +198,7 @@ const Projects = () => {
                                      cursor: 'pointer',
                                      transition: 'all 0.3s'
                                  }}
-                                 onMouseEnter={(e) => e.target.style.borderColor = 'var(--accent-cyber)'}
+                                 onMouseEnter={(e) => e.target.style.borderColor = '#fff'}
                                  onMouseLeave={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.2)'}
                               >
                                  CASE STUDY
@@ -218,22 +218,22 @@ const Projects = () => {
                      initial={{ height: isFlagship ? 'auto' : 0, opacity: isFlagship ? 1 : 0 }}
                      animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
                      transition={{ duration: 0.4, ease: "easeOut" }}
-                     style={{ overflow: 'hidden', width: '100%', maxWidth: '1000px', paddingLeft: isFlagship ? '100px' : '100px', marginTop: isExpanded ? '2rem' : 0 }}
+                     style={{ overflow: 'hidden', width: '100%', maxWidth: '1000px', paddingLeft: '100px', marginTop: isExpanded ? '2rem' : 0 }}
                      className="project-drawer-content"
                  >
                     {/* Dossier Subtitle */}
-                    <p style={{ color: 'var(--accent-cyber)', fontFamily: 'var(--font-code)', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', margin: '0.5rem 0' }}>
+                    <p style={{ color: '#fff', fontFamily: 'var(--font-code)', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', margin: '0.5rem 0' }}>
                        {project.subtitle}
                     </p>
 
                     {/* Problem & Solution columns */}
                     <div className="project-drawer-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '1.5rem', marginTop: '1.5rem' }}>
                        <div>
-                          <span style={{ color: '#ff5555', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>[ PROBLEM ]</span>
+                          <span style={{ color: '#888', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>[ PROBLEM ]</span>
                           <p style={{ color: '#aaa', fontSize: '0.9rem', lineHeight: 1.5, marginTop: '0.4rem' }}>{project.problem}</p>
                        </div>
                        <div>
-                          <span style={{ color: 'var(--accent-cyber)', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>[ SOLUTION ]</span>
+                          <span style={{ color: '#fff', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>[ SOLUTION ]</span>
                           <p style={{ color: '#aaa', fontSize: '0.9rem', lineHeight: 1.5, marginTop: '0.4rem' }}>{project.solution}</p>
                        </div>
                     </div>
@@ -297,7 +297,7 @@ const Projects = () => {
               left: 0,
               width: '100vw',
               height: '100vh',
-              background: 'rgba(5, 5, 5, 0.97)',
+              background: 'rgba(5, 5, 5, 0.98)',
               backdropFilter: 'blur(30px)',
               zIndex: 9999,
               display: 'flex',
@@ -352,15 +352,15 @@ const Projects = () => {
               {/* Header */}
               <div style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '2rem', marginBottom: '2.5rem' }}>
                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-                   <span style={{ color: 'var(--accent-cyber)', fontFamily: 'var(--font-code)', fontSize: '0.8rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                   <span style={{ color: '#fff', fontFamily: 'var(--font-code)', fontSize: '0.8rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                       [ CASE STUDY DOSSIER ]
                    </span>
                    <span style={{
                       fontSize: '0.65rem',
                       fontFamily: 'var(--font-code)',
-                      background: 'rgba(0, 230, 254, 0.1)',
-                      border: '1px solid var(--accent-cyber)',
-                      color: 'var(--accent-cyber)',
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      color: '#fff',
                       padding: '2px 8px',
                       borderRadius: '4px',
                       textTransform: 'uppercase',
@@ -382,7 +382,7 @@ const Projects = () => {
               <div style={{
                   width: '100%',
                   height: '320px',
-                  background: 'linear-gradient(135deg, #090a0c 0%, #000000 100%)',
+                  background: 'linear-gradient(135deg, #111 0%, #000 100%)',
                   border: '1px solid rgba(255, 255, 255, 0.05)',
                   borderRadius: '12px',
                   marginBottom: '2.5rem',
@@ -398,10 +398,9 @@ const Projects = () => {
                       <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ffbd2e' }} />
                       <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27c93f' }} />
                   </div>
-                  <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', width: '300px', height: '200px', background: 'rgba(0, 230, 254, 0.02)', filter: 'blur(40px)', borderRadius: '50%' }} />
                   
                   <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '2rem' }}>
-                      <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.8rem', color: 'var(--accent-cyber)', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                      <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.8rem', color: '#888', textTransform: 'uppercase', letterSpacing: '2px' }}>
                           [ ARCHITECTURE & VIEWPORT INTERFACE ]
                       </span>
                       <h5 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#fff', fontFamily: 'var(--font-display)', marginTop: '0.5rem', textTransform: 'uppercase' }}>
@@ -423,12 +422,12 @@ const Projects = () => {
 
               {/* Problem / Solution Grid */}
               <div className="modal-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2.5rem' }}>
-                 <div style={{ background: 'rgba(255,68,68,0.02)', border: '1px solid rgba(255,68,68,0.08)', padding: '1.5rem', borderRadius: '10px' }}>
+                 <div style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '10px' }}>
                     <span style={{ color: '#ff4444', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', fontWeight: 'bold' }}>[ CORE CHALLENGE ]</span>
                     <p style={{ color: '#aaa', fontSize: '0.95rem', lineHeight: 1.6, marginTop: '0.8rem', marginBottom: 0 }}>{selectedCaseStudy.caseStudy.problem || selectedCaseStudy.problem}</p>
                  </div>
-                 <div style={{ background: 'rgba(0,230,254,0.02)', border: '1px solid rgba(0,230,254,0.08)', padding: '1.5rem', borderRadius: '10px' }}>
-                    <span style={{ color: 'var(--accent-cyber)', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', fontWeight: 'bold' }}>[ RESOLUTION PATHWAY ]</span>
+                 <div style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '10px' }}>
+                    <span style={{ color: '#fff', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', fontWeight: 'bold' }}>[ RESOLUTION PATHWAY ]</span>
                     <p style={{ color: '#aaa', fontSize: '0.95rem', lineHeight: 1.6, marginTop: '0.8rem', marginBottom: 0 }}>{selectedCaseStudy.caseStudy.solution || selectedCaseStudy.solution}</p>
                  </div>
               </div>
@@ -465,7 +464,7 @@ const Projects = () => {
                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '1.5rem', marginLeft: '0.5rem' }}>
                     {selectedCaseStudy.caseStudy.roadmap.map((step, idx) => (
                        <div key={idx} style={{ position: 'relative' }}>
-                          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-cyber)', position: 'absolute', left: '-1.85rem', top: '0.45rem' }}></span>
+                          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#fff', position: 'absolute', left: '-1.85rem', top: '0.45rem' }}></span>
                           <p style={{ color: '#ccc', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>{step}</p>
                        </div>
                     ))}
@@ -478,7 +477,7 @@ const Projects = () => {
                    <h4 style={{ color: '#fff', fontSize: '1.2rem', fontFamily: 'var(--font-display)', marginBottom: '1.2rem', letterSpacing: '1px' }}>LESSONS LEARNED</h4>
                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                       {selectedCaseStudy.caseStudy.lessonsLearned.map((lesson, idx) => (
-                         <div key={idx} style={{ background: 'rgba(255,255,255,0.01)', borderLeft: '3px solid var(--accent-cyber)', padding: '1rem 1.5rem', borderRadius: '0 8px 8px 0' }}>
+                         <div key={idx} style={{ background: 'rgba(255,255,255,0.01)', borderLeft: '3px solid #fff', padding: '1rem 1.5rem', borderRadius: '0 8px 8px 0' }}>
                             <p style={{ color: '#ccc', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{lesson}</p>
                          </div>
                       ))}

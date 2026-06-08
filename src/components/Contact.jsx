@@ -98,12 +98,12 @@ const Contact = () => {
                     <span>SIGNAL: STABLE</span>
                 </div>
 
-               <h2 style={{ fontSize: 'clamp(3rem, 6vw, 7rem)', fontWeight: '900', color: '#fff', lineHeight: 0.9, letterSpacing: '-4px', fontFamily: 'var(--font-display)', marginBottom: '2rem' }}>
-                  SECURE <br/>
-                  <span style={{ color: 'transparent', WebkitTextStroke: '1px #666' }}>UPLINK</span>
+               <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 6rem)', fontWeight: '900', color: '#fff', lineHeight: 0.9, letterSpacing: '-3px', fontFamily: 'var(--font-display)', marginBottom: '2rem' }}>
+                  LET'S BUILD <br/>
+                  <span style={{ color: 'transparent', WebkitTextStroke: '1px #666' }}>SOMETHING MEANINGFUL</span>
                </h2>
                <p style={{ color: '#888', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '400px', borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '1.5rem' }}>
-                  Transmission initiation requested. Deploy your message to re-establish coordination for new digital architecture.
+                  I'm always interested in learning from other developers, collaborating on projects, and contributing to interesting ideas.
                </p>
             </div>
 
