@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Dossier from './components/Dossier';
+import Philosophy from './components/Philosophy';
 import TechStack from './components/TechStack';
 import Education from './components/Education';
 import Missions from './components/Missions';
@@ -159,6 +161,14 @@ function App() {
               </div>
 
               <div style={{ position: 'relative' }}>
+                <Dossier />
+              </div>
+
+              <div style={{ position: 'relative' }}>
+                <Philosophy />
+              </div>
+
+              <div style={{ position: 'relative' }}>
                 <TechStack setActiveTech={setActiveTech} />
               </div>
 
@@ -209,23 +219,18 @@ function App() {
                         WebkitTextStroke: '1px rgba(255,255,255,0.4)',
                     }}
                  >
-                    {/* Creative Dev Builder Oriented Text */}
-                    <span>MERN STACK DEVELOPER</span>
-                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>AI INTEGRATOR</span>
-                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>CREATING DIGITAL MASTERPIECES</span>
-                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>AI PRODUCT BUILDER</span>
-                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>MERN STACK DEVELOPER</span>
-                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>AI INTEGRATOR</span>
-                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>CREATING DIGITAL MASTERPIECES</span>
-                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                    <span>AI PRODUCT BUILDER</span>
-                    <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
+                     <span>FULL STACK DEVELOPER</span>
+                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
+                     <span>BUILDING WITH AI</span>
+                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
+                     <span>LEARNING BY SHIPPING</span>
+                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
+                     <span>FULL STACK DEVELOPER</span>
+                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
+                     <span>BUILDING WITH AI</span>
+                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
+                     <span>LEARNING BY SHIPPING</span>
+                     <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                  </motion.div>
               </div>
 

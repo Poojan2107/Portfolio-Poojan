@@ -30,11 +30,11 @@ const Counter = ({ value, suffix = "" }) => {
 
 const Impact = () => {
   const stats = [
-    { label: "Repositories Built", value: "18", suffix: "+" },
-    { label: "Projects Shipped", value: "12", suffix: "+" },
-    { label: "Hackathon Awards", value: "2", suffix: "" },
-    { label: "Technologies Used", value: "15", suffix: "+" },
-    { label: "Open Source Contribs", value: "50", suffix: "+" }
+    { label: "Projects Built", value: "5", suffix: "" },
+    { label: "AI Projects Built", value: "3", suffix: "" },
+    { label: "Hackathon Recognition", value: "1", suffix: "" },
+    { label: "Developer Events Attended", value: "4", suffix: "" },
+    { label: "Open Source Projects", value: "1", suffix: "" }
   ];
 
   return (
