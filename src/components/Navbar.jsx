@@ -23,7 +23,7 @@ const Navbar = () => {
     { name: 'ORIGIN', href: '#education' },
     { name: 'MISSIONS', href: '#missions' },
     { name: 'ARCHIVE', href: '#projects' },
-    { name: 'IMPACT', href: '#impact' },
+    { name: 'PLAYBOOK', href: '#playbook' },
     { name: 'CONTACT', href: '#contact' },
   ];
 

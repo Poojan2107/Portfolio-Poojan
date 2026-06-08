@@ -9,7 +9,7 @@ import TechStack from './components/TechStack';
 import Education from './components/Education';
 import Missions from './components/Missions';
 import Projects from './components/Projects';
-import Impact from './components/Impact';
+import Playbook from './components/Playbook';
 import Contact from './components/Contact';
 import ReactiveBackground from './components/ReactiveBackground';
 import HeroicIntro from './components/HeroicIntro';
@@ -185,7 +185,7 @@ function App() {
               </div>
 
               <div style={{ position: 'relative' }}>
-                <Impact />
+                <Playbook />
               </div>
 
               <div style={{ position: 'relative' }}>
