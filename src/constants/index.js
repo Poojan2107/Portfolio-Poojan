@@ -1,5 +1,5 @@
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap, FaRobot, FaBrain } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai, SiTypescript, SiPython } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap, FaRobot, FaBrain, FaLock, FaLink, FaServer } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai, SiTypescript, SiPython, SiNextdotjs, SiVercel, SiGoogle, SiFirebase } from 'react-icons/si';
 
 export const PERSONAL_DETAILS = {
   name: "POOJAN P SHRIVASTAV",
@@ -26,7 +26,7 @@ export const SKILL_CATEGORIES = [
     title: "Frontend Systems",
     skills: [
       { name: 'React', icon: FaReact, color: '#61DAFB', description: "Hooks, Context API, Virtual DOM" },
-      { name: 'Next.js', icon: SiTypescript, color: '#000000', description: "App Router, SSR, Server Components" },
+      { name: 'Next.js', icon: SiNextdotjs, color: '#ffffff', description: "App Router, SSR, Server Components" },
       { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', description: "ES6+, Async/Await, Web APIs" },
       { name: 'TypeScript', icon: SiTypescript, color: '#3178C6', description: "Static typing, Interfaces" },
       { name: 'HTML5', icon: FaHtml5, color: '#E34F26', description: "Semantic markup, DOM structure" },
@@ -39,24 +39,24 @@ export const SKILL_CATEGORIES = [
     skills: [
       { name: 'Node.js', icon: FaNodeJs, color: '#339933', description: "Event loop, File System" },
       { name: 'Express.js', icon: SiExpress, color: '#ffffff', description: "Routing, Middleware, HTTP APIs" },
-      { name: 'REST APIs', icon: SiPostman, color: '#FF6C37', description: "API design, Request routing" },
-      { name: 'Authentication', icon: SiOpenai, color: '#412991', description: "JWT, Session state controls" },
+      { name: 'REST APIs', icon: FaServer, color: '#ffffff', description: "API design, Request routing" },
+      { name: 'Authentication', icon: FaLock, color: '#ffffff', description: "JWT, Session state controls" },
     ]
   },
   {
     title: "Databases",
     skills: [
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248', description: "NoSQL document models, Aggregations" },
-      { name: 'Firebase', icon: SiOpenai, color: '#FFCA28', description: "Firestore, Real-time sync, Auth" },
+      { name: 'Firebase', icon: SiFirebase, color: '#FFCA28', description: "Firestore, Real-time sync, Auth" },
     ]
   },
   {
     title: "AI & Automation",
     skills: [
-      { name: 'Gemini API', icon: SiOpenai, color: '#412991', description: "Google Gemini SDK, structured prompts" },
-      { name: 'OpenAI APIs', icon: SiOpenai, color: '#412991', description: "GPT models API integrations" },
+      { name: 'Gemini API', icon: SiGoogle, color: '#ffffff', description: "Google Gemini SDK, structured prompts" },
+      { name: 'OpenAI APIs', icon: SiOpenai, color: '#ffffff', description: "GPT models API integrations" },
       { name: 'Prompt Engineering', icon: FaBrain, color: '#FFD700', description: "System prompts, Structured JSON output" },
-      { name: 'LangChain', icon: FaBrain, color: '#FF9900', description: "Chains, Prompt templates" },
+      { name: 'LangChain', icon: FaLink, color: '#ffffff', description: "Chains, Prompt templates" },
       { name: 'Basic ML', icon: FaBrain, color: '#FF9900', description: "Random Forest estimators, Scikit-Learn" },
     ]
   },
@@ -66,7 +66,7 @@ export const SKILL_CATEGORIES = [
       { name: 'Git', icon: FaGitAlt, color: '#F05032', description: "Branch workflows, Rebase, Merging" },
       { name: 'GitHub', icon: FaGithub, color: '#ffffff', description: "Remote repository hosting, PR reviews" },
       { name: 'Postman', icon: SiPostman, color: '#FF6C37', description: "API endpoints verification" },
-      { name: 'Vercel', icon: SiOpenai, color: '#ffffff', description: "Frontend deployments, Vercel routing" },
+      { name: 'Vercel', icon: SiVercel, color: '#ffffff', description: "Frontend deployments, Vercel routing" },
     ]
   }
 ];

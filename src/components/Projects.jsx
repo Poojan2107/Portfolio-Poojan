@@ -3,12 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowRight, FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import { PROJECTS } from '../constants';
 
+const formatIndex = (num) => String(num).padStart(2, '0');
+
 const Projects = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
 
-  // Pad numbers with leading zero
-  const formatIndex = (i) => (i < 9 ? `0${i + 1}` : i + 1);
+  const flagshipProject = PROJECTS[0];
+  const gridProjects = PROJECTS.slice(1);
 
   return (
     <section 
@@ -21,45 +22,10 @@ const Projects = () => {
             minHeight: 'auto',
         }}
     >
-      
-      {/* Fixed Ambient Image Preview */}
-      <div style={{
-          position: 'absolute',
-          top: '50%',
-          right: '10%',
-          transform: 'translateY(-50%)',
-          width: '40vw',
-          height: '60vh',
-          zIndex: 0,
-          pointerEvents: 'none',
-          opacity: 0.1,
-          filter: 'grayscale(100%) contrast(150%) brightness(0.4)',
-          transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
-      }}>
-          <AnimatePresence mode="wait">
-            {hoveredIndex !== null && (
-                <motion.img
-                  key={hoveredIndex}
-                  src={PROJECTS[hoveredIndex].image}
-                  initial={{ opacity: 0, x: 50, scale: 1.1 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  exit={{ opacity: 0, x: -50, scale: 0.9 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      borderRadius: '20px',
-                  }}
-                />
-            )}
-          </AnimatePresence>
-      </div>
-
       <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1400px' }}>
         
         {/* Section Header */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '8rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '6rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
            <h2 style={{ fontSize: '1rem', fontWeight: '500', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>Selected Work</h2>
            <div style={{
                fontSize: '5rem',
@@ -71,215 +37,224 @@ const Projects = () => {
            }}>ARCHIVE</div>
         </div>
 
-        {/* The List Layout */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {PROJECTS.map((project, index) => {
-            const isFlagship = index === 0; // OpenBridge
-            const isHovered = hoveredIndex === index;
-            const isExpanded = isHovered || isFlagship;
-            
-            return (
-              <motion.div 
-                key={index}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  padding: '4rem 0',
-                  borderBottom: isFlagship ? 'none' : '1px solid',
-                  borderColor: isExpanded ? 'rgba(255,255,255,0.4)' : 'rgba(255,255,255,0.05)',
-                  cursor: 'pointer',
-                  position: 'relative',
-                  transition: 'all 0.4s ease',
-                  background: isFlagship ? 'rgba(255, 255, 255, 0.01)' : 'transparent',
-                  border: isFlagship ? '1px solid rgba(255, 255, 255, 0.08)' : 'none',
-                  paddingLeft: isFlagship ? '2rem' : '0',
-                  paddingRight: isFlagship ? '2rem' : '0',
-                  borderRadius: isFlagship ? '15px' : '0',
-                  marginBottom: isFlagship ? '2rem' : '0',
-                  boxShadow: isFlagship ? '0 10px 30px rgba(0,0,0,0.5)' : 'none'
-                }}
-                className="project-row-container"
-              >
-                 {/* Top Row for Title and Index */}
-                 <div style={{ display: 'flex', alignItems: 'center', width: '100%' }} className="project-row-header">
-                     {/* Index Number */}
-                     <div style={{ flex: '0 0 100px', fontSize: '1.2rem', color: isExpanded ? '#fff' : '#444', fontFamily: 'var(--font-code)', transition: 'color 0.4s' }}>
-                        {formatIndex(index)}
-                     </div>
+        {/* Flagship Project Card (Full-Width) */}
+        <div style={{ marginBottom: '3rem' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8 }}
+            style={{
+              background: 'var(--bg-secondary)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '16px',
+              padding: '3.5rem',
+              position: 'relative',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2.5rem'
+            }}
+          >
+            {/* Top Tag & Status */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+              <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.75rem', color: '#666', letterSpacing: '3px', textTransform: 'uppercase' }}>
+                [ FLAGSHIP WORK // 01 ]
+              </span>
+              <span style={{
+                fontSize: '0.65rem',
+                fontFamily: 'var(--font-code)',
+                background: 'rgba(255, 255, 255, 0.9)',
+                color: '#000',
+                padding: '4px 12px',
+                borderRadius: '20px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                fontWeight: 'bold'
+              }}>
+                {flagshipProject.status}
+              </span>
+            </div>
 
-                     {/* Title & Subtitle */}
-                     <div style={{ flex: '1' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                          <motion.h3 
-                              animate={{ x: isHovered ? 20 : 0 }}
-                              transition={{ ease: "easeOut", duration: 0.4 }}
-                              style={{ 
-                                fontSize: 'clamp(2rem, 5vw, 6rem)', 
-                                fontWeight: '800', 
-                                color: isExpanded ? '#fff' : '#666', 
-                                margin: 0, 
-                                fontFamily: 'var(--font-display)',
-                                letterSpacing: '-2px',
-                                textTransform: 'uppercase',
-                                lineHeight: 1
-                              }}
-                          >
-                              {project.title}
-                          </motion.h3>
-                          
-                          {/* Project Status Badge */}
-                          <span style={{
-                              fontSize: '0.65rem',
-                              fontFamily: 'var(--font-code)',
-                              background: project.status === 'Completed' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.02)',
-                              border: `1px solid ${project.status === 'Completed' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)'}`,
-                              color: '#fff',
-                              padding: '4px 10px',
-                              borderRadius: '20px',
-                              marginLeft: '1.5rem',
-                              textTransform: 'uppercase',
-                              letterSpacing: '1px',
-                              fontWeight: 'bold',
-                              display: 'inline-block',
-                              marginTop: '0.5rem'
-                          }}>
-                              {project.status}
-                          </span>
+            {/* Title Block */}
+            <div>
+              <h3 style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)', fontWeight: '900', color: '#fff', fontFamily: 'var(--font-display)', margin: 0, letterSpacing: '-2px', textTransform: 'uppercase', lineHeight: 1 }}>
+                {flagshipProject.title}
+              </h3>
+              <p style={{ color: '#aaa', fontFamily: 'var(--font-code)', fontSize: '0.9rem', marginTop: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                {flagshipProject.subtitle}
+              </p>
+            </div>
 
-                          {isFlagship && (
-                            <span style={{
-                                fontSize: '0.65rem',
-                                fontFamily: 'var(--font-code)',
-                                background: 'rgba(255, 255, 255, 0.9)',
-                                color: '#000',
-                                padding: '4px 10px',
-                                borderRadius: '20px',
-                                marginLeft: '1rem',
-                                textTransform: 'uppercase',
-                                letterSpacing: '1px',
-                                fontWeight: 'bold',
-                                display: 'inline-block',
-                                marginTop: '0.5rem'
-                            }}>
-                                Flagship Project
-                            </span>
-                          )}
-                        </div>
-                     </div>
+            {/* Problem & Solution Split */}
+            <div className="project-drawer-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2.5rem' }}>
+              <div>
+                <span style={{ color: '#888', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>[ CORE CHALLENGE ]</span>
+                <p style={{ color: '#ccc', fontSize: '1rem', lineHeight: 1.6, marginTop: '0.8rem', marginBottom: 0 }}>{flagshipProject.problem}</p>
+              </div>
+              <div>
+                <span style={{ color: '#fff', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>[ RESOLUTION PATHWAY ]</span>
+                <p style={{ color: '#ccc', fontSize: '1rem', lineHeight: 1.6, marginTop: '0.8rem', marginBottom: 0 }}>{flagshipProject.solution}</p>
+              </div>
+            </div>
 
-                     {/* Action Buttons */}
-                     <div className="project-row-actions" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                         <motion.div 
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: isExpanded ? 1 : 0 }}
-                            transition={{ duration: 0.3 }}
-                            style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}
-                         >
-                              <button 
-                                 onClick={(e) => {
-                                     e.stopPropagation();
-                                     setSelectedCaseStudy(project);
-                                 }}
-                                 style={{
-                                     padding: '0.6rem 1.2rem',
-                                     background: 'transparent',
-                                     border: '1px solid rgba(255,255,255,0.2)',
-                                     borderRadius: '20px',
-                                     color: '#fff',
-                                     fontSize: '0.75rem',
-                                     fontFamily: 'var(--font-code)',
-                                     fontWeight: 'bold',
-                                     cursor: 'pointer',
-                                     transition: 'all 0.3s'
-                                 }}
-                                 onMouseEnter={(e) => e.target.style.borderColor = '#fff'}
-                                 onMouseLeave={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.2)'}
-                              >
-                                 CASE STUDY
-                              </button>
-                              <a href={project.github} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', transition: 'all 0.3s' }}>
-                                 <FaGithub />
-                              </a>
-                              <a href={project.live} target="_blank" rel="noopener noreferrer" style={{ color: '#000', background: '#fff', fontSize: '1.1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', transition: 'all 0.3s' }}>
-                                 <FaArrowRight style={{ transform: 'rotate(-45deg)' }} />
-                              </a>
-                         </motion.div>
-                     </div>
-                 </div>
+            {/* Highlights bullet points */}
+            {flagshipProject.highlights && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem' }}>
+                <span style={{ color: '#666', fontFamily: 'var(--font-code)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px' }}>[ KEY IMPLEMENTATIONS ]</span>
+                <ul style={{ color: '#aaa', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '20px', listStyleType: 'square', display: 'flex', flexDirection: 'column', gap: '0.4rem', margin: 0 }}>
+                  {flagshipProject.highlights.map((highlight, idx) => (
+                    <li key={idx}>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-                 {/* Meta Info (Tags & Desc) - Reveals gracefully */}
-                 <motion.div
-                     initial={{ height: isFlagship ? 'auto' : 0, opacity: isFlagship ? 1 : 0 }}
-                     animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
-                     transition={{ duration: 0.4, ease: "easeOut" }}
-                     style={{ overflow: 'hidden', width: '100%', maxWidth: '1000px', paddingLeft: '100px', marginTop: isExpanded ? '2rem' : 0 }}
-                     className="project-drawer-content"
-                 >
-                    {/* Dossier Subtitle */}
-                    <p style={{ color: '#fff', fontFamily: 'var(--font-code)', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', margin: '0.5rem 0' }}>
-                       {project.subtitle}
-                    </p>
+            {/* Bottom Tech Grid & Actions */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem' }} className="project-row-header">
+              {/* Tech stack pills */}
+              <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+                {flagshipProject.tags.map(tag => (
+                  <span key={tag} style={{ padding: '4px 12px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#ccc', fontSize: '0.75rem', letterSpacing: '1px', borderRadius: '40px', textTransform: 'uppercase' }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
 
-                    {/* Problem & Solution columns */}
-                    <div className="project-drawer-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '1.5rem', marginTop: '1.5rem' }}>
-                       <div>
-                          <span style={{ color: '#888', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>[ PROBLEM ]</span>
-                          <p style={{ color: '#aaa', fontSize: '0.9rem', lineHeight: 1.5, marginTop: '0.4rem' }}>{project.problem}</p>
-                       </div>
-                       <div>
-                          <span style={{ color: '#fff', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>[ SOLUTION ]</span>
-                          <p style={{ color: '#aaa', fontSize: '0.9rem', lineHeight: 1.5, marginTop: '0.4rem' }}>{project.solution}</p>
-                       </div>
-                    </div>
+              {/* Action buttons */}
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                <button 
+                  onClick={() => setSelectedCaseStudy(flagshipProject)}
+                  style={{
+                    padding: '0.7rem 1.5rem',
+                    background: 'transparent',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    borderRadius: '20px',
+                    color: '#fff',
+                    fontSize: '0.8rem',
+                    fontFamily: 'var(--font-code)',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s'
+                  }}
+                  onMouseEnter={(e) => e.target.style.borderColor = '#fff'}
+                  onMouseLeave={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.2)'}
+                >
+                  CASE STUDY
+                </button>
+                <a href={flagshipProject.github} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '42px', height: '42px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', transition: 'all 0.3s' }}>
+                  <FaGithub />
+                </a>
+                <a href={flagshipProject.live} target="_blank" rel="noopener noreferrer" style={{ color: '#000', background: '#fff', fontSize: '1.1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '42px', height: '42px', borderRadius: '50%', transition: 'all 0.3s' }}>
+                  <FaArrowRight style={{ transform: 'rotate(-45deg)' }} />
+                </a>
+              </div>
+            </div>
 
-                    {/* Metrics block */}
-                    <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', marginBottom: '1.5rem', background: 'rgba(255,255,255,0.02)', padding: '1rem 1.5rem', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                       {Object.entries(project.metrics).map(([key, val]) => (
-                          <div key={key}>
-                             <span style={{ color: '#666', fontFamily: 'var(--font-code)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{key}</span>
-                             <p style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 'bold', fontFamily: 'var(--font-display)', marginTop: '0.2rem' }}>{val}</p>
-                          </div>
-                       ))}
-                    </div>
+          </motion.div>
+        </div>
 
-                    {/* Highlights list */}
-                    {project.highlights && (
-                      <ul style={{ 
-                          color: '#999', 
-                          fontSize: '0.9rem', 
-                          lineHeight: '1.6', 
-                          marginBottom: '1.5rem', 
-                          paddingLeft: '20px', 
-                          listStyleType: 'square',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '0.4rem',
-                          fontFamily: 'var(--font-main)'
-                      }}>
-                         {project.highlights.map((highlight, idx) => (
-                            <li key={idx}>{highlight}</li>
-                         ))}
-                      </ul>
-                    )}
+        {/* 2-Column Grid for other projects */}
+        <div className="project-drawer-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+          {gridProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              style={{
+                background: 'rgba(255, 255, 255, 0.01)',
+                border: '1px solid rgba(255, 255, 255, 0.05)',
+                borderRadius: '12px',
+                padding: '2.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '2rem',
+                justifyContent: 'space-between',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
+              }}
+            >
+              {/* Header */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: '1rem' }}>
+                <div>
+                  <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.7rem', color: '#444', letterSpacing: '1px' }}>
+                    [ ARCHIVE // {formatIndex(index + 1)} ]
+                  </span>
+                  <h4 style={{ fontSize: '2rem', fontWeight: '800', color: '#fff', fontFamily: 'var(--font-display)', margin: '0.4rem 0 0 0', textTransform: 'uppercase', letterSpacing: '-1px' }}>
+                    {project.title}
+                  </h4>
+                </div>
+                <span style={{
+                  fontSize: '0.6rem',
+                  fontFamily: 'var(--font-code)',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  color: '#fff',
+                  padding: '3px 8px',
+                  borderRadius: '15px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  fontWeight: 'bold',
+                  whiteSpace: 'nowrap'
+                }}>
+                  {project.status}
+                </span>
+              </div>
 
-                    {/* Tech Badges */}
-                    <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-                       {project.tags.map(tag => (
-                          <span key={tag} style={{ padding: '4px 12px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: '#ccc', fontSize: '0.75rem', letterSpacing: '1px', borderRadius: '40px', textTransform: 'uppercase' }}>
-                            {tag}
-                          </span>
-                       ))}
-                    </div>
-                 </motion.div>
-              </motion.div>
-            );
-          })}
+              {/* Problem/Solution Blocks */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                <div>
+                  <span style={{ color: '#666', fontFamily: 'var(--font-code)', fontSize: '0.7rem', textTransform: 'uppercase' }}>[ Problem ]</span>
+                  <p style={{ color: '#aaa', fontSize: '0.85rem', lineHeight: 1.5, marginTop: '0.2rem', marginBottom: 0 }}>{project.problem}</p>
+                </div>
+                <div>
+                  <span style={{ color: '#aaa', fontFamily: 'var(--font-code)', fontSize: '0.7rem', textTransform: 'uppercase' }}>[ Solution ]</span>
+                  <p style={{ color: '#ccc', fontSize: '0.85rem', lineHeight: 1.5, marginTop: '0.2rem', marginBottom: 0 }}>{project.solution}</p>
+                </div>
+              </div>
+
+              {/* Tech tags */}
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                {project.tags.map(tag => (
+                  <span key={tag} style={{ padding: '2px 8px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', color: '#999', fontSize: '0.7rem', letterSpacing: '1px', borderRadius: '40px', textTransform: 'uppercase' }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Actions row */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.5rem', marginTop: '0.5rem' }}>
+                <button 
+                  onClick={() => setSelectedCaseStudy(project)}
+                  style={{
+                    padding: '0.5rem 1.2rem',
+                    background: 'transparent',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    borderRadius: '20px',
+                    color: '#fff',
+                    fontSize: '0.75rem',
+                    fontFamily: 'var(--font-code)',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s'
+                  }}
+                  onMouseEnter={(e) => e.target.style.borderColor = '#fff'}
+                  onMouseLeave={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.2)'}
+                >
+                  CASE STUDY
+                </button>
+                <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', fontSize: '1.1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', transition: 'all 0.3s' }}>
+                    <FaGithub />
+                  </a>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" style={{ color: '#000', background: '#fff', fontSize: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '50%', transition: 'all 0.3s' }}>
+                    <FaArrowRight style={{ transform: 'rotate(-45deg)' }} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>
@@ -532,7 +507,7 @@ const Projects = () => {
                        flex: 1,
                        padding: '1rem',
                        background: 'rgba(255,255,255,0.03)',
-                       border: '1px solid rgba(255,255,255,0.1)',
+                       border: '1px solid rgba(255, 255, 255, 0.1)',
                        color: '#fff',
                        borderRadius: '30px',
                        textAlign: 'center',
