@@ -1,13 +1,18 @@
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBootstrap, FaRobot, FaBrain, FaLock, FaLink, FaServer } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostman, SiJquery, SiMysql, SiOpenai, SiTypescript, SiPython, SiNextdotjs, SiVercel, SiGoogle, SiFirebase } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaLinkedin, FaGithub, FaBrain, FaLock, FaLink, FaServer } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiTailwindcss, SiPostman, SiOpenai, SiTypescript, SiNextdotjs, SiVercel, SiGoogle, SiFirebase, SiPostgresql, SiSupabase, SiPrisma, SiSocketdotio } from 'react-icons/si';
 
 export const PERSONAL_DETAILS = {
-  name: "POOJAN P SHRIVASTAV",
-  role: "B.Tech AI Student & Full Stack Developer",
-  bio: "B.Tech AI student focused on Full Stack Development, AI-powered applications, and open-source ecosystems.",
+  name: "Poojan P. Shrivastav",
+  role: "B.Tech Artificial Intelligence Student & Full Stack Developer",
+  roles: [
+    "B.Tech Artificial Intelligence Student",
+    "Full Stack Developer",
+    "AI & Open Source Builder"
+  ],
+  bio: "Building production-focused software, AI-powered applications, open-source ecosystems, and solving real-world business problems through technology.",
   email: "poojanshrivastav21@gmail.com",
   phone: "+91 9023362134",
-  location: "Ahmedabad",
+  location: "Ahmedabad, Gujarat",
   social: {
     linkedin: "https://www.linkedin.com/in/poojanshrivastav21",
     github: "https://github.com/Poojan2107",
@@ -16,8 +21,8 @@ export const PERSONAL_DETAILS = {
 
 export const SOCIAL_PROOF_BADGES = [
   { text: "🏆 Runner-Up — Build With AI Ahmedabad", category: "award" },
+  { text: "💼 Production Client Delivery", category: "status" },
   { text: "🚀 Building OpenBridge", category: "status" },
-  { text: "🎓 B.Tech Artificial Intelligence", category: "edu" },
   { text: "💻 Full Stack Developer", category: "role" }
 ];
 
@@ -27,10 +32,10 @@ export const SKILL_CATEGORIES = [
     skills: [
       { name: 'React', icon: FaReact, color: '#61DAFB', description: "Hooks, Context API, Virtual DOM" },
       { name: 'Next.js', icon: SiNextdotjs, color: '#ffffff', description: "App Router, SSR, Server Components" },
-      { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', description: "ES6+, Async/Await, Web APIs" },
       { name: 'TypeScript', icon: SiTypescript, color: '#3178C6', description: "Static typing, Interfaces" },
-      { name: 'HTML5', icon: FaHtml5, color: '#E34F26', description: "Semantic markup, DOM structure" },
-      { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6', description: "Flexbox, Grid, Custom Variables" },
+      { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', description: "ES6+, Async/Await, Web APIs" },
+      { name: 'HTML', icon: FaHtml5, color: '#E34F26', description: "Semantic markup, DOM structure" },
+      { name: 'CSS', icon: FaCss3Alt, color: '#1572B6', description: "Flexbox, Grid, Custom Variables" },
       { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38B2AC', description: "Utility-first layout, Responsive design" },
     ]
   },
@@ -41,23 +46,28 @@ export const SKILL_CATEGORIES = [
       { name: 'Express.js', icon: SiExpress, color: '#ffffff', description: "Routing, Middleware, HTTP APIs" },
       { name: 'REST APIs', icon: FaServer, color: '#ffffff', description: "API design, Request routing" },
       { name: 'Authentication', icon: FaLock, color: '#ffffff', description: "JWT, Session state controls" },
+      { name: 'WebSockets', icon: SiSocketdotio, color: '#010101', description: "Real-time bi-directional communication" },
     ]
   },
   {
     title: "Databases",
     skills: [
+      { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791', description: "Relational schemas, SQL queries, Indexing" },
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248', description: "NoSQL document models, Aggregations" },
+      { name: 'Supabase', icon: SiSupabase, color: '#3ECF8E', description: "PostgREST APIs, Auth, Realtime DB" },
       { name: 'Firebase', icon: SiFirebase, color: '#FFCA28', description: "Firestore, Real-time sync, Auth" },
+      { name: 'Prisma ORM', icon: SiPrisma, color: '#2D3748', description: "Type-safe database client and migrations" },
     ]
   },
   {
-    title: "AI & Automation",
+    title: "AI Systems",
     skills: [
       { name: 'Gemini API', icon: SiGoogle, color: '#ffffff', description: "Google Gemini SDK, structured prompts" },
-      { name: 'OpenAI APIs', icon: SiOpenai, color: '#ffffff', description: "GPT models API integrations" },
-      { name: 'Prompt Engineering', icon: FaBrain, color: '#FFD700', description: "System prompts, Structured JSON output" },
+      { name: 'OpenAI API', icon: SiOpenai, color: '#ffffff', description: "GPT models API integrations" },
       { name: 'LangChain', icon: FaLink, color: '#ffffff', description: "Chains, Prompt templates" },
-      { name: 'Basic ML', icon: FaBrain, color: '#FF9900', description: "Random Forest estimators, Scikit-Learn" },
+      { name: 'Prompt Engineering', icon: FaBrain, color: '#FFD700', description: "System prompts, Structured JSON output" },
+      { name: 'Machine Learning', icon: FaBrain, color: '#FF9900', description: "Classification, Scikit-Learn" },
+      { name: 'RAG Systems', icon: FaServer, color: '#ffffff', description: "Retrieval-Augmented Generation, Vector DBs" },
     ]
   },
   {
@@ -65,8 +75,10 @@ export const SKILL_CATEGORIES = [
     skills: [
       { name: 'Git', icon: FaGitAlt, color: '#F05032', description: "Branch workflows, Rebase, Merging" },
       { name: 'GitHub', icon: FaGithub, color: '#ffffff', description: "Remote repository hosting, PR reviews" },
+      { name: 'Prisma ORM', icon: SiPrisma, color: '#2D3748', description: "Type-safe database client and migrations" },
       { name: 'Postman', icon: SiPostman, color: '#FF6C37', description: "API endpoints verification" },
       { name: 'Vercel', icon: SiVercel, color: '#ffffff', description: "Frontend deployments, Vercel routing" },
+      { name: 'Supabase', icon: SiSupabase, color: '#3ECF8E', description: "Backend-as-a-Service, Postgres hosting" },
     ]
   }
 ];
@@ -76,8 +88,8 @@ export const PROJECTS = [
     title: 'OpenBridge',
     subtitle: 'AI-Powered Open Source Onboarding Platform',
     status: 'Active Development',
-    problem: 'Open Source is difficult for newcomers.',
-    solution: 'An AI-powered onboarding platform that matches repositories, translates issues, generates roadmaps, discovers fellowships, and tracks progress.',
+    problem: 'Open Source is difficult for newcomers. Developers struggle with finding repositories, understanding issues, and navigating contribution pathways.',
+    solution: 'An AI-powered onboarding platform that recommends repositories, translates issues, generates roadmaps, discovers fellowships, and tracks progress.',
     tags: ['Next.js', 'TypeScript', 'Gemini AI', 'GitHub APIs', 'MongoDB', 'TailwindCSS'],
     github: 'https://github.com/Poojan2107/OpenBridge',
     live: 'https://github.com/Poojan2107/OpenBridge',
@@ -88,19 +100,18 @@ export const PROJECTS = [
       "Hackathon": "Build With AI Runner-Up"
     },
     highlights: [
-      "Runner-Up at Build With AI Ahmedabad",
-      "Matches users with repositories based on their skill profile",
-      "Translates complex GitHub issue descriptions into step-by-step checklists",
-      "Aggregates and filters student fellowship programs (GSoC, LFX, Outreachy)"
+      "Secured Runner-Up position at Build With AI Ahmedabad 2026",
+      "Developed repository recommendation and issue translation systems using Gemini AI",
+      "Designed contribution tracking, PR validation, and contributor profiling workflows",
+      "Aggregates fellowship opportunities including GSoC, LFX, and Outreachy"
     ],
     caseStudy: {
       summary: "An AI-powered onboarding companion for open-source newcomers. Profiles developer skills, matches to real GitHub repos, and generates custom 4-week roadmaps using Gemini AI.",
-      problem: "Open Source is difficult for newcomers. Developers struggle with finding repositories, understanding issues, understanding workflows, finding mentorship, and discovering fellowships.",
+      problem: "Open Source is difficult for newcomers. Developers struggle with finding repositories, understanding issues, and navigating contribution pathways.",
+      solution: "An AI-powered onboarding platform that recommends repositories, translates issues, generates roadmaps, discovers fellowships, and tracks progress.",
       research: "Conducted interviews with peer students and observed that many wanted to contribute to open source but felt overwhelmed by the sheer volume of code and complex setup instructions.",
       architecture: "Next.js frontend with TailwindCSS, connecting to GitHub GraphQL APIs and Google Gemini SDK for intelligent repo parsing and roadmap synthesis.",
-      techStack: ['Next.js', 'TypeScript', 'Gemini AI', 'GitHub APIs', 'MongoDB', 'TailwindCSS'],
       challenges: "Designing structured JSON outputs from Gemini AI to parse reliably into step-by-step roadmaps, and securing GitHub OAuth credentials with AES-256-CBC.",
-      solution: "Developed a structured schema generation pipeline with Gemini 1.5 Flash. Implemented client-side cryptography for securing GitHub API credentials.",
       roadmap: [
         "Ship OpenBridge publicly",
         "Acquire initial beta users and gather feedback",
@@ -111,47 +122,71 @@ export const PROJECTS = [
         "Factual and structured prompt engineering with Gemini yields reliable roadmap schemas.",
         "Building tooltips and descriptive interface copy significantly reduces friction for newcomers.",
         "Integrating open-source program search (GSoC/LFX) simplifies program navigation."
-      ]
+      ],
+      technicalHighlights: [
+        "Gemini structured schema generation",
+        "GitHub OAuth integration",
+        "AES-256 credential encryption",
+        "Personalized onboarding pathways",
+        "4-week contribution roadmaps"
+      ],
+      impact: "Reduces the barrier to entry for new contributors by transforming complex open-source onboarding workflows into structured contribution pathways."
     }
   },
   {
-    title: 'Ledger AI',
-    subtitle: 'AI-Powered B2B Invoicing & Automation Platform',
-    status: 'Completed',
-    problem: 'Manual invoice management is inefficient and repetitive.',
-    solution: 'AI-assisted B2B invoicing and financial automation platform.',
-    tags: ['React', 'Node.js', 'Google Gemini AI', 'TypeScript', 'Framer Motion', 'MongoDB'],
-    github: 'https://github.com/Poojan2107/ITCH',
-    live: 'https://ledgerai.vercel.app/',
-    image: '/assets/nexus_pos.png',
+    title: 'Tripzy',
+    subtitle: 'Production Travel & Itinerary Platform',
+    status: 'Delivered',
+    problem: 'A tourism business with 15+ years of experience needed a custom solution to move beyond manual package distribution and booking workflows.',
+    solution: 'Delivered a production-ready travel booking and itinerary management platform with destination showcases, booking workflows, payment verification, and administrative controls.',
+    tags: ['Next.js', 'PostgreSQL', 'Prisma', 'Supabase', 'React Native'],
+    github: 'https://github.com/Poojan2107',
+    live: 'https://github.com/Poojan2107',
+    image: '/assets/traveling_tent.png',
     metrics: {
-      "Status": "Completed",
-      "Model": "Gemini 1.5 Flash Vision",
-      "Focus": "Receipt Parsing"
+      "Status": "Delivered",
+      "Client": "Oneverce Solutions",
+      "Timeline": "June 2026 - July 2026"
     },
     highlights: [
-      "Developed receipt parsing systems using Gemini Vision APIs",
-      "Engineered AI extraction pipelines that parse unstructured documents into structured ledgers",
-      "Designed real-time update workflows for B2B financial logging"
+      "Successfully delivered a client-facing platform for a tourism business with 15+ years of industry experience",
+      "Developed package discovery and destination showcase systems",
+      "Implemented payment verification workflows",
+      "Built customer management infrastructure",
+      "Worked directly with stakeholder requirements"
     ],
     caseStudy: {
-      summary: "An AI-assisted receipt extraction and invoicing tool that converts raw document scans into clean financial ledger rows.",
-      problem: "Manual financial management and invoice typing are time-consuming and prone to transcription errors.",
-      solution: "Built Ledger AI, which leverages Gemini Vision to parse uploaded receipt images and format them into MongoDB data entries.",
-      research: "Analyzed bookkeeping friction in small businesses and found manual transcription was the largest administrative bottleneck.",
-      architecture: "MERN Stack SaaS calling Gemini 1.5 Flash Vision APIs for structured JSON OCR extraction.",
-      techStack: ['React', 'Node.js', 'Google Gemini AI', 'TypeScript', 'Framer Motion', 'MongoDB'],
-      challenges: "Handling irregular, low-resolution receipt images and ensuring the AI outputs strictly adhere to a valid JSON schema.",
-      solution: "Implemented client-side Canvas-based image compression before uploads, and designed custom system prompts with Gemini structured JSON output parameters.",
+      summary: "Designed, built, and shipped a comprehensive travel booking and itinerary platform for a tourism client with 15+ years of industry experience. Streamlines custom vacation itineraries and customer management.",
+      problem: "The client's booking management and package distribution relied on fragmented spreadsheet tracking and manual messaging, causing communication overhead and booking delays.",
+      solution: "Developed a unified system: a responsive Next.js web application for travelers, a React Native mobile companion, and a secure Supabase-backed admin dashboard to manage customers and verify payments.",
+      research: "Conducted direct stakeholder interviews with the client to analyze their workflow, mapping out the stages of trip package discovery, customized booking request flows, and manual payment verification procedures.",
+      architecture: "Next.js web portal, Supabase database storage with Prisma ORM schema management, and a React Native application providing instant notifications to administrators.",
+      challenges: "Designing a flexible database schema to support custom travel packages while ensuring real-time itinerary updates and payment status verification workflows.",
       roadmap: [
-        "Support batch invoice scanning",
-        "Implement multi-currency conversions",
-        "Build Export to CSV/PDF features"
+        "Enhance automated email invoicing triggers",
+        "Implement multi-currency payment gateway direct checkout integrations",
+        "Refine React Native admin interface for real-time mobile push notifications"
       ],
       lessonsLearned: [
-        "Image preprocessing (resizing/cropping) before API upload saves bandwidth and lowers response latency.",
-        "Explicit schema parameters in system instructions prevent parsing failures."
-      ]
+        "Direct stakeholder interaction and feedback cycles prevent scope creep and ensure feature alignment.",
+        "Type-safe database interactions using Prisma ORM speeds up API implementation by 2x.",
+        "Webhooks and secure backend checkbacks are essential for reliable billing state tracking."
+      ],
+      technicalHighlights: [
+        "Next.js web portals and custom client showcases",
+        "PostgreSQL schema design and query optimization",
+        "Prisma ORM database interface",
+        "Supabase cloud database storage",
+        "React Native administrator mobile application"
+      ],
+      focusAreas: [
+        "Requirement Gathering",
+        "Full Stack Development",
+        "Database Design",
+        "Deployment",
+        "Production Delivery"
+      ],
+      impact: "Transitioned the client from spreadsheets to a unified, production travel software environment, reducing booking errors and scaling manual administration."
     }
   },
   {
@@ -191,46 +226,6 @@ export const PROJECTS = [
       lessonsLearned: [
         "Node subprocess management requires recycling daemons to prevent memory leaks.",
         "Visualizing feature contributions via Radar charts helps underwriters make decisions faster."
-      ]
-    }
-  },
-  {
-    title: 'Traveling Tent',
-    subtitle: 'Geospatial Campsite Booking Platform',
-    status: 'Completed',
-    problem: 'Location-based bookings require integrated systems.',
-    solution: 'Geospatial booking platform with maps, user authentication, Razorpay payments, and geolocation.',
-    tags: ['React', 'Firebase', 'Razorpay', 'React-Leaflet'],
-    github: 'https://github.com/Poojan2107/Travelling-Website',
-    live: 'https://travelling-tent.vercel.app/',
-    image: '/assets/traveling_tent.png',
-    metrics: {
-      "Status": "Completed",
-      "Map API": "React-Leaflet Maps",
-      "Payments": "Razorpay"
-    },
-    highlights: [
-      "Integrated interactive React-Leaflet maps for campsite search",
-      "Implemented user authentication and database synchronization using Firebase",
-      "Integrated Razorpay payment gateways with robust checkout status validation"
-    ],
-    caseStudy: {
-      summary: "An e-commerce booking experience for campsite rentals with geospatial coordinates and payment processing.",
-      problem: "Campsite selection and booking are fragmented across non-interactive legacy services.",
-      solution: "Built Traveling Tent, combining Leaflet map coordinates and payment gates in a modern interface.",
-      research: "Identified that campsite bookers prefer seeing exact locations on interactive maps before committing to a reservation.",
-      architecture: "React + Vite SPA front-end, Firebase Auth for user state, and Leaflet geographical mapping layers with Razorpay transaction checkbacks.",
-      techStack: ['React', 'Firebase', 'Razorpay', 'React-Leaflet'],
-      challenges: "Synchronizing cart state, date-reservations, and Razorpay transaction states cleanly while keeping the experience completely smooth.",
-      solution: "Built a custom transaction state machine with React Context to manage reservation locks and verify Razorpay webhook signatures before final checkout confirmations.",
-      roadmap: [
-        "Introduce offline booking parameters",
-        "Implement email/sms receipt confirmations",
-        "Optimize marker clusters for dense map areas"
-      ],
-      lessonsLearned: [
-        "Webhooks are critical for checking payment transactions to avoid client-side spoofing.",
-        "Map markers must be lazy loaded to keep scrolling performance smooth."
       ]
     }
   }

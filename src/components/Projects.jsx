@@ -395,6 +395,22 @@ const Projects = () => {
                  </p>
               </div>
 
+              {/* Impact */}
+              {selectedCaseStudy.caseStudy.impact && (
+                <div style={{ 
+                  marginBottom: '2.5rem', 
+                  background: 'rgba(255, 255, 255, 0.02)', 
+                  borderLeft: '3px solid var(--accent-cyber)', 
+                  padding: '1.5rem', 
+                  borderRadius: '0 8px 8px 0' 
+                }}>
+                   <span style={{ color: 'var(--accent-cyber)', fontFamily: 'var(--font-code)', fontSize: '0.75rem', letterSpacing: '1px', fontWeight: 'bold' }}>[ SHIPPED IMPACT ]</span>
+                   <p style={{ color: '#fff', fontSize: '1rem', lineHeight: 1.6, marginTop: '0.5rem', marginBottom: 0 }}>
+                      {selectedCaseStudy.caseStudy.impact}
+                   </p>
+                </div>
+              )}
+
               {/* Problem / Solution Grid */}
               <div className="modal-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2.5rem' }}>
                  <div style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '10px' }}>
@@ -445,6 +461,35 @@ const Projects = () => {
                     ))}
                  </div>
               </div>
+
+              {/* Technical Highlights */}
+              {selectedCaseStudy.caseStudy.technicalHighlights && (
+                <div style={{ marginBottom: '2.5rem' }}>
+                   <h4 style={{ color: '#fff', fontSize: '1.2rem', fontFamily: 'var(--font-display)', marginBottom: '1rem', letterSpacing: '1px' }}>TECHNICAL HIGHLIGHTS</h4>
+                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', paddingLeft: '1.5rem' }}>
+                      {selectedCaseStudy.caseStudy.technicalHighlights.map((highlight, idx) => (
+                         <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontFamily: 'var(--font-code)', fontSize: '0.9rem' }}>
+                            <span style={{ width: '4px', height: '4px', background: 'var(--accent-cyber)', borderRadius: '50%' }}></span>
+                            <span style={{ color: '#ccc' }}>{highlight}</span>
+                         </div>
+                      ))}
+                   </div>
+                </div>
+              )}
+
+              {/* Focus Areas */}
+              {selectedCaseStudy.caseStudy.focusAreas && (
+                <div style={{ marginBottom: '2.5rem' }}>
+                   <h4 style={{ color: '#fff', fontSize: '1.2rem', fontFamily: 'var(--font-display)', marginBottom: '1rem', letterSpacing: '1px' }}>CORE FOCUS AREAS</h4>
+                   <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap', paddingLeft: '0.5rem' }}>
+                      {selectedCaseStudy.caseStudy.focusAreas.map(focus => (
+                         <span key={focus} style={{ padding: '6px 14px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: '#ccc', fontSize: '0.75rem', letterSpacing: '1px', borderRadius: '40px', textTransform: 'uppercase' }}>
+                           {focus}
+                         </span>
+                      ))}
+                   </div>
+                </div>
+              )}
 
               {/* Lessons Learned */}
               {selectedCaseStudy.caseStudy.lessonsLearned && (

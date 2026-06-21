@@ -4,23 +4,23 @@ const Missions = () => {
   const activeMissions = [
     {
       symbol: "🚀",
-      title: "OpenBridge",
-      role: "AI Onboarding Project",
-      status: "Active Dev",
-      description: "AI-powered open-source onboarding project designed to help beginners bridge the technical gap and contribute cleanly to major packages.",
+      title: "OPENBRIDGE",
+      role: "AI Onboarding Platform",
+      status: "ACTIVE DEVELOPMENT",
+      description: "AI-powered open-source onboarding platform helping developers discover repositories, understand issues, generate contribution roadmaps, discover fellowships, and track contribution progress.",
     },
     {
-      symbol: "🏢",
-      title: "Oneverce",
-      role: "Product Building Initiative",
-      status: "Experimentation Phase",
-      description: "Software and product-building initiative aiming to design modern, functional, and user-centric web applications.",
+      symbol: "💼",
+      title: "TRIPZY",
+      role: "Production Client Delivery",
+      status: "DELIVERED",
+      description: "Production travel booking and itinerary platform built for a tourism business with 15+ years of industry experience. Successfully translated business requirements into a production-ready software solution. Delivered for Oneverce Solutions.",
     },
     {
       symbol: "⚡",
-      title: "Trio Labs",
+      title: "TRIO LABS",
       role: "Student-Led Dev Initiative",
-      status: "Experimentation Phase",
+      status: "EXPERIMENTATION PHASE",
       description: "Student-led development and experimentation initiative focusing on exploring new technologies and deploying practical prototypes.",
     }
   ];

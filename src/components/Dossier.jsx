@@ -20,21 +20,27 @@ const Dossier = () => {
   ];
 
   const journeyLog = [
-    { year: "2024", text: "Started B.Tech AI at Gandhinagar Institute of Technology." },
-    { year: "2024", text: "Began exploring development ecosystems, databases, and APIs." },
-    { year: "2025", text: "Shifted focus to building full-stack projects rather than isolated components." },
-    { year: "2025", text: "Began exploring practical AI-powered application integrations." },
-    { year: "2026", text: "Participated in ADC x GDG Build With AI Ahmedabad, becoming Runner-Up." },
-    { year: "2026", text: "Built OpenBridge, a flagship developer onboarding platform." },
-    { year: "2026", text: "Started experimenting with collaborative product-building initiatives through Oneverce and Trio Labs." }
+    { year: "2024", text: "Started B.Tech Artificial Intelligence." },
+    { year: "2024", text: "Started learning development ecosystems, databases, APIs, and software engineering fundamentals." },
+    { year: "2025", text: "Shifted focus toward full-stack product development." },
+    { year: "2025", text: "Started building AI-powered applications." },
+    { year: "2026", text: "Participated in Build With AI Ahmedabad." },
+    { year: "2026", text: "Built OpenBridge." },
+    { year: "2026", text: "Secured Runner-Up position." },
+    { year: "2026", text: "Acquired first real-world client through Oneverce." },
+    { year: "2026", text: "Delivered Tripzy Travel Platform." },
+    { year: "2026", text: "Transitioned from project-building to production software engineering." }
   ];
 
   const activeMissions = [
-    { label: "Ship OpenBridge publicly", status: false },
+    { label: "Ship OpenBridge Publicly", status: false },
+    { label: "Acquire Client #2", status: false },
     { label: "Contribute to Open Source", status: false },
-    { label: "Strengthen AI fundamentals", status: false },
-    { label: "Improve System Design knowledge", status: false },
-    { label: "Gain real-world engineering experience", status: false }
+    { label: "Strengthen AI Fundamentals", status: false },
+    { label: "Improve System Design Knowledge", status: false },
+    { label: "Prepare for Internship Season", status: false },
+    { label: "Strengthen DSA & Problem Solving", status: false },
+    { label: "Gain Real-World Engineering Experience", status: false }
   ];
 
   return (
@@ -132,13 +138,13 @@ const Dossier = () => {
                         // IDENTITY: POOJAN P. SHRIVASTAV
                       </p>
                       <p>
-                        Current Stage: 5th Semester B.Tech AI Student @ GIT.
-                      </p>
-                      <p>
-                        Most AI students consume theoretical content. Most web developers clone boilerplate projects. Most hackathon participants stop after collecting certificates.
+                        Most projects never leave development. Most ideas never reach real users. Most students stop after tutorials.
                       </p>
                       <p style={{ borderLeft: '2px solid #fff', paddingLeft: '1rem', color: '#fff' }}>
-                        I have focused my trajectory on becoming a Full Stack Developer who enjoys exploring AI models, creating dev tools, and learning through real-world product implementation.
+                        I focus on shipping production software, building AI-powered systems, contributing to open-source ecosystems, and learning through real-world implementation.
+                      </p>
+                      <p>
+                        Recently delivered a production travel booking platform for a tourism business with 15+ years of industry experience and currently building OpenBridge to simplify open-source onboarding for developers.
                       </p>
                       <p style={{ color: '#666', marginTop: '1rem' }}>
                         &gt; CORE_BELIEF: The fastest way to learn is by building.
@@ -158,11 +164,11 @@ const Dossier = () => {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                       <p style={{ color: '#fff', fontWeight: 'bold' }}>// PRIMARY STACK CAPABILITIES</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                        <p><span style={{ color: '#fff' }}>Frontend:</span> React, Next.js, TypeScript, Tailwind CSS</p>
-                        <p><span style={{ color: '#fff' }}>Backend:</span> Node.js, Express.js, REST APIs, Authentication</p>
-                        <p><span style={{ color: '#fff' }}>Databases:</span> MongoDB, Firebase</p>
-                        <p><span style={{ color: '#fff' }}>AI Integrations:</span> Gemini API, OpenAI APIs, Prompt Engineering, LangChain</p>
-                        <p><span style={{ color: '#fff' }}>Developer Tools:</span> Git, GitHub, Postman, Vercel</p>
+                        <p><span style={{ color: '#fff' }}>Frontend:</span> React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS</p>
+                        <p><span style={{ color: '#fff' }}>Backend:</span> Node.js, Express.js, REST APIs, Authentication, WebSockets</p>
+                        <p><span style={{ color: '#fff' }}>Databases:</span> PostgreSQL, MongoDB, Supabase, Firebase, Prisma ORM</p>
+                        <p><span style={{ color: '#fff' }}>AI Systems:</span> Gemini API, OpenAI API, LangChain, Prompt Engineering, Machine Learning, RAG Systems</p>
+                        <p><span style={{ color: '#fff' }}>Developer Tools:</span> Git, GitHub, Prisma ORM, Postman, Vercel, Supabase</p>
                       </div>
                     </div>
                   </motion.div>

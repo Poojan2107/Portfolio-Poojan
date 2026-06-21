@@ -92,12 +92,18 @@ const Hero = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '1rem'
+                  gap: '1rem',
+                  flexWrap: 'wrap'
              }}>
                   <span style={{ color: 'var(--text-secondary)' }}>//</span> 
-                  {PERSONAL_DETAILS.role.split(' & ')[0]} 
-                  <span style={{ color: 'var(--text-secondary)' }}>•</span> 
-                  {PERSONAL_DETAILS.role.split(' & ')[1]}
+                  {PERSONAL_DETAILS.roles.map((role, idx) => (
+                    <span key={idx} style={{ display: 'inline-flex', alignItems: 'center' }}>
+                      {role}
+                      {idx < PERSONAL_DETAILS.roles.length - 1 && (
+                        <span style={{ color: 'var(--text-secondary)', margin: '0 0.8rem' }}>•</span>
+                      )}
+                    </span>
+                  ))}
                   <span style={{ color: 'var(--text-secondary)' }}>//</span>
              </h2>
           </motion.div>
@@ -358,6 +364,64 @@ const Hero = () => {
                  >
                      GET IN TOUCH
                  </motion.a>
+             </div>
+
+             {/* Tactical Metrics Grid */}
+             <div 
+               style={{ 
+                 display: 'grid', 
+                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                 gap: '2.5rem', 
+                 width: '100%', 
+                 maxWidth: '1000px', 
+                 marginTop: '4rem',
+                 borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+                 borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                 padding: '2.5rem 1.5rem',
+                 background: 'rgba(255, 255, 255, 0.01)',
+                 borderRadius: '8px'
+               }}
+               className="metrics-grid"
+             >
+               {[
+                 { value: "RUNNER-UP", label: "Build With AI", desc: "Ahmedabad 2026" },
+                 { value: "01", label: "Production Client Delivery", desc: "Tripzy Platform" },
+                 { value: "03", label: "Major Projects", desc: "Selected & Shipped" },
+                 { value: "B.TECH AI", label: "2024–2028", desc: "GIT Gandhinagar" }
+               ].map((stat, idx) => (
+                 <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', textAlign: 'center' }}>
+                   <span style={{ 
+                     fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', 
+                     fontWeight: '900', 
+                     color: '#fff', 
+                     fontFamily: 'var(--font-display)', 
+                     lineHeight: 1,
+                     letterSpacing: '-1px'
+                   }}>
+                     {stat.value}
+                   </span>
+                   <span style={{ 
+                     fontSize: '0.75rem', 
+                     color: 'var(--accent-primary)', 
+                     fontFamily: 'var(--font-code)', 
+                     letterSpacing: '1px', 
+                     textTransform: 'uppercase', 
+                     fontWeight: 'bold',
+                     marginTop: '0.2rem'
+                   }}>
+                     {stat.label}
+                   </span>
+                   <span style={{ 
+                     fontSize: '0.75rem', 
+                     color: '#555', 
+                     fontFamily: 'var(--font-code)',
+                     textTransform: 'uppercase',
+                     letterSpacing: '1px'
+                   }}>
+                     {stat.desc}
+                   </span>
+                 </div>
+               ))}
              </div>
 
              {/* Scroll Indicator */}
