@@ -26,6 +26,12 @@ const Playbook = () => {
       title: "Execution Mindset",
       subtitle: "Read Docs, Ship Code",
       description: "Learning through building. Diving deep into official documentations, testing assumptions in isolated environments, refactoring relentlessly, and understanding that working software beats perfect theory."
+    },
+    {
+      number: "05",
+      title: "SHIP > PERFECT",
+      subtitle: "Fast Feedback Loops & Delivery",
+      description: "Real users expose more problems than months of planning. The fastest feedback loop is delivery. Production experience creates better engineers than endless planning."
     }
   ];
 
