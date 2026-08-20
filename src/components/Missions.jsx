@@ -3,25 +3,36 @@ import { motion } from 'framer-motion';
 const Missions = () => {
   const activeMissions = [
     {
-      symbol: "🚀",
-      title: "OPENBRIDGE",
-      role: "AI Onboarding Platform",
-      status: "ACTIVE DEVELOPMENT",
-      description: "AI-powered open-source onboarding platform helping developers discover repositories, understand issues, generate contribution roadmaps, discover fellowships, and track contribution progress.",
-    },
-    {
-      symbol: "💼",
-      title: "TRIPZY",
-      role: "Production Client Delivery",
-      status: "DELIVERED",
-      description: "Production travel booking and itinerary platform built for a tourism business with 15+ years of industry experience. Successfully translated business requirements into a production-ready software solution. Delivered for Oneverce Solutions.",
-    },
-    {
       symbol: "⚡",
-      title: "TRIO LABS",
-      role: "Student-Led Dev Initiative",
-      status: "EXPERIMENTATION PHASE",
-      description: "Student-led development and experimentation initiative focusing on exploring new technologies and deploying practical prototypes.",
+      title: "KARYAUP",
+      role: "Developer Intern",
+      status: "PRODUCTION SAAS (~2.5K USERS)",
+      link: "https://karyaup.com",
+      description: "Engineering production AI CRM software, AI voice calling agents, live location tracking attendance systems, and leading an ~80% performance optimization sprint across asset payloads and Nginx real-time AI token streaming.",
+    },
+    {
+      symbol: "🎨",
+      title: "13 UTOPIA",
+      role: "Full Stack Developer",
+      status: "CREATIVE TECH STUDIO",
+      link: "https://github.com/Poojan2107/FormX.git",
+      description: "Architecting high-fidelity web applications, custom brand design systems, and motion-driven interfaces for enterprise clients including FormX Consultants (40+ routes Next.js 16 platform) and Navkar Tubes & Tools.",
+    },
+    {
+      symbol: "🚀",
+      title: "ONEVERCE",
+      role: "Co-Founder & Product Engineer",
+      status: "STARTUP / CLIENT DELIVERY",
+      link: "https://www.onevercesolution.in/",
+      description: "Co-founded Oneverce Systems Studio (onevercesolution.in), engineering high-fidelity digital infrastructure. Shipped Tripzy (travebie.com), an AI travel booking platform with a 19-intent engine, Playwright E2E tests, and PWA capabilities.",
+    },
+    {
+      symbol: "🏆",
+      title: "OPENBRIDGE",
+      role: "AI Open Source Platform",
+      status: "RUNNER-UP AWARD",
+      link: "https://github.com/Poojan2107/OpenBridge",
+      description: "AI-powered open-source onboarding platform helping developers discover repositories, translate issues via Gemini AI SDK, generate custom 4-week roadmaps, and discover GSoC/LFX fellowships. Runner-Up at Build With AI Ahmedabad.",
     }
   ];
 
@@ -76,18 +87,29 @@ const Missions = () => {
 
                {/* Title & Description Container */}
                <div style={{ flex: '1', display: 'flex', flexDirection: 'column', gap: '1rem', minWidth: '300px' }}>
-                  <h3 style={{ 
-                        fontSize: 'clamp(2rem, 4vw, 4rem)', 
-                        fontWeight: '900', 
-                        color: '#fff', 
-                        margin: 0, 
-                        fontFamily: 'var(--font-display)',
-                        letterSpacing: '-2px',
-                        textTransform: 'uppercase',
-                        lineHeight: 1
-                  }}>
-                      {mission.title}
-                  </h3>
+                  <a
+                    href={mission.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <h3 style={{ 
+                          fontSize: 'clamp(2rem, 4vw, 4rem)', 
+                          fontWeight: '900', 
+                          color: '#fff', 
+                          margin: 0, 
+                          fontFamily: 'var(--font-display)',
+                          letterSpacing: '-2px',
+                          textTransform: 'uppercase',
+                          lineHeight: 1,
+                          transition: 'color 0.3s'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'}
+                    onMouseLeave={(e) => e.target.style.color = '#fff'}
+                    >
+                        {mission.title} ↗
+                    </h3>
+                  </a>
                   
                   <p style={{ color: '#888', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '600px', marginTop: '0.5rem' }}>
                      {mission.description}

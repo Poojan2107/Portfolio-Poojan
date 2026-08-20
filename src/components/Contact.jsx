@@ -112,17 +112,64 @@ const Contact = () => {
                <a href={`mailto:${PERSONAL_DETAILS.email}`} style={{ fontSize: '1.5rem', color: '#fff', textDecoration: 'none', position: 'relative', display: 'inline-block', width: 'fit-content' }} className="hover-underline">
                  {PERSONAL_DETAILS.email}
                </a>
-               <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem' }}>
-                   <div>
-                        <div style={{ fontSize: '0.6rem', color: '#444' }}>[ LOCATION ]</div>
-                        <p style={{ fontSize: '1rem', color: '#666' }}>{PERSONAL_DETAILS.location}</p>
-                   </div>
-                   <div>
-                        <div style={{ fontSize: '0.6rem', color: '#444' }}>[ STATUS ]</div>
-                        <p style={{ fontSize: '1rem', color: '#666' }}>OPEN_FOR_COLLAB</p>
-                   </div>
-               </div>
-            </div>
+                <div style={{ display: 'flex', gap: '2rem', marginTop: '1rem' }}>
+                    <div>
+                         <div style={{ fontSize: '0.6rem', color: '#444' }}>[ LOCATION ]</div>
+                         <p style={{ fontSize: '1rem', color: '#666' }}>{PERSONAL_DETAILS.location}</p>
+                    </div>
+                    <div>
+                         <div style={{ fontSize: '0.6rem', color: '#444' }}>[ STATUS ]</div>
+                         <p style={{ fontSize: '1rem', color: '#666' }}>OPEN_FOR_COLLAB</p>
+                    </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+                   <a 
+                     href={PERSONAL_DETAILS.social.github} 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     style={{
+                       display: 'inline-flex',
+                       alignItems: 'center',
+                       gap: '0.6rem',
+                       padding: '0.8rem 1.6rem',
+                       background: 'rgba(10, 16, 28, 0.7)',
+                       border: '1px solid rgba(0, 240, 255, 0.2)',
+                       borderRadius: '30px',
+                       color: '#fff',
+                       textDecoration: 'none',
+                       fontFamily: 'var(--font-code)',
+                       fontSize: '0.85rem',
+                       fontWeight: 'bold',
+                       transition: 'all 0.3s'
+                     }}
+                   >
+                     <FaGithub style={{ color: 'var(--accent-primary)' }} /> GITHUB
+                   </a>
+                   <a 
+                     href={PERSONAL_DETAILS.social.linkedin} 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     style={{
+                       display: 'inline-flex',
+                       alignItems: 'center',
+                       gap: '0.6rem',
+                       padding: '0.8rem 1.6rem',
+                       background: 'rgba(10, 16, 28, 0.7)',
+                       border: '1px solid rgba(0, 240, 255, 0.2)',
+                       borderRadius: '30px',
+                       color: '#fff',
+                       textDecoration: 'none',
+                       fontFamily: 'var(--font-code)',
+                       fontSize: '0.85rem',
+                       fontWeight: 'bold',
+                       transition: 'all 0.3s'
+                     }}
+                   >
+                     <FaLinkedin style={{ color: '#0a66c2' }} /> LINKEDIN
+                   </a>
+                </div>
+             </div>
           </motion.div>
 
           {/* Minimal Form */}

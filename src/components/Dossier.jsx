@@ -12,35 +12,31 @@ const Dossier = () => {
   ];
 
   const currentlyLearning = [
-    "RAG Systems",
-    "AI Agents",
-    "System Design",
-    "Open Source Contribution Workflows",
-    "Production AI Evaluation"
+    "System Design & Scalable Architectures",
+    "Advanced DSA & Continuous Problem Solving",
+    "Autonomous AI Agents & RAG Workflows",
+    "Nginx & Reverse Proxy Streaming Optimization",
+    "Eliminating University Foundation Backlogs (9.23 CGPA)"
   ];
 
   const journeyLog = [
-    { year: "2024", text: "Started B.Tech Artificial Intelligence." },
-    { year: "2024", text: "Started learning development ecosystems, databases, APIs, and software engineering fundamentals." },
-    { year: "2025", text: "Shifted focus toward full-stack product development." },
-    { year: "2025", text: "Started building AI-powered applications." },
-    { year: "2026", text: "Participated in Build With AI Ahmedabad." },
-    { year: "2026", text: "Built OpenBridge." },
-    { year: "2026", text: "Secured Runner-Up position." },
-    { year: "2026", text: "Acquired first real-world client through Oneverce." },
-    { year: "2026", text: "Delivered Tripzy Travel Platform." },
-    { year: "2026", text: "Transitioned from project-building to production software engineering." }
+    { year: "2024", text: "Began B.Tech Artificial Intelligence at Gandhinagar Institute of Technology." },
+    { year: "2024", text: "Mastered full-stack engineering basics: HTML, CSS, JS, React, Node, Express, MongoDB." },
+    { year: "2025", text: "Shifted focus to building production AI applications with Gemini and OpenAI APIs." },
+    { year: "2026", text: "Built OpenBridge & won Runner-Up position at Build With AI Ahmedabad." },
+    { year: "2026", text: "Co-founded Oneverce & delivered Tripzy travel booking platform at travebie.com." },
+    { year: "2026", text: "Joined 13 UTOPIA Pvt. Ltd. as Full Stack Dev building FormX & Navkar web applications." },
+    { year: "2026", text: "Joined KaryaUp as Developer Intern engineering AI CRM for 2,500+ active users." },
+    { year: "2026", text: "Led ~80% production payload optimization sprint (36MB → 6.89MB) and Nginx stream flushing." }
   ];
 
   const activeMissions = [
-    { label: "Ship OpenBridge Publicly", status: false },
-    { label: "Acquire Client #2", status: false },
-    { label: "Contribute to Open Source", status: false },
-    { label: "Strengthen AI Fundamentals", status: false },
-    { label: "Improve System Design Knowledge", status: false },
-    { label: "Prepare for Internship Season", status: false },
-    { label: "Strengthen DSA & Problem Solving", status: false },
-    { label: "Gain Real-World Engineering Experience", status: false }
+    { label: "Scale KaryaUp AI Voice Calling & Location Systems", status: true },
+    { label: "Deliver FormX 40+ Route Next.js 16 Architectural Site", status: true },
+    { label: "Ship Tripzy (travebie.com) 19-Intent AI Engine", status: true },
+    { label: "Clear 4 foundation backlogs while keeping 9.23 CGPA", status: false },
+    { label: "Deepen System Design & Advanced DSA capabilities", status: false },
+    { label: "Target European Master's (Germany) & Product Company Roles", status: false }
   ];
 
   return (
@@ -138,16 +134,16 @@ const Dossier = () => {
                         // IDENTITY: POOJAN P. SHRIVASTAV
                       </p>
                       <p>
-                        Most projects never leave development. Most ideas never reach real users. Most students stop after tutorials.
+                        Full Stack Developer & AI Engineering Student operating simultaneously across product engineering, creative tech studio development, and startup client delivery.
                       </p>
                       <p style={{ borderLeft: '2px solid #fff', paddingLeft: '1rem', color: '#fff' }}>
-                        I focus on shipping production software, building AI-powered systems, contributing to open-source ecosystems, and learning through real-world implementation.
+                        Engineering production SaaS features at KaryaUp (~2,500 active users), architecting enterprise web applications at 13 UTOPIA (FormX Consultants & Navkar Tubes), and co-founding Oneverce (Tripzy / travebie.com).
                       </p>
                       <p>
-                        Recently delivered a production travel booking platform for a tourism business with 15+ years of industry experience and currently building OpenBridge to simplify open-source onboarding for developers.
+                        Maintains a 9.23 CGPA in B.Tech Artificial Intelligence at Gandhinagar Institute of Technology (92.2% 5th sem midterm score across Deep Learning, Computer Vision, Networks, & AI).
                       </p>
                       <p style={{ color: '#666', marginTop: '1rem' }}>
-                        &gt; CORE_BELIEF: The fastest way to learn is by building.
+                        &gt; CORE_BELIEF: Real software is measured by production impact, user volume, and engineering rigor.
                       </p>
                     </div>
                   </motion.div>

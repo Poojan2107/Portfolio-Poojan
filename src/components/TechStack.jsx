@@ -36,49 +36,53 @@ const SkillPill = ({ skill, categoryTitle, isHovered, onMouseEnter, onMouseLeave
         alignItems: 'center', 
         gap: '1rem',
         padding: '1rem 2rem',
-        border: '1px solid rgba(255, 255, 255, 0.1)',
+        border: isHovered ? '1px solid #ffffff' : '1px solid rgba(255, 255, 255, 0.12)',
         borderRadius: '50px',
-        color: '#888',
+        color: isHovered ? '#ffffff' : '#cccccc',
         cursor: 'default',
-        background: 'rgba(0,0,0,0.4)',
-        backdropFilter: 'blur(10px)',
+        background: isHovered ? 'rgba(255, 255, 255, 0.08)' : '#0a0a0a',
+        backdropFilter: 'blur(12px)',
+        boxShadow: isHovered ? '0 0 25px rgba(255, 255, 255, 0.15)' : '0 4px 20px rgba(0,0,0,0.6)',
+        transition: 'border-color 0.3s, background 0.3s, box-shadow 0.3s',
         zIndex: isHovered ? 10 : 1,
         willChange: 'transform'
       }}
     >
-      <div style={{ fontSize: '1.5rem', color: 'var(--accent-primary)' }}>
+      <div style={{ fontSize: '1.5rem', color: '#ffffff', display: 'flex', alignItems: 'center' }}>
         <skill.icon />
       </div>
-      <span style={{ fontSize: '1.2rem', fontWeight: '600', letterSpacing: '1px' }}>
+      <span style={{ fontSize: '1.1rem', fontWeight: '600', letterSpacing: '0.5px', color: '#ffffff' }}>
           {skill.name}
       </span>
 
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, y: -60, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: -65 }}
+            exit={{ opacity: 0, scale: 0.95 }}
             style={{
               position: 'absolute',
               top: 0,
-              left: '10%',
-              background: '#111',
-              border: '1px solid var(--accent-primary)',
-              padding: '8px 12px',
-              borderRadius: '4px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              background: '#0a0a0a',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
+              padding: '12px 16px',
+              borderRadius: '8px',
               zIndex: 100,
               pointerEvents: 'none',
-              width: '240px',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.8)'
+              width: '280px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.95), 0 0 15px rgba(255,255,255,0.08)'
             }}
           >
-             <div style={{ fontFamily: 'var(--font-code)', fontSize: '0.65rem', color: 'var(--accent-primary)', display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <span style={{ opacity: 0.5 }}>// SCANNING_METADATA...</span>
-                <span>TYPE: {categoryTitle.replace(' ', '_').toUpperCase()}</span>
-                <span>USE: {skill.description || 'General Integration'}</span>
-                <span>EFFICIENCY: {(90 + Math.random() * 9).toFixed(1)}%</span>
-                <span>READY: TRUE</span>
+             <div style={{ fontFamily: 'var(--font-code)', fontSize: '0.7rem', color: '#cccccc', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: '#ffffff', fontWeight: 'bold' }}>
+                   <span>// HUD_SCANNER</span>
+                   <span>ACTIVE</span>
+                </div>
+                <div><span style={{ color: '#666666' }}>CATEGORY:</span> {categoryTitle.toUpperCase()}</div>
+                <div><span style={{ color: '#666666' }}>CAPABILITY:</span> {skill.description || 'Production Core'}</div>
              </div>
           </motion.div>
         )}
@@ -91,55 +95,58 @@ const TechStack = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <section id="skills" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0', background: 'var(--bg-secondary)', minHeight: 'auto' }}>
+    <section id="skills" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0', background: 'var(--bg-primary)', minHeight: 'auto' }}>
       <div style={{ position: 'absolute', top: 0, left: '50%', width: '1px', height: '100%', background: 'rgba(255,255,255,0.05)', zIndex: 0 }}></div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1400px', display: 'flex', flexDirection: 'column', gap: '8rem' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
-           <h2 style={{ fontSize: 'clamp(3rem, 8vw, 10rem)', fontWeight: '900', color: '#fff', margin: 0, lineHeight: 0.8, fontFamily: 'var(--font-display)', letterSpacing: '-3px' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1600px' }}>
+        
+        {/* Massive Header */}
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: '2rem', marginBottom: '6rem' }}>
+           <h2 style={{ fontSize: 'clamp(3rem, 8vw, 10rem)', fontWeight: '900', color: '#ffffff', margin: 0, lineHeight: 0.8, fontFamily: 'var(--font-display)', letterSpacing: '-3px' }}>
               ARSENAL
            </h2>
-           <span style={{ fontSize: '1.2rem', color: '#666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ / Capabilities ]</span>
+           <span style={{ fontSize: '1.2rem', color: '#666666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ / Core Tech Capabilities ]</span>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-          {SKILL_CATEGORIES.map((category, index) => (
+        {/* Skill Category Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '4rem' }}>
+          {SKILL_CATEGORIES.map((category, catIdx) => (
             <motion.div 
-              key={category.title}
-              initial={{ opacity: 0, y: 50 }}
+              key={catIdx}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.6, delay: catIdx * 0.1 }}
               style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                <span style={{ fontSize: '2rem', color: '#333', fontWeight: '900', fontFamily: 'var(--font-code)' }}>0{index + 1}</span>
-                <h3 style={{ fontSize: 'clamp(2rem, 4vw, 4rem)', fontWeight: '800', color: '#fff', margin: 0, letterSpacing: '-1px', textTransform: 'uppercase' }}>
+              <div style={{ borderLeft: '3px solid #ffffff', paddingLeft: '1rem' }}>
+                <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-code)', color: '#666666', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                  // CATEGORY 0{catIdx + 1}
+                </span>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '800', color: '#ffffff', fontFamily: 'var(--font-display)', margin: '0.2rem 0 0 0', textTransform: 'uppercase', letterSpacing: '-1px' }}>
                   {category.title}
                 </h3>
               </div>
-              
-              <div style={{ 
-                  display: 'flex', 
-                  flexWrap: 'wrap', 
-                  gap: '1.5rem', 
-                  paddingLeft: 'clamp(1rem, 10vw, 6rem)',
-                  maxWidth: '1200px'
-              }}>
-                {category.skills.map((skill) => (
-                  <SkillPill 
-                    key={skill.name} 
-                    skill={skill} 
-                    categoryTitle={category.title}
-                    isHovered={hoveredSkill === skill.name}
-                    onMouseEnter={() => setHoveredSkill(skill.name)}
-                    onMouseLeave={() => setHoveredSkill(null)}
-                  />
-                ))}
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                {category.skills.map((skill, skillIdx) => {
+                  const skillId = `${catIdx}-${skillIdx}`;
+                  return (
+                    <SkillPill
+                      key={skillIdx}
+                      skill={skill}
+                      categoryTitle={category.title}
+                      isHovered={hoveredSkill === skillId}
+                      onMouseEnter={() => setHoveredSkill(skillId)}
+                      onMouseLeave={() => setHoveredSkill(null)}
+                    />
+                  );
+                })}
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

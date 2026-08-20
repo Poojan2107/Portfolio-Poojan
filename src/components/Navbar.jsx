@@ -96,7 +96,7 @@ const Navbar = () => {
                       top: 0,
                       width: '30px',
                       height: '100%',
-                      background: 'linear-gradient(90deg, transparent, var(--accent-cyber), transparent)',
+                      background: 'linear-gradient(90deg, transparent, #ffffff, transparent)',
                       opacity: 0.3,
                       zIndex: 0,
                       pointerEvents: 'none',

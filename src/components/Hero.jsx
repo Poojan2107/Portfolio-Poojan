@@ -367,28 +367,30 @@ const Hero = () => {
              </div>
 
              {/* Tactical Metrics Grid */}
-             <div 
-               style={{ 
-                 display: 'grid', 
-                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-                 gap: '2.5rem', 
-                 width: '100%', 
-                 maxWidth: '1000px', 
-                 marginTop: '4rem',
-                 borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-                 borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-                 padding: '2.5rem 1.5rem',
-                 background: 'rgba(255, 255, 255, 0.01)',
-                 borderRadius: '8px'
-               }}
-               className="metrics-grid"
-             >
-               {[
-                 { value: "RUNNER-UP", label: "Build With AI", desc: "Ahmedabad 2026" },
-                 { value: "01", label: "Production Client Delivery", desc: "Tripzy Platform" },
-                 { value: "03", label: "Major Projects", desc: "Selected & Shipped" },
-                 { value: "B.TECH AI", label: "2024–2028", desc: "GIT Gandhinagar" }
-               ].map((stat, idx) => (
+              <div 
+                style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', 
+                  gap: '1.5rem', 
+                  width: '100%', 
+                  maxWidth: '1200px', 
+                  marginTop: '4rem',
+                  border: '1px solid rgba(0, 240, 255, 0.15)',
+                  padding: '2.5rem 2rem',
+                  background: 'rgba(8, 14, 26, 0.7)',
+                  backdropFilter: 'blur(20px)',
+                  boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(0, 240, 255, 0.08)',
+                  borderRadius: '16px'
+                }}
+                className="metrics-grid"
+              >
+                {[
+                  { value: "2.5K+", label: "Active CRM Users", desc: "KaryaUp SaaS Internship" },
+                  { value: "9.23", label: "Academic CGPA", desc: "B.Tech Artificial Intelligence" },
+                  { value: "~80%", label: "Payload Optimization", desc: "36MB → 6.89MB Sprint" },
+                  { value: "RUNNER-UP", label: "Build With AI", desc: "OpenBridge Platform" },
+                  { value: "13 UTOPIA", label: "Agency Full Stack", desc: "FormX & Navkar Web Apps" }
+                ].map((stat, idx) => (
                  <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', textAlign: 'center' }}>
                    <span style={{ 
                      fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', 
