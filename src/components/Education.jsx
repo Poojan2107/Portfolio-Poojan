@@ -61,7 +61,10 @@ const Education = () => {
                   </h3>
                   
                   <p style={{ color: '#888', fontSize: '1.2rem', lineHeight: 1.6, maxWidth: '600px', marginTop: '1rem' }}>
-                     Gandhinagar Institute of Technology
+                     Gandhinagar Institute of Technology — <span style={{ color: '#fff', fontWeight: 'bold' }}>CGPA: 9.23</span>
+                  </p>
+                  <p style={{ color: '#aaa', fontSize: '0.95rem', fontFamily: 'var(--font-code)', lineHeight: 1.6, maxWidth: '700px' }}>
+                    AA-level distinction across core AI/CS subjects: Artificial Intelligence, Machine Learning, Deep Learning (30/30 Midterm), Computer Vision (30/30 Midterm), Computer Networks (29/30 Midterm), Operating Systems, DBMS, & DSA.
                   </p>
                </div>
             </motion.div>

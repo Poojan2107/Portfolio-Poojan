@@ -5,33 +5,33 @@ const Playbook = () => {
   const principles = [
     {
       number: "01",
-      title: "AI Integration",
-      subtitle: "Structured Schemas & Fallbacks",
-      description: "Designing deterministic interfaces on top of probabilistic LLMs. Relying on strict JSON schema validation, structured outputs, and redundant fallback models to ensure stability in production systems."
+      title: "Real-Time AI Streaming",
+      subtitle: "Proxy Flushing & Whitespace Guards",
+      description: "Intermediate CDN & Nginx proxies often buffer LLM streams. Flushing 1KB whitespace padding forces instant proxy chunk delivery, ensuring sub-second token-by-token streaming UI response."
     },
     {
       number: "02",
-      title: "Security At Rest",
-      subtitle: "Token Encryption & Webhooks",
-      description: "Never hardcoding secrets. Encrypting API keys at rest using industry-standard cryptography, routing third-party events securely through backend webhooks, and enforcing tight CORS controls."
+      title: "Payload Engineering",
+      subtitle: "Asset Compression & Bundle Decoupling",
+      description: "Performance is an essential feature. Downscaling assets to WebP, removing dead script overhead, and decoupling heavy 3D vendor libraries dropped payload size by 80% (36MB to 6.89MB) on KaryaUp."
     },
     {
       number: "03",
-      title: "UX Speed",
-      subtitle: "Asset Optimization & Pre-rendering",
-      description: "Treating performance as a core feature. Delivering content instantly through static pre-rendering, modern asset formats, lazy loading, and aggressive cache management to maintain sub-100ms load times."
+      title: "Domain-Tailored UX",
+      subtitle: "Proof Architecture & Specification Tools",
+      description: "Architecture must match domain psychology. Using S3M proof structures for FormX architectural consulting, interactive pipe calculators for industrial buyers at Navkar, and 19 intent patterns for Tripzy."
     },
     {
       number: "04",
-      title: "Execution Mindset",
-      subtitle: "Read Docs, Ship Code",
-      description: "Learning through building. Diving deep into official documentations, testing assumptions in isolated environments, refactoring relentlessly, and understanding that working software beats perfect theory."
+      title: "Resilient Fallbacks",
+      subtitle: "Local Data & Offline Guards",
+      description: "Production software cannot fail when network links degrade. Building JSON local fallbacks for cloud databases (MongoDB Atlas) and offline error boundaries ensures uninterrupted user experiences."
     },
     {
       number: "05",
-      title: "SHIP > PERFECT",
-      subtitle: "Fast Feedback Loops & Delivery",
-      description: "Real users expose more problems than months of planning. The fastest feedback loop is delivery. Production experience creates better engineers than endless planning."
+      title: "Production Delivery",
+      subtitle: "Real Users > Tutorial Clones",
+      description: "Shipping production software to 2,500+ active users teaches real engineering: debugging race conditions, cross-browser audits across 58 files, and measuring code by user volume and business impact."
     }
   ];
 
