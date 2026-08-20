@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import ReactiveBackground from './components/ReactiveBackground';
 import HeroicIntro from './components/HeroicIntro';
 import CustomCursor from './components/CustomCursor';
+import ResumeModal from './components/ResumeModal';
 import { PERSONAL_DETAILS } from './constants';
 
 const SectionBrackets = () => {
@@ -58,6 +59,7 @@ const SectionBrackets = () => {
 function App() {
   const [activeTech, setActiveTech] = useState(null);
   const [showIntro, setShowIntro] = useState(true);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
     const originalTitle = document.title;
@@ -97,7 +99,8 @@ function App() {
               }}></div>
 
               <CustomCursor />
-              <Navbar />
+              <Navbar onOpenResume={() => setIsResumeOpen(true)} />
+              <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
               
               {/* Left Persistent Socials */}
               <motion.div 
@@ -157,7 +160,7 @@ function App() {
               </motion.div>
 
               <div style={{ position: 'relative' }}>
-                <Hero />
+                <Hero onOpenResume={() => setIsResumeOpen(true)} />
               </div>
 
               <div style={{ position: 'relative' }}>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ onOpenResume }) => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -24,11 +24,16 @@ const Navbar = () => {
     { name: 'MISSIONS', href: '#missions' },
     { name: 'ARCHIVE', href: '#projects' },
     { name: 'PLAYBOOK', href: '#playbook' },
+    { name: 'RESUME', href: '#resume', isAction: true },
     { name: 'CONTACT', href: '#contact' },
   ];
 
-  const scrollToSection = (e, href) => {
+  const scrollToSection = (e, href, isAction) => {
     e.preventDefault();
+    if (isAction && onOpenResume) {
+      onOpenResume();
+      return;
+    }
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
     if (element) {
@@ -142,7 +147,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
+                onClick={(e) => scrollToSection(e, link.href, link.isAction)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 style={{

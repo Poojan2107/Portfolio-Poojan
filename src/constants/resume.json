@@ -1,0 +1,97 @@
+{
+  "basics": {
+    "name": "Poojan Palakkumar Shrivastav",
+    "label": "Full Stack Developer | AI Engineering Student | Product Engineer",
+    "email": "poojanshrivastav21@gmail.com",
+    "phone": "+91 9023362134",
+    "location": "Ahmedabad, Gujarat",
+    "website": "https://portfolio-poojan.vercel.app",
+    "profiles": {
+      "linkedin": "https://www.linkedin.com/in/poojanshrivastav21/",
+      "github": "https://github.com/Poojan2107"
+    },
+    "summary": "Full Stack Developer and Artificial Intelligence student with experience building production web applications, SaaS platforms, and AI integrations. Proficient in React, Next.js, Node.js, TypeScript, PostgreSQL, and cloud services. Demonstrated experience optimizing website performance, developing custom analytics systems, and shipping software for active users."
+  },
+  "skills": {
+    "languages": ["TypeScript", "JavaScript (ES6+)", "Python", "C++", "C"],
+    "frontend": ["React 19", "Next.js 16", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion", "Radix UI", "Vite"],
+    "backend": ["Node.js", "Express.js", "RESTful APIs", "WebSockets", "Nginx", "Serverless"],
+    "databases_cloud": ["PostgreSQL", "MongoDB Atlas", "Supabase", "Prisma ORM", "AWS S3", "CloudFront CDN", "Firebase"],
+    "ai_ml": ["Large Language Models (LLMs)", "Generative AI Integration", "Conversational AI & Voice Agents", "Intent Classification", "RAG Architecture", "Scikit-Learn"],
+    "tools_qa": ["Git", "GitHub", "Playwright E2E Testing", "Progressive Web Apps (PWA)", "Postman", "Vercel"]
+  },
+  "experience": [
+    {
+      "company": "13 UTOPIA / KaryaUp",
+      "position": "Full Stack Developer & Developer Intern",
+      "period": "June 2026 – Present",
+      "location": "Ahmedabad, Gujarat",
+      "bullets": [
+        "Built a first-party analytics system with real client IP geolocation tracking and bot filtering to display accurate user traffic metrics for 2,500+ users.",
+        "Developed an IP-based automatic currency switcher to display pricing in INR for users in India and USD for international visitors.",
+        "Reduced website payload size by 80% (36 MB to 6.89 MB) by migrating media files from MongoDB Atlas to AWS S3 and CloudFront CDN.",
+        "Optimized database queries by requesting only required card fields, resolving admin panel loading delays.",
+        "Integrated an AI voice calling feature and configured Nginx proxy settings to enable real-time streaming responses.",
+        "Architected and built FormX Consultants (formxconsultants.com), a 40+ page architectural consulting platform using Next.js 16, React 19, TypeScript, and Tailwind CSS.",
+        "Built Navkar Tubes & Tools (navkar-tubes-and-pipes.vercel.app), a web platform for a Jindal steel pipe distributor featuring an interactive pipe weight calculator and backend APIs."
+      ]
+    },
+    {
+      "company": "Oneverce Solutions",
+      "position": "Co-Founder & Product Engineer",
+      "period": "June 2026 – Present",
+      "location": "Ahmedabad, Gujarat",
+      "bullets": [
+        "Co-founded studio and shipped Tripzy / Travebie (travebie.com), an AI travel booking platform featuring a 19-intent classification engine and 18 interactive chat cards.",
+        "Wrote automated Playwright end-to-end test suites to validate user booking flows and API endpoints.",
+        "Configured Progressive Web App (PWA) offline support and developed an administrator mobile app using React Native."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "KaryaUp AI CRM & Analytics System",
+      "period": "June 2026 – Present",
+      "link": "https://karyaup.com",
+      "tech": "React, Node.js, MongoDB Atlas, AWS S3, CloudFront, Express, Tailwind CSS",
+      "description": "Implemented first-party analytics, automated bot filtering, AWS S3 image hosting, and dynamic currency switching for a platform with 2,500+ active users."
+    },
+    {
+      "name": "OpenBridge — AI Open Source Onboarding Platform",
+      "period": "May 2026 – Present",
+      "link": "https://openbridge-in.vercel.app",
+      "tech": "Next.js, TypeScript, Generative AI, GitHub GraphQL API, MongoDB, OAuth",
+      "description": "Earned Runner-Up at the Build With AI Hackathon 2026. Developed repository recommendation algorithms and 4-week contribution roadmaps."
+    },
+    {
+      "name": "Tripzy / Travebie — AI Travel Platform",
+      "period": "June 2026 – Present",
+      "link": "https://www.travebie.com",
+      "tech": "Next.js, TypeScript, Generative AI, PostgreSQL, Supabase, Prisma ORM, Playwright E2E",
+      "description": "Developed an AI travel application with intent detection, structured UI card rendering, Playwright automated testing, and PWA support."
+    },
+    {
+      "name": "FormX Consultants — Architectural Web Platform",
+      "period": "June 2026 – Present",
+      "link": "https://formxconsultants.com",
+      "tech": "Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion",
+      "description": "Built a 40+ page web application with sector matrices, project galleries, and responsive design systems."
+    },
+    {
+      "name": "Navkar Tubes & Tools — Steel Pipe Procurement Platform",
+      "period": "June 2026 – Present",
+      "link": "https://navkar-tubes-and-pipes.vercel.app",
+      "tech": "React 19, Vite 7, Radix UI, Express.js, Zod, Vercel",
+      "description": "Built a B2B web platform featuring an interactive pipe weight calculation tool, product catalog, and serverless backend APIs."
+    }
+  ],
+  "education": {
+    "institution": "Gandhinagar Institute of Technology",
+    "degree": "B.Tech in Artificial Intelligence",
+    "period": "2024 – 2028"
+  },
+  "achievements": [
+    "Runner-Up — Build With AI Hackathon 2026: Awarded by Google Developer Groups (GDG) & Ahmedabad Developer Club (ADC) for OpenBridge platform.",
+    "Production Deployment: Developed features deployed on software serving 2,500+ active business users connected with Startup India and GUSEC."
+  ]
+}
