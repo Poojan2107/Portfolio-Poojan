@@ -1,0 +1,202 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Poojan Palakkumar Shrivastav
+% Based on: Jake's Resume Template (Gold Standard for Software Engineers)
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% Page formatting
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\vline height 1.5pt width \linewidth \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemList}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemList}}
+\newcommand{\resumeItemListStart}{\begin{itemList}}
+\newcommand{\resumeItemListEnd}{\end{itemList}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Poojan Palakkumar Shrivastav} \\ \vspace{4pt}
+    \small Full Stack Developer $|$ AI Engineering Student $|$ Product Engineer \\ \vspace{3pt}
+    \small +91 9023362134 $|$ \href{mailto:poojanshrivastav21@gmail.com}{\underline{poojanshrivastav21@gmail.com}} $|$ Ahmedabad, Gujarat \\ \vspace{3pt}
+    \small \href{https://www.linkedin.com/in/poojanshrivastav21/}{\underline{linkedin.com/in/poojanshrivastav21}} $|$ 
+    \href{https://github.com/Poojan2107}{\underline{github.com/Poojan2107}} $|$ 
+    \href{https://portfolio-poojan.vercel.app/}{\underline{portfolio-poojan.vercel.app}}
+\end{center}
+
+
+%-----------SUMMARY-----------
+\section{Professional Summary}
+\small{Full Stack Developer and Artificial Intelligence student with experience building production web applications, SaaS platforms, and AI integrations. Proficient in React, Next.js, Node.js, TypeScript, PostgreSQL, and cloud services. Demonstrated experience optimizing website performance, developing custom analytics systems, and shipping software for active users.}
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: TypeScript, JavaScript (ES6+), Python, C++, C} \\
+     \textbf{Frontend Development}{: React 19, Next.js 16, HTML5, CSS3, Tailwind CSS, Framer Motion, Radix UI, Vite} \\
+     \textbf{Backend \& Infrastructure}{: Node.js, Express.js, RESTful APIs, WebSockets, Reverse Proxies (Nginx), Serverless} \\
+     \textbf{Databases \& Cloud}{: PostgreSQL, MongoDB Atlas, Supabase, Prisma ORM, AWS (S3, CloudFront CDN), Firebase} \\
+     \textbf{AI \& Machine Learning}{: Large Language Models (LLMs), Generative AI Integration, Conversational AI, RAG, Scikit-Learn} \\
+     \textbf{Tools \& QA}{: Git, GitHub, Playwright E2E Testing, Progressive Web Apps (PWA), Postman, Vercel}
+    }}
+ \end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {13 UTOPIA / KaryaUp}{June 2026 -- Present}
+      {Full Stack Developer \& Developer Intern}{Ahmedabad, Gujarat}
+      \resumeItemListStart
+        \resumeItem{\textbf{KaryaUp (In-House SaaS CRM -- 2,500+ Active Users):} Built a first-party analytics system with real client IP geolocation tracking and bot filtering to display accurate user traffic metrics.}
+        \resumeItem{Developed an IP-based automatic currency switcher to display pricing in INR for users in India and USD for international visitors.}
+        \resumeItem{Reduced website payload size by 80\% (36 MB to 6.89 MB) by migrating media files from MongoDB Atlas to AWS S3 and CloudFront CDN.}
+        \resumeItem{Optimized database queries by requesting only required card fields, resolving admin panel loading delays.}
+        \resumeItem{Integrated an AI voice calling feature and configured Nginx proxy settings to enable real-time streaming responses.}
+        \resumeItem{\textbf{13 UTOPIA (Client Web Engineering):} Architected and built \textbf{FormX Consultants} (\href{https://formxconsultants.com}{\underline{formxconsultants.com}}), a 40+ page architectural consulting platform using Next.js 16, React 19, TypeScript, and Tailwind CSS.}
+        \resumeItem{Built \textbf{Navkar Tubes \& Tools} (\href{https://navkar-tubes-and-pipes.vercel.app}{\underline{navkar-tubes-and-pipes.vercel.app}}), a web platform for a Jindal steel pipe distributor featuring an interactive pipe weight calculator and backend APIs.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Oneverce Solutions}{June 2026 -- Present}
+      {Co-Founder \& Product Engineer}{Ahmedabad, Gujarat}
+      \resumeItemListStart
+        \resumeItem{Co-founded studio and shipped \textbf{Tripzy / Travebie} (\href{https://www.travebie.com}{\underline{travebie.com}}), an AI travel booking platform featuring a 19-intent classification engine and 18 interactive chat cards.}
+        \resumeItem{Wrote automated Playwright end-to-end test suites to validate user booking flows and API endpoints.}
+        \resumeItem{Configured Progressive Web App (PWA) offline support and developed an administrator mobile app using React Native.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Key Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{KaryaUp AI CRM \& Analytics System} $|$ \emph{React, Node.js, AWS S3, CloudFront, Express, MongoDB}}{June 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Implemented first-party analytics, automated bot filtering, AWS S3 image hosting, and dynamic currency switching for a platform with 2,500+ active users (\href{https://karyaup.com}{\underline{karyaup.com}}).}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{OpenBridge -- AI Open Source Onboarding Platform} $|$ \emph{Next.js, TypeScript, Generative AI, GitHub API}}{May 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Earned \textbf{Runner-Up} at the Build With AI Hackathon 2026. Developed repository recommendation algorithms and 4-week contribution roadmaps (\href{https://openbridge-in.vercel.app}{\underline{openbridge-in.vercel.app}}).}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Tripzy / Travebie -- AI Travel Platform} $|$ \emph{Next.js, TypeScript, Generative AI, PostgreSQL, Supabase, Prisma}}{June 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Developed an AI travel application with intent detection, structured UI card rendering, Playwright automated testing, and PWA support (\href{https://www.travebie.com}{\underline{travebie.com}}).}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{FormX Consultants -- Architectural Web Platform} $|$ \emph{Next.js 16, React 19, TypeScript, Tailwind, Framer Motion}}{June 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Built a 40+ page web application with sector matrices, project galleries, and responsive design systems (\href{https://formxconsultants.com}{\underline{formxconsultants.com}}).}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Navkar Tubes \& Tools -- Steel Pipe Procurement Platform} $|$ \emph{React 19, Vite 7, Radix UI, Express.js, Zod}}{June 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Built a B2B web platform featuring an interactive pipe weight calculation tool, product catalog, and serverless backend APIs (\href{https://navkar-tubes-and-pipes.vercel.app}{\underline{navkar-tubes-and-pipes.vercel.app}}).}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Gandhinagar Institute of Technology}{2024 -- 2028}
+      {B.Tech in Artificial Intelligence}{}
+  \resumeSubHeadingListEnd
+
+
+%-----------HONORS & ACHIEVEMENTS-----------
+\section{Honors \& Achievements}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Runner-Up -- Build With AI Hackathon 2026}{: Awarded by Google Developer Groups (GDG) \& Ahmedabad Developer Club (ADC) for OpenBridge platform.} \\
+     \textbf{Production Deployment}{: Developed features deployed on software serving 2,500+ active business users connected with Startup India and GUSEC.}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
