@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { PERSONAL_DETAILS, SOCIAL_PROOF_BADGES } from '../constants';
 
-const Hero = () => {
+const Hero = ({ onOpenResume }) => {
   return (
     <section id="home" style={{ 
       minHeight: '100vh', /* Shrunk vertically just a bit to pull next section closer */
@@ -275,28 +275,27 @@ const Hero = () => {
                  flexWrap: 'wrap',
                  justifyContent: 'center'
              }}>
-                 <motion.a
-                     href="/resume.pdf"
-                     download
-                     whileHover={{ scale: 1.05, backgroundColor: '#fff', color: '#000' }}
-                     whileTap={{ scale: 0.95 }}
-                     style={{
-                         padding: '0.8rem 2rem',
-                         background: 'transparent',
-                         border: '1px solid #fff',
-                         borderRadius: '30px',
-                         color: '#fff',
-                         fontSize: '0.85rem',
-                         fontWeight: 'bold',
-                         fontFamily: 'var(--font-code)',
-                         letterSpacing: '1px',
-                         textDecoration: 'none',
-                         cursor: 'pointer',
-                         transition: 'background 0.3s, color 0.3s'
-                     }}
-                 >
-                     DOWNLOAD RESUME
-                 </motion.a>
+                  <motion.button
+                      onClick={onOpenResume}
+                      whileHover={{ scale: 1.05, backgroundColor: '#fff', color: '#000' }}
+                      whileTap={{ scale: 0.95 }}
+                      style={{
+                          padding: '0.8rem 2rem',
+                          background: 'transparent',
+                          border: '1px solid #fff',
+                          borderRadius: '30px',
+                          color: '#fff',
+                          fontSize: '0.85rem',
+                          fontWeight: 'bold',
+                          fontFamily: 'var(--font-code)',
+                          letterSpacing: '1px',
+                          textDecoration: 'none',
+                          cursor: 'pointer',
+                          transition: 'background 0.3s, color 0.3s'
+                      }}
+                  >
+                      VIEW RESUME / PRINT PDF
+                  </motion.button>
                  <motion.a
                      href={PERSONAL_DETAILS.social.github}
                      target="_blank"
