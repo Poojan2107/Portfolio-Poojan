@@ -8,13 +8,12 @@ export const PERSONAL_DETAILS = {
     "Full Stack Developer @ 13 UTOPIA",
     "Developer Intern @ KaryaUp (~2.5K Users)",
     "Co-Founder & Builder @ Oneverce",
-    "B.Tech AI Student @ GIT (9.23 CGPA)"
+    "B.Tech AI Student @ GIT"
   ],
   bio: "Building production SaaS software, AI voice agents, scalable full-stack applications, and high-performance agency web platforms across product, startup, and client environments.",
   email: "poojanshrivastav21@gmail.com",
   phone: "+91 9023362134",
   location: "Ahmedabad, Gujarat",
-  cgpa: "9.23",
   social: {
     linkedin: "https://www.linkedin.com/in/poojanshrivastav21/",
     github: "https://github.com/Poojan2107",
@@ -26,7 +25,7 @@ export const SOCIAL_PROOF_BADGES = [
   { text: "🎨 Full Stack Developer @ 13 UTOPIA (FormX & Navkar)", category: "status" },
   { text: "🚀 Co-Founder @ Oneverce (Tripzy / Travebie)", category: "role" },
   { text: "🏆 Build With AI Ahmedabad — Runner-Up", category: "award" },
-  { text: "🎓 B.Tech AI — 9.23 CGPA (92.2% Midterm)", category: "academic" }
+  { text: "🎓 B.Tech AI — Gandhinagar Institute of Technology", category: "academic" }
 ];
 
 export const SKILL_CATEGORIES = [

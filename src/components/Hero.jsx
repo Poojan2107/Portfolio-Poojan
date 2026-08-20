@@ -386,7 +386,7 @@ const Hero = () => {
               >
                 {[
                   { value: "2.5K+", label: "Active CRM Users", desc: "KaryaUp SaaS Internship" },
-                  { value: "9.23", label: "Academic CGPA", desc: "B.Tech Artificial Intelligence" },
+                  { value: "5+ APPS", label: "Production Shipped", desc: "SaaS, Agency & AI Products" },
                   { value: "~80%", label: "Payload Optimization", desc: "36MB → 6.89MB Sprint" },
                   { value: "RUNNER-UP", label: "Build With AI", desc: "OpenBridge Platform" },
                   { value: "13 UTOPIA", label: "Agency Full Stack", desc: "FormX & Navkar Web Apps" }

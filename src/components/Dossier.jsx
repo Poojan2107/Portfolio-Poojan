@@ -16,11 +16,11 @@ const Dossier = () => {
     "Advanced DSA & Continuous Problem Solving",
     "Autonomous AI Agents & RAG Workflows",
     "Nginx & Reverse Proxy Streaming Optimization",
-    "Eliminating University Foundation Backlogs (9.23 CGPA)"
+    "High-Performance Production Engineering"
   ];
 
   const journeyLog = [
-    { year: "2024", text: "Began B.Tech Artificial Intelligence at Gandhinagar Institute of Technology." },
+    { year: "2024", text: "Began B.Tech Artificial Intelligence degree." },
     { year: "2024", text: "Mastered full-stack engineering basics: HTML, CSS, JS, React, Node, Express, MongoDB." },
     { year: "2025", text: "Shifted focus to building production AI applications with Gemini and OpenAI APIs." },
     { year: "2026", text: "Built OpenBridge & won Runner-Up position at Build With AI Ahmedabad." },
@@ -34,9 +34,8 @@ const Dossier = () => {
     { label: "Scale KaryaUp AI Voice Calling & Location Systems", status: true },
     { label: "Deliver FormX 40+ Route Next.js 16 Architectural Site", status: true },
     { label: "Ship Tripzy (travebie.com) 19-Intent AI Engine", status: true },
-    { label: "Clear 4 foundation backlogs while keeping 9.23 CGPA", status: false },
     { label: "Deepen System Design & Advanced DSA capabilities", status: false },
-    { label: "Target European Master's (Germany) & Product Company Roles", status: false }
+    { label: "Target Product Company Roles & Master's Programs", status: false }
   ];
 
   return (
@@ -138,9 +137,6 @@ const Dossier = () => {
                       </p>
                       <p style={{ borderLeft: '2px solid #fff', paddingLeft: '1rem', color: '#fff' }}>
                         Engineering production SaaS features at KaryaUp (~2,500 active users), architecting enterprise web applications at 13 UTOPIA (FormX Consultants & Navkar Tubes), and co-founding Oneverce (Tripzy / travebie.com).
-                      </p>
-                      <p>
-                        Maintains a 9.23 CGPA in B.Tech Artificial Intelligence at Gandhinagar Institute of Technology (92.2% 5th sem midterm score across Deep Learning, Computer Vision, Networks, & AI).
                       </p>
                       <p style={{ color: '#666', marginTop: '1rem' }}>
                         &gt; CORE_BELIEF: Real software is measured by production impact, user volume, and engineering rigor.
