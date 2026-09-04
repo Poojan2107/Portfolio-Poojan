@@ -286,7 +286,7 @@ const Projects = () => {
                       transition: 'all 0.3s'
                     }}
                   >
-                    CASE STUDY & ARCHITECTURE
+                    Case study
                   </button>
                   <a href={flagshipProject.github} target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.25)', transition: 'all 0.3s' }}>
                     <FaGithub />
@@ -419,7 +419,7 @@ const Projects = () => {
                     padding: 0
                   }}
                 >
-                  EXPLORE ARCHITECTURE <FaArrowRight size={10} />
+                  View case study <FaArrowRight size={10} />
                 </button>
 
                 <div style={{ display: 'flex', gap: '0.8rem' }}>
@@ -505,7 +505,7 @@ const Projects = () => {
               {/* Modal Header */}
               <div style={{ marginBottom: '2.5rem' }}>
                 <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.75rem', color: '#ffffff', letterSpacing: '2px', textTransform: 'uppercase' }}>
-                  [ DEEP ARCHITECTURE CASE STUDY ]
+                  Case study
                 </span>
                 <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: '900', color: '#ffffff', fontFamily: 'var(--font-display)', margin: '0.5rem 0 0 0', textTransform: 'uppercase', letterSpacing: '-1px' }}>
                   {selectedCaseStudy.title}
