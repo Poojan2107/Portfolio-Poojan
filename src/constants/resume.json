@@ -2,15 +2,15 @@
   "basics": {
     "name": "Poojan Shrivastav",
     "label": "Full Stack Developer • AI Engineering Student",
-    "email": "",
-    "phone": "",
+    "email": "poojanshrivastav21@gmail.com",
+    "phone": "+91 9023362134",
     "location": "Ahmedabad, Gujarat",
     "website": "https://portfolio-poojan.vercel.app",
     "profiles": {
       "linkedin": "https://www.linkedin.com/in/poojanshrivastav21/",
       "github": "https://github.com/Poojan2107"
     },
-    "summary": "B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028). Dual Developer Intern under one organization: KaryaUp (company SaaS) and 13 UTOPIA (digital agency). On KaryaUp, joined an existing marketing MVP in Jul 2026 and became primary engineering contributor (~96% post-join commits). On 13 UTOPIA, built FormX, AIA, and Navkar client platforms from scratch and shipped the agency portal. Separately runs a college freelancing side hustle (Oneverce / Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
+    "summary": "Third-year B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028). Dual Developer Intern under one organization: KaryaUp (company SaaS) and 13 UTOPIA (digital agency). On KaryaUp, joined an existing marketing MVP in Jul 2026 and became primary engineering contributor (~96% post-join commits), shipping Analytics HQ, S3/CloudFront, Vercel migration, and KAI productionization. On 13 UTOPIA, built FormX, AIA, and Navkar from scratch and shipped the agency portal. Separately runs a college freelancing side hustle (Oneverce / Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
   },
   "skills": {
     "languages": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL", "Python", "C++"],
@@ -38,8 +38,8 @@
       "period": "2026 – Present",
       "location": "Ahmedabad",
       "bullets": [
-        "College freelancing venture with a friend (separate from internship): shipped Travebie (travebie.com), an AI travel platform with a 19-intent engine and 18 dynamic chat card UI components.",
-        "Added Playwright E2E coverage across booking/planner flows and PWA offline caching with a React Native admin companion."
+        "College freelancing venture with a friend (separate from internship): shipped Travebie (travebie.com), an AI travel platform with a 19-intent engine and 18 chat card UI components.",
+        "Added Playwright E2E coverage across booking/planner flows and PWA offline caching with a React Native admin companion. Live access currently paused pending client payment."
       ]
     }
   ],
@@ -80,18 +80,18 @@
       "description": "Agency production portal: Awwwards-style mobile menu, accessible H1 SEO, EISDIR build fixes, Vercel static deploy."
     },
     {
-      "name": "Travebie — AI Travel Platform",
-      "period": "2026 – Present",
-      "link": "https://www.travebie.com",
-      "tech": "Next.js, TypeScript, Gemini AI SDK, PostgreSQL, Supabase, Prisma, Playwright",
-      "description": "College freelancing side hustle (Oneverce). 19 intent patterns, 18 chat cards, Playwright E2E, PWA."
-    },
-    {
       "name": "OpenBridge — AI Open Source Onboarding",
       "period": "2026",
       "link": "https://openbridge-in.vercel.app",
       "tech": "Next.js, TypeScript, Gemini AI SDK, GitHub GraphQL, MongoDB",
       "description": "Runner-Up at Build With AI Ahmedabad. Repo matching, issue translation, and 4-week contribution roadmaps."
+    },
+    {
+      "name": "Travebie — AI Travel Platform",
+      "period": "2026 – Present",
+      "link": "https://www.travebie.com",
+      "tech": "Next.js, TypeScript, Gemini AI SDK, PostgreSQL, Supabase, Prisma, Playwright",
+      "description": "College freelancing side hustle (Oneverce). 19 intent patterns, 18 chat cards, Playwright E2E, PWA. Access paused pending client payment."
     }
   ],
   "education": {

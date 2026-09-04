@@ -101,7 +101,7 @@ const Projects = () => {
         id="projects" 
         style={{ 
             position: 'relative', 
-            padding: '10rem 0', 
+            padding: 'clamp(4rem, 10vw, 10rem) 0', 
             background: 'var(--bg-primary)', 
             overflow: 'hidden',
             minHeight: 'auto',

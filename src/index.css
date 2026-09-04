@@ -137,14 +137,18 @@ body {
   .container {
     padding: 0 2rem;
   }
+
+  .modal-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
   
-  .project-drawer-grid, .modal-grid-2 {
+  .project-drawer-grid, .modal-grid-2, .modal-grid-3 {
     grid-template-columns: 1fr !important;
   }
 
@@ -157,4 +161,36 @@ body {
     align-items: flex-start !important;
     gap: 1.5rem !important;
   }
+
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  /* Keep oversized section titles readable on phones */
+  section h2 {
+    letter-spacing: -1px !important;
+  }
+
+  .side-rail {
+    display: none !important;
+  }
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

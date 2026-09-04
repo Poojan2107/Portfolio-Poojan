@@ -180,9 +180,9 @@ ${resumeData.achievements.map(a => `• ${a}`).join('\n')}
             </div>
             {(resumeData.basics.email || resumeData.basics.phone || resumeData.basics.location) && (
               <div style={{ fontSize: '8.5pt', color: '#444444', marginTop: '4px', display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
-                {resumeData.basics.email && <span>✉ {resumeData.basics.email}</span>}
-                {resumeData.basics.phone && <span>📞 {resumeData.basics.phone}</span>}
-                {resumeData.basics.location && <span>📍 {resumeData.basics.location}</span>}
+                {resumeData.basics.email && <span>{resumeData.basics.email}</span>}
+                {resumeData.basics.phone && <span>{resumeData.basics.phone}</span>}
+                {resumeData.basics.location && <span>{resumeData.basics.location}</span>}
               </div>
             )}
             <div style={{ fontSize: '8.5pt', color: '#111111', marginTop: '3px', display: 'flex', flexWrap: 'wrap', gap: '1rem', fontWeight: '600' }}>
