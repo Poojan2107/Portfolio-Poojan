@@ -26,11 +26,23 @@ const ARCHITECTURE_TOPOLOGIES = {
     { step: '03', title: 'Branded Mega Menu Portals', desc: 'Portal routing for 12 sector matrices, 10 service lines & 9 project cases' },
     { step: '04', title: 'S3M Proof Architecture', desc: 'Proof → People → Process → Peers content psychology conversion framework' }
   ],
+  'AIA Engineering': [
+    { step: '01', title: 'Figma → Present Homepage', desc: 'Lock section plates, hero mill film, mega menu, and industrial offerings' },
+    { step: '02', title: 'Motion & Metrics', desc: 'Reveal transitions, MetricGauge, counters, and film-backed storytelling' },
+    { step: '03', title: 'Client Review Prototypes', desc: 'Dual orange/blue palettes for stakeholder choice before final Present ship' },
+    { step: '04', title: 'Production Hardening', desc: 'Typecheck cleanup, viewport layout fixes, drop unused Gallery overlays' }
+  ],
   'Navkar Tubes & Tools': [
     { step: '01', title: 'Industrial Authority UI', desc: 'React 19, Vite 7 & Radix UI primitives with Deep Teal #0A1628 palette' },
     { step: '02', title: 'Interactive Procurement Tools', desc: 'Pipe weight calculator, MTC inspection search & Jindal authorization proof' },
     { step: '03', title: 'Bracketed Section Typography', desc: '[ PROVEN ADVANTAGE ] & [ TECHNICAL INSPECTION ] specification UI' },
     { step: '04', title: 'Express Serverless Backend', desc: 'Vercel API routing with JSONL inquiry logging and Zod schema validation' }
+  ],
+  '13 UTOPIA Portal': [
+    { step: '01', title: 'Static Agency Portal', desc: 'Multi-page production site with relative links and clean Vercel static deploy' },
+    { step: '02', title: 'Awwwards Mobile Nav', desc: 'Fullscreen menu, accordion Services, capture-phase toggle, tablet breakpoints' },
+    { step: '03', title: 'On-Page SEO', desc: 'Accessible H1 per page + metadata for crawler-visible structure' },
+    { step: '04', title: 'Build Path Remediation', desc: 'Convert directory hrefs to index.html to eliminate EISDIR build failures' }
   ],
   'OpenBridge': [
     { step: '01', title: 'Onboarding Companion UI', desc: 'Next.js frontend with skill profiling and repository matching tools' },
@@ -56,7 +68,7 @@ const Projects = () => {
       return project.title.includes('KaryaUp') || project.title.includes('Travebie');
     }
     if (activeFilter === 'AGENCY & CLIENT WEB') {
-      return project.title.includes('FormX') || project.title.includes('Navkar');
+      return project.title.includes('FormX') || project.title.includes('AIA') || project.title.includes('Navkar') || project.title.includes('13 UTOPIA');
     }
     if (activeFilter === 'OPEN SOURCE & FINTECH') {
       return project.title.includes('OpenBridge') || project.title.includes('NeuralCredit');

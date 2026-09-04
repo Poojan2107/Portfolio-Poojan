@@ -10,7 +10,7 @@
       "linkedin": "https://www.linkedin.com/in/poojanshrivastav21/",
       "github": "https://github.com/Poojan2107"
     },
-    "summary": "B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028). Developer Intern at KaryaUp: joined an existing marketing MVP in Jul 2026 and became the primary engineering contributor on karyaUp_Website (~96% of post-join commits), shipping Analytics HQ, S3/CloudFront media, Vercel migration, KAI streaming/Agent productionization, geo pricing, and SPA SEO. Also Full Stack at 13 UTOPIA across client products (FormX, Navkar, AIA, and more) and Co-Founder at Oneverce (Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
+    "summary": "B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028). Dual Developer Intern under one organization: KaryaUp (company SaaS) and 13 UTOPIA (digital agency). On KaryaUp, joined an existing marketing MVP in Jul 2026 and became primary engineering contributor (~96% post-join commits). On 13 UTOPIA, built FormX, AIA, and Navkar client platforms from scratch and shipped the agency portal. Separately runs a college freelancing side hustle (Oneverce / Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
   },
   "skills": {
     "languages": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL", "Python", "C++"],
@@ -22,34 +22,23 @@
   },
   "experience": [
     {
-      "company": "KaryaUp",
-      "position": "Developer Intern",
-      "period": "Jul 2026 – Present",
-      "location": "Ahmedabad",
-      "bullets": [
-        "Joined KaryaUp in Jul 2026 on an existing website MVP; became primary engineering contributor on karyaUp_Website (~96% of commits after join; prior phase ~166 commits by other authors).",
-        "Built net-new production systems: first-party Analytics HQ (geo + bot filtering), blog media MongoDB→S3/CloudFront, Vercel SPA migration/deep links, and live app-mock chrome replacing static screenshots.",
-        "Productionized KAI chatbot/Agent (1KB proxy stream flush, timeouts/fallbacks, silk/particle UX, mobile tour) and hardened homepage/mobile after GSAP and React 19 production failures.",
-        "Shipped IP geo pricing (INR/USD), SPA crawl SEO (canonicals, prerender, sitemap), lean blog list projections, and PageSpeed/TBT work while restoring visuals when deferrals went too far."
-      ]
-    },
-    {
-      "company": "13 UTOPIA Pvt. Ltd.",
-      "position": "Full Stack Developer",
+      "company": "KaryaUp / 13 UTOPIA",
+      "position": "Developer Intern (Dual Track)",
       "period": "2026 – Present",
       "location": "Ahmedabad",
       "bullets": [
-        "Delivered FormX Consultants — 40+ route Next.js 16 / React 19 architectural consulting platform with a custom brand design system.",
-        "Built Navkar Tubes & Tools — industrial B2B site with interactive pipe weight calculator, MTC inspection UI, and Express serverless inquiry APIs."
+        "Dual internship in one organization: KaryaUp SaaS product engineering + 13 UTOPIA digital agency client delivery.",
+        "KaryaUp (SaaS): joined Jul 2026 on an existing website MVP; became primary engineering contributor (~96% of post-join commits). Built Analytics HQ, S3/CloudFront media, Vercel SPA migration; productionized KAI, homepage, geo pricing, and SPA SEO.",
+        "13 UTOPIA (Agency): built FormX, AIA, and Navkar client platforms from scratch; also shipped the 13 UTOPIA agency portal (mobile nav, SEO, Vercel static deploy)."
       ]
     },
     {
-      "company": "Oneverce",
+      "company": "Oneverce (College Side Hustle)",
       "position": "Co-Founder & Product Engineer",
       "period": "2026 – Present",
       "location": "Ahmedabad",
       "bullets": [
-        "Shipped Travebie (travebie.com), an AI travel booking platform with a 19-intent engine and 18 dynamic chat card UI components.",
+        "College freelancing venture with a friend (separate from internship): shipped Travebie (travebie.com), an AI travel platform with a 19-intent engine and 18 dynamic chat card UI components.",
         "Added Playwright E2E coverage across booking/planner flows and PWA offline caching with a React Native admin companion."
       ]
     }
@@ -60,28 +49,42 @@
       "period": "Jul 2026 – Present",
       "link": "https://karyaup.com",
       "tech": "React 19, Node.js, MongoDB Atlas, AWS S3, CloudFront, Vite, Vercel",
-      "description": "Joined existing MVP Jul 2026; primary post-join contributor (~96%). Analytics HQ, S3/CDN, Vercel migration, KAI productionization, geo pricing, SPA SEO — acceleration of a live product, not greenfield creation of the whole site."
-    },
-    {
-      "name": "Travebie — AI Travel Platform",
-      "period": "2026 – Present",
-      "link": "https://www.travebie.com",
-      "tech": "Next.js, TypeScript, Gemini AI SDK, PostgreSQL, Supabase, Prisma, Playwright",
-      "description": "19 intent patterns, 18 chat card components, Playwright E2E, PWA offline caching, Schema.org SEO."
+      "description": "Company SaaS track. Joined existing MVP Jul 2026; primary post-join contributor (~96%). Analytics HQ, S3/CDN, Vercel migration, KAI productionization, geo pricing, SPA SEO."
     },
     {
       "name": "FormX Consultants — Architectural Web Platform",
       "period": "2026",
       "link": "https://formxconsultants.com",
       "tech": "Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion",
-      "description": "40+ page enterprise site with 12 sector matrices, custom typography system, and branded mega-menu portals."
+      "description": "13 UTOPIA agency client — built from scratch. 40+ page enterprise site with custom brand system and mega-menu portals."
+    },
+    {
+      "name": "AIA Engineering — Industrial Showcase",
+      "period": "2026",
+      "link": "https://github.com/Poojan2107/Aia",
+      "tech": "Next.js, React, Figma Implementation, Motion, Video",
+      "description": "13 UTOPIA agency client — built from scratch. Figma-faithful Present homepage with hero films, Reveal motion, and dual-palette client review."
     },
     {
       "name": "Navkar Tubes & Tools — B2B Procurement Platform",
       "period": "2026",
       "link": "https://navkar-tubes-and-pipes.vercel.app",
       "tech": "React 19, Express.js, Vite, Radix UI, Zod, Vercel",
-      "description": "Industrial procurement UI with pipe weight calculator and serverless Express inquiry logging."
+      "description": "13 UTOPIA agency client — built from scratch. Pipe weight calculator, serverless inquiry APIs, SEO/sitemap launch hardening."
+    },
+    {
+      "name": "13 UTOPIA Portal — Agency Site",
+      "period": "2026",
+      "link": "https://github.com/13utopia/13utopia",
+      "tech": "Static Site, Responsive Nav, SEO, Vercel",
+      "description": "Agency production portal: Awwwards-style mobile menu, accessible H1 SEO, EISDIR build fixes, Vercel static deploy."
+    },
+    {
+      "name": "Travebie — AI Travel Platform",
+      "period": "2026 – Present",
+      "link": "https://www.travebie.com",
+      "tech": "Next.js, TypeScript, Gemini AI SDK, PostgreSQL, Supabase, Prisma, Playwright",
+      "description": "College freelancing side hustle (Oneverce). 19 intent patterns, 18 chat cards, Playwright E2E, PWA."
     },
     {
       "name": "OpenBridge — AI Open Source Onboarding",
@@ -98,6 +101,6 @@
   },
   "achievements": [
     "Runner-Up — Build With AI Ahmedabad (OpenBridge), Google for Developers ecosystem.",
-    "Shipped production features on live SaaS and client platforms across KaryaUp, 13 UTOPIA, and Oneverce."
+    "Dual-track intern shipping company SaaS (KaryaUp) and greenfield agency clients (FormX, AIA, Navkar)."
   ]
 }

@@ -387,7 +387,7 @@ const Hero = ({ onOpenResume }) => {
                   { value: "~96%", label: "Post-Join Ownership", desc: "154 / 160 KaryaUp commits" },
                   { value: "MVP→PROD", label: "KaryaUp Arc", desc: "Inherited site, primary contributor" },
                   { value: "TRAVEBIE", label: "Live AI Product", desc: "19-Intent Engine Shipped" },
-                  { value: "FORMX+", label: "Client Platforms", desc: "FormX & Navkar @ 13 UTOPIA" },
+                  { value: "FORMX+", label: "Agency Clients", desc: "FormX · AIA · Navkar (scratch)" },
                   { value: "RUNNER-UP", label: "Build With AI", desc: "OpenBridge Platform" }
                 ].map((stat, idx) => (
                  <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', textAlign: 'center' }}>

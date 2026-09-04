@@ -23,18 +23,19 @@ const Dossier = () => {
     { year: "2024", text: "Started B.Tech in Artificial Intelligence at Gandhinagar Institute of Technology (2024–2028)." },
     { year: "2024–25", text: "Built full-stack foundations: React, Node, Express, MongoDB, and early AI API integrations." },
     { year: "2026 Q2–Q3", text: "Shipped OpenBridge — Runner-Up at Build With AI Ahmedabad." },
-    { year: "2026 Q2–Q3", text: "Co-founded Oneverce and launched Travebie (travebie.com) with a 19-intent AI engine." },
-    { year: "2026 Q2–Q3", text: "Joined 13 UTOPIA — delivered FormX Consultants and Navkar Tubes & Tools." },
-    { year: "2026 Jul–Sep", text: "Developer Intern @ KaryaUp — joined existing MVP; became primary web contributor (~96% post-join commits)." },
-    { year: "2026 NOW", text: "Owning productionization: Analytics HQ, S3/CDN, KAI Agent, PageSpeed/TBT, Vercel — next: deeper storage architecture." }
+    { year: "2026 Q2–Q3", text: "College side hustle: Oneverce with a friend — launched Travebie (travebie.com)." },
+    { year: "2026", text: "Joined as Developer Intern — dual track: KaryaUp (SaaS) + 13 UTOPIA (agency clients)." },
+    { year: "2026", text: "Agency track: built FormX, AIA, and Navkar from scratch; shipped 13 UTOPIA portal." },
+    { year: "2026 Jul–Sep", text: "SaaS track @ KaryaUp — inherited MVP → primary web contributor (~96% post-join commits)." },
+    { year: "2026 NOW", text: "Owning productionization on KaryaUp; continue client delivery on 13 UTOPIA." }
   ];
 
   const activeMissions = [
-    { label: "Scale KaryaUp AI Voice Calling & Analytics HQ", status: true },
-    { label: "FormX 40+ routes + Navkar procurement platform — shipped", status: true },
-    { label: "Travebie (travebie.com) 19-intent AI engine — live", status: true },
+    { label: "Dual intern — KaryaUp SaaS + 13 UTOPIA agency", status: true },
+    { label: "FormX · AIA · Navkar — greenfield client builds shipped", status: true },
+    { label: "Travebie — college freelancing side hustle (live)", status: true },
     { label: "Deepen System Design & Advanced DSA", status: false },
-    { label: "Target product-based software engineering internships", status: false }
+    { label: "Target product-based software engineering roles", status: false }
   ];
 
   return (
@@ -132,10 +133,10 @@ const Dossier = () => {
                         // IDENTITY: POOJAN P. SHRIVASTAV
                       </p>
                       <p>
-                        B.Tech AI student (GIT, 2024–2028) building production full-stack and AI software across internship, studio, and startup lanes.
+                        B.Tech AI student (GIT, 2024–2028). Dual internship under one organization: KaryaUp (company SaaS) + 13 UTOPIA (digital agency clients). Separate college freelancing side hustle: Oneverce / Travebie.
                       </p>
                       <p style={{ borderLeft: '2px solid #fff', paddingLeft: '1rem', color: '#fff' }}>
-                        Last 2–3 months: Developer Intern @ KaryaUp (joined MVP → primary web contributor, ~96% post-join commits), Full Stack @ 13 UTOPIA (FormX, Navkar, AIA, Rayon, Plus X, Geet), Co-Founder @ Oneverce (Travebie), Runner-Up with OpenBridge.
+                        Now: KaryaUp primary web contributor (~96% post-join) · 13 UTOPIA greenfield clients FormX, AIA, Navkar + agency portal · Oneverce side hustle (Travebie) · OpenBridge Runner-Up.
                       </p>
                       <p style={{ color: '#666', marginTop: '1rem' }}>
                         &gt; CORE_BELIEF: Real software is measured by production impact and shipping, not demos.

@@ -19,7 +19,7 @@ const Playbook = () => {
       number: "03",
       title: "Domain-Tailored UX",
       subtitle: "Proof Architecture & Specification Tools",
-      description: "Architecture must match domain psychology. Using S3M proof structures for FormX architectural consulting, interactive pipe calculators for industrial buyers at Navkar, and 19 intent patterns for Travebie."
+      description: "Architecture must match domain psychology. S3M proof structures for FormX, Figma-faithful film/motion for AIA, pipe calculators for Navkar, and 19 intent patterns for Travebie (side hustle)."
     },
     {
       number: "04",
