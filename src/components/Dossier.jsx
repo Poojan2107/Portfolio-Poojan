@@ -25,8 +25,8 @@ const Dossier = () => {
     { year: "2026 Q2–Q3", text: "Shipped OpenBridge — Runner-Up at Build With AI Ahmedabad." },
     { year: "2026 Q2–Q3", text: "Co-founded Oneverce and launched Travebie (travebie.com) with a 19-intent AI engine." },
     { year: "2026 Q2–Q3", text: "Joined 13 UTOPIA — delivered FormX Consultants and Navkar Tubes & Tools." },
-    { year: "2026 Q2–Q3", text: "Developer Intern @ KaryaUp — Analytics HQ, S3/CloudFront CDN, AI voice calling." },
-    { year: "2026 NOW", text: "Led ~80% payload optimization sprint (36MB → 6.89MB) and Nginx AI token-stream flushing." }
+    { year: "2026 Jul–Sep", text: "Developer Intern @ KaryaUp — 170 commits on karyaUp_Website (KAI streaming, Analytics HQ, CDN, SEO, Vercel)." },
+    { year: "2026 NOW", text: "Continuing KaryaUp production: PageSpeed/TBT, KAI Agent, geo pricing, and live SaaS hardening." }
   ];
 
   const activeMissions = [
@@ -135,7 +135,7 @@ const Dossier = () => {
                         B.Tech AI student (GIT, 2024–2028) building production full-stack and AI software across internship, studio, and startup lanes.
                       </p>
                       <p style={{ borderLeft: '2px solid #fff', paddingLeft: '1rem', color: '#fff' }}>
-                        Last 2–3 months: Developer Intern @ KaryaUp (analytics, CDN, AI voice, 80% payload cut), Full Stack @ 13 UTOPIA (FormX & Navkar), Co-Founder @ Oneverce (Travebie), Runner-Up with OpenBridge.
+                        Last 2–3 months: Developer Intern @ KaryaUp (170 commits Jul–Sep on karyaUp_Website), Full Stack @ 13 UTOPIA (FormX & Navkar), Co-Founder @ Oneverce (Travebie), Runner-Up with OpenBridge.
                       </p>
                       <p style={{ color: '#666', marginTop: '1rem' }}>
                         &gt; CORE_BELIEF: Real software is measured by production impact and shipping, not demos.

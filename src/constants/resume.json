@@ -10,7 +10,7 @@
       "linkedin": "https://www.linkedin.com/in/poojanshrivastav21/",
       "github": "https://github.com/Poojan2107"
     },
-    "summary": "B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028) shipping production full-stack and AI products. Currently Developer Intern at KaryaUp (analytics, CDN migration, AI voice calling, ~80% payload optimization), Full Stack Developer at 13 UTOPIA (FormX Consultants & Navkar Tubes), and Co-Founder at Oneverce (Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
+    "summary": "B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028) shipping production full-stack and AI products. Developer Intern at KaryaUp with 170 commits on karyaUp_Website (Jul–Sep 2026): KAI streaming, Analytics HQ, S3/CloudFront, geo pricing, PageSpeed/TBT, SPA SEO, Vercel migration. Also Full Stack at 13 UTOPIA (FormX & Navkar) and Co-Founder at Oneverce (Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
   },
   "skills": {
     "languages": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL", "Python", "C++"],
@@ -24,13 +24,14 @@
     {
       "company": "KaryaUp",
       "position": "Developer Intern",
-      "period": "2026 – Present",
+      "period": "Jul 2026 – Present",
       "location": "Ahmedabad",
       "bullets": [
-        "Built first-party Analytics HQ with IP geolocation telemetry and automated bot filtering for a live business SaaS platform.",
-        "Cut initial payload ~80% (36 MB → 6.89 MB) by migrating media from MongoDB Atlas to AWS S3 + CloudFront CDN and trimming vendor bundles.",
-        "Implemented IP-based geo pricing (INR / USD) and Nginx reverse-proxy streaming with 1KB whitespace flush for real-time AI token delivery.",
-        "Shipped AI voice calling agent features and projected lean MongoDB schemas that unblocked admin list hangs."
+        "Authored 170 production commits on KaryaUp/karyaUp_Website (Jul 7–Sep 2, 2026) across AI streaming, analytics, performance, SEO, and hosting migration.",
+        "Hardened KAI chatbot streaming with 1KB reverse-proxy flush, timeouts/abort signals, voice engines, and suggestion-chip UX.",
+        "Built first-party Analytics HQ (client-IP geo, demographics, bot filtering) and IP-based INR/USD geo pricing for live visitors.",
+        "Migrated blog media MongoDB → AWS S3/CloudFront; unblocked admin lists with projected lean card queries; ran PageSpeed/TBT optimization without gutting visuals.",
+        "Fixed SPA crawl SEO (canonicals, prerender, sitemaps), shipped KAI Agent surfaces, and migrated deep-link hosting from Render to Vercel."
       ]
     },
     {
@@ -56,11 +57,11 @@
   ],
   "projects": [
     {
-      "name": "KaryaUp AI CRM & Analytics System",
-      "period": "2026 – Present",
+      "name": "KaryaUp AI CRM & Marketing Platform",
+      "period": "Jul 2026 – Present",
       "link": "https://karyaup.com",
-      "tech": "MongoDB Atlas, Express.js, React, Node.js, AWS S3, CloudFront, Tailwind CSS",
-      "description": "First-party analytics engine, bot filtering, S3/CloudFront asset delivery, geo pricing, AI voice calling, and ~80% payload optimization."
+      "tech": "React 19, Node.js, MongoDB Atlas, AWS S3, CloudFront, Vite, Vercel",
+      "description": "170 commits (Jul–Sep 2026): KAI streaming, Analytics HQ, geo pricing, S3/CloudFront, lean blog queries, PageSpeed/TBT, SPA SEO, KAI Agent, Vercel migration."
     },
     {
       "name": "Travebie — AI Travel Platform",

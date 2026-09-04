@@ -21,7 +21,7 @@ export const PERSONAL_DETAILS = {
 };
 
 export const SOCIAL_PROOF_BADGES = [
-  { text: "Developer Intern @ KaryaUp — Analytics, CDN & AI Voice", category: "status" },
+  { text: "Developer Intern @ KaryaUp — 170 commits (Jul–Sep 2026)", category: "status" },
   { text: "Full Stack @ 13 UTOPIA — FormX & Navkar shipped", category: "status" },
   { text: "Co-Founder @ Oneverce — Travebie (travebie.com)", category: "role" },
   { text: "Build With AI Ahmedabad — Runner-Up (OpenBridge)", category: "award" },
@@ -94,60 +94,60 @@ export const SKILL_CATEGORIES = [
 export const PROJECTS = [
   {
     title: 'KaryaUp AI CRM',
-    subtitle: 'Production AI CRM, Analytics Engine & Optimization Sprint',
-    status: 'In Production',
-    problem: 'Enterprise SaaS platform needed first-party traffic analytics, IP-based international pricing, cloud asset migration (S3/CloudFront), AI voice calling, and a major TBT/payload optimization cleanup.',
-    solution: 'Engineered a custom First-Party Analytics HQ platform with IP geolocation & bot filtering, IP-based geo-pricing (INR vs USD), migrated MongoDB media to AWS S3/CloudFront CDN, optimized database queries with projected lean schemas, built AI voice calling agents, and executed an ~80% payload optimization sprint.',
-    tags: ['React', 'Node.js', 'MongoDB Atlas', 'AWS S3/CloudFront', 'Analytics Engine', 'AI Voice Agent', 'IP Geo Pricing', 'TailwindCSS'],
+    subtitle: 'Production SaaS — 170 commits on karyaUp_Website (Jul 7 → Sep 2, 2026)',
+    status: 'In Production · Developer Intern',
+    problem: 'Live business SaaS needed production-grade KAI chatbot streaming, first-party analytics, IP geo pricing, blog/media CDN migration, SPA SEO, mobile stability, and a sustained PageSpeed/TBT optimization campaign without gutting visuals.',
+    solution: 'Over ~8 weeks shipped 170 commits across KAI streaming (1KB proxy flush), Analytics HQ + bot filtering, INR/USD geo pricing, MongoDB→S3/CloudFront, lean blog projections, SPA crawl SEO/prerender, KAI Agent experience, and Render→Vercel migration.',
+    tags: ['React 19', 'Node.js', 'MongoDB Atlas', 'AWS S3/CloudFront', 'Analytics HQ', 'KAI Agent', 'IP Geo Pricing', 'Vercel'],
     github: 'https://github.com/KaryaUp/karyaUp_Website.git',
     live: 'https://karyaup.com',
     image: '/assets/karyaup_crm.png',
     metrics: {
-      "Users": "Active Business Users",
-      "Analytics": "Built First-Party Analytics HQ",
+      "Commits": "170 (Jul 7 – Sep 2, 2026)",
+      "Analytics": "First-Party Analytics HQ",
       "Media CDN": "MongoDB → AWS S3 + CloudFront",
       "Geo Pricing": "Auto INR / USD ($20 Pro)",
-      "Optimization": "80% Payload Drop (36MB → 6.89MB)",
-      "Role": "Full Stack MERN Engineer"
+      "Optimization": "PageSpeed · TBT · ~80% payload cut",
+      "Role": "Developer Intern"
     },
     highlights: [
-      "Engineered First-Party Analytics HQ Engine featuring real client IP geolocation, demographic telemetry, & bot filtering",
-      "Implemented IP-Based Dynamic Currency Engine automatically serving INR in India and USD ($20 Pro) globally",
-      "Migrated blog media storage from MongoDB documents to AWS S3 + CloudFront CDN for instant asset delivery",
-      "Optimized MongoDB query payloads by projecting lean card fields, unblocking heavy blog admin list loads",
-      "Built AI Voice Calling Agent & interactive live feature mocks (Salary/Calendar/Attendance mock state controllers)",
-      "Executed 80% payload optimization sprint (36MB → 6.89MB), Three.js vendor reduction (879KB → 550KB), & TBT reduction via deferred hydration",
-      "Solved Cloudflare/Nginx proxy buffering using 1KB whitespace padding for instant streaming token delivery",
-      "Fixed SPA crawl SEO: unique canonical URLs per route, prerendered pricing/demo pages, & dynamic sitemap dates"
+      "170 production commits on KaryaUp/karyaUp_Website from Jul 7–Sep 2, 2026 (internship trail)",
+      "Hardened KAI chatbot streaming: 1KB whitespace proxy flush, abort/timeouts, voice engines, suggestion chips",
+      "Built First-Party Analytics HQ with real client-IP geo, demographics, and bot/junk filtering",
+      "Shipped IP-based geo pricing (INR in India, USD internationally; Pro $20)",
+      "Migrated blog images MongoDB → AWS S3/CloudFront; fixed admin hangs with projected lean card queries",
+      "PageSpeed/TBT sprint: deferred i18n hydrate, route CSS split, critical-path cuts while restoring full visuals",
+      "SPA crawl SEO: unique canonicals, prerendered pricing/demo, sitemap dates, Helmet title dedupe",
+      "Shipped KAI Agent experience (particles/silk hero, Calling page) and migrated hosting Render → Vercel SPA"
     ],
     caseStudy: {
-      summary: "Full stack MERN software engineering on KaryaUp, an active business CRM connected with Startup India and GUSEC.",
-      problem: "Oversized database payloads blocked admin dashboards, media assets overloaded MongoDB, international visitors saw incorrect local pricing, and heavy payloads (36 MB) slowed page loads.",
-      solution: "Engineered first-party analytics, IP-based geo pricing, S3/CloudFront asset migration, projected lean DB queries, AI voice calling, and a full performance engineering sprint.",
-      research: "Analyzed network waterfalls, client IP headers, database query execution times, and reverse-proxy streaming behaviors across Nginx and Cloudflare CDN layers.",
-      architecture: "React frontend with live mock state controllers, Express backend connected to MongoDB Atlas & AWS S3/CloudFront, and Nginx reverse proxy configured for 1KB whitespace token streaming.",
-      challenges: "Oversized full-HTML payloads hanging the blog admin list, which was solved by restructuring queries into projected card metadata.",
+      summary: "Developer Intern on KaryaUp — 170 commits in eight weeks shipping production marketing SaaS, AI streaming, analytics, and performance work for a live Startup India / GUSEC-connected product.",
+      problem: "Chat streams buffered behind proxies, blog admin hung on full-HTML payloads, media lived in MongoDB, pricing ignored visitor geography, SPA SEO collapsed to homepage canonicals, and mobile/GSAP pins caused white voids and crashes.",
+      solution: "Iterated in production: streaming flush + chatbot stability, Analytics HQ, geo pricing, S3/CloudFront, lean DB projections, SEO prerender, homepage/mobile hardening, KAI Agent UI, and Vercel deep-link fallbacks.",
+      research: "Debugged network waterfalls, Cloudflare/Nginx buffering, React 19 chunk order, GSAP pin blank screens, PageSpeed TBT, and real client-IP headers for geo accuracy.",
+      architecture: "React 19 + Vite marketing/app shell, Express/MongoDB Atlas, AWS S3/CloudFront media, first-party analytics pipeline, KAI streaming with 1KB padding, Vercel SPA rewrites after Render migration.",
+      challenges: "Balancing PageSpeed cuts against visual fidelity; Team Solutions GSAP pin white voids required multiple production rollbacks and sticky/scrub redesigns; blog seed resurfacing after deploys.",
       roadmap: [
-        "Scale AI voice calling workflow triggers",
-        "Expand first-party demographic analytics dashboards",
-        "Enhance real-time team collaboration channels"
+        "Scale KAI voice calling workflow triggers",
+        "Expand Analytics HQ demographic dashboards",
+        "Continue affiliate program and pricing packaging"
       ],
       lessonsLearned: [
-        "Projecting lean card metadata instead of full HTML payloads prevents database admin hangs.",
-        "AWS S3 + CloudFront CDN migration drastically reduces database memory footprint and speeds up image delivery.",
-        "1KB whitespace padding overcomes reverse-proxy buffering for real-time AI token streaming."
+        "1KB whitespace padding forces reverse proxies to flush AI tokens immediately.",
+        "Projecting lean card fields beats shipping full HTML blobs to admin lists.",
+        "Performance work that guts visuals gets reverted — measure TBT without deleting the product."
       ],
       technicalHighlights: [
-        "First-Party Analytics HQ Engine",
-        "IP-Based Dynamic Currency Pricing",
-        "AWS S3 & CloudFront Media CDN",
-        "Projected Lean Database Queries",
-        "AI Voice Calling Agent",
-        "80% Payload Optimization (36MB → 6.89MB)",
-        "Nginx 1KB Streaming Flush Strategy",
-        "SPA Crawl SEO & Prerendering Engine"
+        "170-commit internship trail (Jul–Sep 2026)",
+        "KAI streaming + 1KB proxy flush",
+        "First-Party Analytics HQ + bot filter",
+        "IP geo pricing (INR / USD)",
+        "S3/CloudFront media CDN",
+        "Lean MongoDB list projections",
+        "PageSpeed / TBT optimization sprint",
+        "SPA SEO prerender + Vercel migration"
       ],
-      impact: "Accelerated platform response times, eliminated admin load hangs, automated global pricing, and delivered production features to active users."
+      impact: "Stabilized live SaaS UX on mobile and desktop, unblocked blog admin, enabled accurate first-party analytics and regional pricing, and kept shipping KAI Agent features through a hosting migration."
     }
   },
   {

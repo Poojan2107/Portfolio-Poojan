@@ -8,7 +8,7 @@ const Missions = () => {
       role: "Developer Intern",
       status: "NOW · PRODUCTION SAAS",
       link: "https://karyaup.com",
-      description: "Shipping production AI CRM features: first-party Analytics HQ, IP geo pricing, MongoDB → AWS S3/CloudFront migration, AI voice calling, and an ~80% payload sprint (36MB → 6.89MB) with Nginx token-stream flushing.",
+      description: "170 commits on karyaUp_Website (Jul 7–Sep 2, 2026): KAI chatbot streaming + 1KB proxy flush, Analytics HQ + bot filter, INR/USD geo pricing, MongoDB→S3/CloudFront, lean blog queries, PageSpeed/TBT sprint, SPA SEO, KAI Agent UI, Render→Vercel migration.",
     },
     {
       symbol: "🎨",

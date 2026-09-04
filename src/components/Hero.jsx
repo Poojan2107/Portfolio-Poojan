@@ -384,8 +384,8 @@ const Hero = ({ onOpenResume }) => {
                 className="metrics-grid"
               >
                 {[
-                  { value: "KARYAUP", label: "Developer Intern", desc: "Analytics · CDN · AI Voice" },
-                  { value: "~80%", label: "Payload Cut", desc: "36MB → 6.89MB Sprint" },
+                  { value: "170", label: "KaryaUp Commits", desc: "Jul 7 → Sep 2, 2026" },
+                  { value: "~80%", label: "Payload Cut", desc: "PageSpeed · TBT Sprint" },
                   { value: "TRAVEBIE", label: "Live AI Product", desc: "19-Intent Engine Shipped" },
                   { value: "FORMX+", label: "Client Platforms", desc: "FormX & Navkar @ 13 UTOPIA" },
                   { value: "RUNNER-UP", label: "Build With AI", desc: "OpenBridge Platform" }
