@@ -206,8 +206,8 @@ export const PROJECTS = [
     solution: 'Built the AIA portal from scratch for 13 UTOPIA — pixel-aligned Figma sections, hero/about films, Reveal motion, MetricGauge, dual-palette client review prototypes, and production typecheck/layout hardening.',
     tags: ['Next.js', 'React', 'Figma Implementation', 'Motion', 'Video/Film', 'Responsive'],
     github: 'https://github.com/Poojan2107/Aia.git',
-    live: 'https://github.com/Poojan2107/Aia',
-    image: '/assets/oneverce_studio.png',
+    live: 'https://aia-engineering.vercel.app/',
+    image: '/assets/aia_engineering.jpg',
     metrics: {
       "Ownership": "Built from scratch",
       "Fidelity": "Figma → Present product",
@@ -304,8 +304,8 @@ export const PROJECTS = [
     solution: 'Shipped the 13 UTOPIA agency portal — Awwwards-style fullscreen mobile menu, accordion services nav, responsive typography, hidden accessible H1s per page, vercel.json routing, and large-scale static href fixes for clean builds.',
     tags: ['Static Site', 'Responsive', 'SEO', 'Vercel', 'Mobile Nav'],
     github: 'https://github.com/13utopia/13utopia',
-    live: 'https://github.com/13utopia/13utopia',
-    image: '/assets/oneverce_studio.png',
+    live: 'https://13-utopia.vercel.app/',
+    image: '/assets/13utopia_portal.png',
     metrics: {
       "Surface": "Agency portal",
       "Nav": "Awwwards-style mobile menu",
@@ -357,6 +357,7 @@ export const PROJECTS = [
     metrics: {
       "Domain": "travebie.com",
       "Lane": "College freelancing",
+      "Studio": "oneverce-solutions.vercel.app",
       "AI Engine": "19 Intent Patterns",
       "QA": "Playwright E2E"
     },

@@ -15,7 +15,7 @@ const Missions = () => {
       title: "13 UTOPIA",
       role: "Developer Intern · Agency Track",
       status: "NOW · CLIENT DELIVERY",
-      link: "https://formxconsultants.com/",
+      link: "https://13-utopia.vercel.app/",
       description: "Same org, agency track: built FormX, AIA, and Navkar client platforms from scratch; also shipped the 13 UTOPIA agency portal.",
     },
     {

@@ -61,7 +61,7 @@
     {
       "name": "AIA Engineering — Industrial Showcase",
       "period": "2026",
-      "link": "https://github.com/Poojan2107/Aia",
+      "link": "https://aia-engineering.vercel.app",
       "tech": "Next.js, React, Figma Implementation, Motion, Video",
       "description": "13 UTOPIA agency client — built from scratch. Figma-faithful Present homepage with hero films, Reveal motion, and dual-palette client review."
     },
@@ -75,7 +75,7 @@
     {
       "name": "13 UTOPIA Portal — Agency Site",
       "period": "2026",
-      "link": "https://github.com/13utopia/13utopia",
+      "link": "https://13-utopia.vercel.app",
       "tech": "Static Site, Responsive Nav, SEO, Vercel",
       "description": "Agency production portal: Awwwards-style mobile menu, accessible H1 SEO, EISDIR build fixes, Vercel static deploy."
     },
