@@ -19,7 +19,7 @@ const Playbook = () => {
       number: "03",
       title: "Domain-Tailored UX",
       subtitle: "Proof Architecture & Specification Tools",
-      description: "Architecture must match domain psychology. Using S3M proof structures for FormX architectural consulting, interactive pipe calculators for industrial buyers at Navkar, and 19 intent patterns for Tripzy."
+      description: "Architecture must match domain psychology. Using S3M proof structures for FormX architectural consulting, interactive pipe calculators for industrial buyers at Navkar, and 19 intent patterns for Travebie."
     },
     {
       number: "04",
@@ -31,7 +31,7 @@ const Playbook = () => {
       number: "05",
       title: "Production Delivery",
       subtitle: "Real Users > Tutorial Clones",
-      description: "Shipping production software to 2,500+ active users teaches real engineering: debugging race conditions, cross-browser audits across 58 files, and measuring code by user volume and business impact."
+      description: "Shipping production software to active production users teaches real engineering: debugging race conditions, cross-browser audits across 58 files, and measuring code by user volume and business impact."
     }
   ];
 

@@ -3,14 +3,14 @@ import { SiMongodb, SiExpress, SiTailwindcss, SiPostman, SiOpenai, SiTypescript,
 
 export const PERSONAL_DETAILS = {
   name: "Poojan P. Shrivastav",
-  role: "Full Stack Developer | AI Engineering Student | Product Engineer | Startup Builder",
+  role: "Full Stack Developer • AI Engineering Student",
   roles: [
+    "Developer Intern @ KaryaUp",
     "Full Stack Developer @ 13 UTOPIA",
-    "Developer Intern @ KaryaUp (~2.5K Users)",
-    "Co-Founder & Builder @ Oneverce",
+    "Co-Founder @ Oneverce",
     "B.Tech AI Student @ GIT"
   ],
-  bio: "Building production SaaS software, AI voice agents, scalable full-stack applications, and high-performance agency web platforms across product, startup, and client environments.",
+  bio: "B.Tech AI student shipping production SaaS, AI products, and client platforms — currently building at KaryaUp, 13 UTOPIA, and Oneverce.",
   email: "poojanshrivastav21@gmail.com",
   phone: "+91 9023362134",
   location: "Ahmedabad, Gujarat",
@@ -21,11 +21,11 @@ export const PERSONAL_DETAILS = {
 };
 
 export const SOCIAL_PROOF_BADGES = [
-  { text: "⚡ Developer Intern @ KaryaUp (2.5K+ Active Users)", category: "status" },
-  { text: "🎨 Full Stack Developer @ 13 UTOPIA (FormX & Navkar)", category: "status" },
-  { text: "🚀 Co-Founder @ Oneverce (Tripzy / Travebie)", category: "role" },
-  { text: "🏆 Build With AI Ahmedabad — Runner-Up", category: "award" },
-  { text: "🎓 B.Tech AI — Gandhinagar Institute of Technology", category: "academic" }
+  { text: "Developer Intern @ KaryaUp — Analytics, CDN & AI Voice", category: "status" },
+  { text: "Full Stack @ 13 UTOPIA — FormX & Navkar shipped", category: "status" },
+  { text: "Co-Founder @ Oneverce — Travebie (travebie.com)", category: "role" },
+  { text: "Build With AI Ahmedabad — Runner-Up (OpenBridge)", category: "award" },
+  { text: "B.Tech AI — Gandhinagar Institute of Technology (2024–2028)", category: "academic" }
 ];
 
 export const SKILL_CATEGORIES = [
@@ -95,20 +95,20 @@ export const PROJECTS = [
   {
     title: 'KaryaUp AI CRM',
     subtitle: 'Production AI CRM, Analytics Engine & Optimization Sprint',
-    status: 'In Production (2.5K+ Users)',
-    problem: 'Enterprise SaaS platform (~2,500 active users) needed first-party traffic analytics, IP-based international pricing, cloud asset migration (S3/CloudFront), AI voice calling, and a major TBT/payload optimization cleanup.',
+    status: 'In Production',
+    problem: 'Enterprise SaaS platform needed first-party traffic analytics, IP-based international pricing, cloud asset migration (S3/CloudFront), AI voice calling, and a major TBT/payload optimization cleanup.',
     solution: 'Engineered a custom First-Party Analytics HQ platform with IP geolocation & bot filtering, IP-based geo-pricing (INR vs USD), migrated MongoDB media to AWS S3/CloudFront CDN, optimized database queries with projected lean schemas, built AI voice calling agents, and executed an ~80% payload optimization sprint.',
     tags: ['React', 'Node.js', 'MongoDB Atlas', 'AWS S3/CloudFront', 'Analytics Engine', 'AI Voice Agent', 'IP Geo Pricing', 'TailwindCSS'],
     github: 'https://github.com/KaryaUp/karyaUp_Website.git',
     live: 'https://karyaup.com',
     image: '/assets/karyaup_crm.png',
     metrics: {
-      "Users": "2,500+ Active Users",
+      "Users": "Active Business Users",
       "Analytics": "Built First-Party Analytics HQ",
       "Media CDN": "MongoDB → AWS S3 + CloudFront",
       "Geo Pricing": "Auto INR / USD ($20 Pro)",
       "Optimization": "80% Payload Drop (36MB → 6.89MB)",
-      "Role": "Developer Intern @ KaryaUp"
+      "Role": "Full Stack MERN Engineer"
     },
     highlights: [
       "Engineered First-Party Analytics HQ Engine featuring real client IP geolocation, demographic telemetry, & bot filtering",
@@ -121,7 +121,7 @@ export const PROJECTS = [
       "Fixed SPA crawl SEO: unique canonical URLs per route, prerendered pricing/demo pages, & dynamic sitemap dates"
     ],
     caseStudy: {
-      summary: "Direct developer internship engineering on KaryaUp, an active business CRM serving 2,500+ users connected with Startup India and GUSEC.",
+      summary: "Full stack MERN software engineering on KaryaUp, an active business CRM connected with Startup India and GUSEC.",
       problem: "Oversized database payloads blocked admin dashboards, media assets overloaded MongoDB, international visitors saw incorrect local pricing, and heavy payloads (36 MB) slowed page loads.",
       solution: "Engineered first-party analytics, IP-based geo pricing, S3/CloudFront asset migration, projected lean DB queries, AI voice calling, and a full performance engineering sprint.",
       research: "Analyzed network waterfalls, client IP headers, database query execution times, and reverse-proxy streaming behaviors across Nginx and Cloudflare CDN layers.",
@@ -147,11 +147,11 @@ export const PROJECTS = [
         "Nginx 1KB Streaming Flush Strategy",
         "SPA Crawl SEO & Prerendering Engine"
       ],
-      impact: "Accelerated platform response times, eliminated admin load hangs, automated global pricing, and delivered production features to 2,500+ active users."
+      impact: "Accelerated platform response times, eliminated admin load hangs, automated global pricing, and delivered production features to active users."
     }
   },
   {
-    title: 'Tripzy / Travebie',
+    title: 'Travebie',
     subtitle: 'AI Travel Booking & Itinerary Platform (travebie.com)',
     status: 'Delivered (Oneverce Solutions)',
     problem: 'A tourism business with 15+ years of experience needed a modern platform to replace manual spreadsheet itinerary creation and fragmented package distribution.',

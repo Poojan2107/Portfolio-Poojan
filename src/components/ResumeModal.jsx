@@ -13,11 +13,11 @@ const ResumeModal = ({ isOpen, onClose }) => {
   };
 
   const handleCopyText = () => {
+    const contactLine = [resumeData.basics.email, resumeData.basics.phone, resumeData.basics.location].filter(Boolean).join(' | ');
     const rawText = `
-POOJAN PALAKKUMAR SHRIVASTAV
+${resumeData.basics.name}
 ${resumeData.basics.label}
-${resumeData.basics.email} | ${resumeData.basics.phone} | ${resumeData.basics.location}
-LinkedIn: ${resumeData.basics.profiles.linkedin} | GitHub: ${resumeData.basics.profiles.github} | Portfolio: ${resumeData.basics.website}
+${contactLine ? contactLine + '\n' : ''}LinkedIn: ${resumeData.basics.profiles.linkedin} | GitHub: ${resumeData.basics.profiles.github} | Portfolio: ${resumeData.basics.website}
 
 PROFESSIONAL SUMMARY
 ${resumeData.basics.summary}
@@ -32,7 +32,7 @@ SKILLS
 
 WORK EXPERIENCE
 ${resumeData.experience.map(exp => `
-${exp.position} — ${exp.company} | ${exp.period} | ${exp.location}
+${exp.position} — ${exp.company} | ${exp.period}${exp.location ? ` | ${exp.location}` : ''}
 ${exp.bullets.map(b => `• ${b}`).join('\n')}
 `).join('\n')}
 
@@ -178,11 +178,13 @@ ${resumeData.achievements.map(a => `• ${a}`).join('\n')}
             <div style={{ fontSize: '9.5pt', fontWeight: '700', color: '#222222', marginTop: '2px' }}>
               {resumeData.basics.label}
             </div>
-            <div style={{ fontSize: '8.5pt', color: '#444444', marginTop: '4px', display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
-              <span>✉ {resumeData.basics.email}</span>
-              <span>📞 {resumeData.basics.phone}</span>
-              <span>📍 {resumeData.basics.location}</span>
-            </div>
+            {(resumeData.basics.email || resumeData.basics.phone || resumeData.basics.location) && (
+              <div style={{ fontSize: '8.5pt', color: '#444444', marginTop: '4px', display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
+                {resumeData.basics.email && <span>✉ {resumeData.basics.email}</span>}
+                {resumeData.basics.phone && <span>📞 {resumeData.basics.phone}</span>}
+                {resumeData.basics.location && <span>📍 {resumeData.basics.location}</span>}
+              </div>
+            )}
             <div style={{ fontSize: '8.5pt', color: '#111111', marginTop: '3px', display: 'flex', flexWrap: 'wrap', gap: '1rem', fontWeight: '600' }}>
               <a href={resumeData.basics.profiles.linkedin} target="_blank" rel="noreferrer" style={{ color: '#111', textDecoration: 'none' }}>
                 LinkedIn: linkedin.com/in/poojanshrivastav21
@@ -228,7 +230,7 @@ ${resumeData.achievements.map(a => `• ${a}`).join('\n')}
               <div key={idx} style={{ marginBottom: idx === resumeData.experience.length - 1 ? 0 : '6px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', fontWeight: 'bold', fontSize: '9pt' }}>
                   <span>{exp.position} — <span style={{ color: '#000000' }}>{exp.company}</span></span>
-                  <span style={{ fontSize: '8.5pt', fontWeight: '600' }}>{exp.period} | {exp.location}</span>
+                  <span style={{ fontSize: '8.5pt', fontWeight: '600' }}>{exp.period}{exp.location ? ` | ${exp.location}` : ''}</span>
                 </div>
                 <ul style={{ margin: '2px 0 0 0', paddingLeft: '16px', fontSize: '8.5pt', color: '#222222' }}>
                   {exp.bullets.map((b, bIdx) => (

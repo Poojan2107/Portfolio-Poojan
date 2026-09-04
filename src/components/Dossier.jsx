@@ -20,22 +20,21 @@ const Dossier = () => {
   ];
 
   const journeyLog = [
-    { year: "2024", text: "Began B.Tech Artificial Intelligence degree." },
-    { year: "2024", text: "Mastered full-stack engineering basics: HTML, CSS, JS, React, Node, Express, MongoDB." },
-    { year: "2025", text: "Shifted focus to building production AI applications with Gemini and OpenAI APIs." },
-    { year: "2026", text: "Built OpenBridge & won Runner-Up position at Build With AI Ahmedabad." },
-    { year: "2026", text: "Co-founded Oneverce & delivered Tripzy travel booking platform at travebie.com." },
-    { year: "2026", text: "Joined 13 UTOPIA Pvt. Ltd. as Full Stack Dev building FormX & Navkar web applications." },
-    { year: "2026", text: "Joined KaryaUp as Developer Intern engineering AI CRM for 2,500+ active users." },
-    { year: "2026", text: "Led ~80% production payload optimization sprint (36MB → 6.89MB) and Nginx stream flushing." }
+    { year: "2024", text: "Started B.Tech in Artificial Intelligence at Gandhinagar Institute of Technology (2024–2028)." },
+    { year: "2024–25", text: "Built full-stack foundations: React, Node, Express, MongoDB, and early AI API integrations." },
+    { year: "2026 Q2–Q3", text: "Shipped OpenBridge — Runner-Up at Build With AI Ahmedabad." },
+    { year: "2026 Q2–Q3", text: "Co-founded Oneverce and launched Travebie (travebie.com) with a 19-intent AI engine." },
+    { year: "2026 Q2–Q3", text: "Joined 13 UTOPIA — delivered FormX Consultants and Navkar Tubes & Tools." },
+    { year: "2026 Q2–Q3", text: "Developer Intern @ KaryaUp — Analytics HQ, S3/CloudFront CDN, AI voice calling." },
+    { year: "2026 NOW", text: "Led ~80% payload optimization sprint (36MB → 6.89MB) and Nginx AI token-stream flushing." }
   ];
 
   const activeMissions = [
-    { label: "Scale KaryaUp AI Voice Calling & Location Systems", status: true },
-    { label: "Deliver FormX 40+ Route Next.js 16 Architectural Site", status: true },
-    { label: "Ship Tripzy (travebie.com) 19-Intent AI Engine", status: true },
-    { label: "Deepen System Design & Advanced DSA capabilities", status: false },
-    { label: "Target Product Company Roles & Master's Programs", status: false }
+    { label: "Scale KaryaUp AI Voice Calling & Analytics HQ", status: true },
+    { label: "FormX 40+ routes + Navkar procurement platform — shipped", status: true },
+    { label: "Travebie (travebie.com) 19-intent AI engine — live", status: true },
+    { label: "Deepen System Design & Advanced DSA", status: false },
+    { label: "Target product-based software engineering internships", status: false }
   ];
 
   return (
@@ -133,13 +132,13 @@ const Dossier = () => {
                         // IDENTITY: POOJAN P. SHRIVASTAV
                       </p>
                       <p>
-                        Full Stack Developer & AI Engineering Student operating simultaneously across product engineering, creative tech studio development, and startup client delivery.
+                        B.Tech AI student (GIT, 2024–2028) building production full-stack and AI software across internship, studio, and startup lanes.
                       </p>
                       <p style={{ borderLeft: '2px solid #fff', paddingLeft: '1rem', color: '#fff' }}>
-                        Engineering production SaaS features at KaryaUp (~2,500 active users), architecting enterprise web applications at 13 UTOPIA (FormX Consultants & Navkar Tubes), and co-founding Oneverce (Tripzy / travebie.com).
+                        Last 2–3 months: Developer Intern @ KaryaUp (analytics, CDN, AI voice, 80% payload cut), Full Stack @ 13 UTOPIA (FormX & Navkar), Co-Founder @ Oneverce (Travebie), Runner-Up with OpenBridge.
                       </p>
                       <p style={{ color: '#666', marginTop: '1rem' }}>
-                        &gt; CORE_BELIEF: Real software is measured by production impact, user volume, and engineering rigor.
+                        &gt; CORE_BELIEF: Real software is measured by production impact and shipping, not demos.
                       </p>
                     </div>
                   </motion.div>

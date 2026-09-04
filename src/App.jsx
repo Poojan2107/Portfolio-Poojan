@@ -222,17 +222,17 @@ function App() {
                         WebkitTextStroke: '1px rgba(255,255,255,0.4)',
                     }}
                  >
-                     <span>FULL STACK DEVELOPER</span>
+                     <span>AI ENGINEERING STUDENT</span>
                      <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                     <span>BUILDING WITH AI</span>
+                     <span>SHIPPING AT PRODUCTION</span>
                      <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                     <span>LEARNING BY SHIPPING</span>
+                     <span>KARYAUP · TRAVEBIE · FORMX</span>
                      <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                     <span>FULL STACK DEVELOPER</span>
+                     <span>AI ENGINEERING STUDENT</span>
                      <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                     <span>BUILDING WITH AI</span>
+                     <span>SHIPPING AT PRODUCTION</span>
                      <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
-                     <span>LEARNING BY SHIPPING</span>
+                     <span>KARYAUP · TRAVEBIE · FORMX</span>
                      <span style={{ color: 'var(--accent-cyber)', WebkitTextStroke: '0' }}>//</span>
                  </motion.div>
               </div>

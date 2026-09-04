@@ -384,11 +384,11 @@ const Hero = ({ onOpenResume }) => {
                 className="metrics-grid"
               >
                 {[
-                  { value: "2.5K+", label: "Active CRM Users", desc: "KaryaUp SaaS Internship" },
-                  { value: "5+ APPS", label: "Production Shipped", desc: "SaaS, Agency & AI Products" },
-                  { value: "~80%", label: "Payload Optimization", desc: "36MB → 6.89MB Sprint" },
-                  { value: "RUNNER-UP", label: "Build With AI", desc: "OpenBridge Platform" },
-                  { value: "13 UTOPIA", label: "Agency Full Stack", desc: "FormX & Navkar Web Apps" }
+                  { value: "KARYAUP", label: "Developer Intern", desc: "Analytics · CDN · AI Voice" },
+                  { value: "~80%", label: "Payload Cut", desc: "36MB → 6.89MB Sprint" },
+                  { value: "TRAVEBIE", label: "Live AI Product", desc: "19-Intent Engine Shipped" },
+                  { value: "FORMX+", label: "Client Platforms", desc: "FormX & Navkar @ 13 UTOPIA" },
+                  { value: "RUNNER-UP", label: "Build With AI", desc: "OpenBridge Platform" }
                 ].map((stat, idx) => (
                  <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', textAlign: 'center' }}>
                    <span style={{ 

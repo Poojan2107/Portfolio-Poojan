@@ -14,7 +14,7 @@ const ARCHITECTURE_TOPOLOGIES = {
     { step: '03', title: 'API & Analytics Engine', desc: 'Express REST routes + first-party IP geolocation & bot filtering HQ' },
     { step: '04', title: 'Cloud Atlas & S3 CDN', desc: 'MongoDB Atlas (projected lean schema queries) + AWS S3/CloudFront CDN' }
   ],
-  'Tripzy / Travebie': [
+  'Travebie': [
     { step: '01', title: 'Traveler Frontend & PWA', desc: 'Next.js App Router with Playwright E2E & offline service worker caching' },
     { step: '02', title: '19-Intent AI Engine', desc: 'Intent classification (budget/duration) + composable prompt modules' },
     { step: '03', title: '18 Chat Card Renderers', desc: 'Structured JSON response parser driving interactive Hotel, Food & Timeline cards' },
@@ -53,7 +53,7 @@ const Projects = () => {
   const filterProject = (project) => {
     if (activeFilter === 'ALL') return true;
     if (activeFilter === 'AI & SAAS PRODUCTS') {
-      return project.title.includes('KaryaUp') || project.title.includes('Tripzy');
+      return project.title.includes('KaryaUp') || project.title.includes('Travebie');
     }
     if (activeFilter === 'AGENCY & CLIENT WEB') {
       return project.title.includes('FormX') || project.title.includes('Navkar');
