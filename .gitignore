@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Local me-mode / audit scratch (not portfolio)
+.me-mode-profile/
+.email-rewrite-work/
+.commit-audit-*.json
+*.docx
+~$*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
