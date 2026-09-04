@@ -191,7 +191,7 @@ const Projects = () => {
               {/* Top Tag & Status */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                 <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.75rem', color: '#ffffff', letterSpacing: '3px', textTransform: 'uppercase' }}>
-                  [ FLAGSHIP WORK // 01 ]
+                  [ Flagship · 01 ]
                 </span>
                 <span style={{
                   fontSize: '0.65rem',
@@ -565,7 +565,7 @@ const Projects = () => {
               {/* Tech Stack Matrix */}
               <div style={{ marginBottom: '3rem' }}>
                  <h5 style={{ color: '#666666', fontFamily: 'var(--font-code)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem' }}>
-                    [ TECHNOLOGY MATRIX ]
+                    [ Stack ]
                  </h5>
                  <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
                     {(selectedCaseStudy.caseStudy.techStack || selectedCaseStudy.tags).map(tag => (

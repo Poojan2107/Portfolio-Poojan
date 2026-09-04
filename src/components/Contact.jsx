@@ -215,7 +215,7 @@ const Contact = () => {
                   rows="3"
                   value={formData.message} 
                   onChange={handleChange} 
-                  placeholder="TELL ME ABOUT IT..." 
+                  placeholder="Project, internship, or role..." 
                   required 
                   style={{ ...inputStyle, resize: 'none' }}
                   onFocus={(e) => e.target.style.borderColor = '#fff'}

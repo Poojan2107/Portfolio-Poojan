@@ -347,9 +347,9 @@ export const PROJECTS = [
   {
     title: 'Travebie',
     subtitle: 'College freelancing side hustle — Oneverce (travebie.com)',
-    status: 'Live · Oneverce Side Hustle',
+    status: 'Delivered · Access paused (client payment)',
     problem: 'A tourism business with 15+ years of experience needed a modern platform to replace manual spreadsheet itinerary creation and fragmented package distribution.',
-    solution: 'With a college friend via Oneverce (side hustle, not employer work): shipped a production travel platform with a 19-pattern AI intent detector, 18 chat cards, Playwright E2E, PWA, and React Native admin companion.',
+    solution: 'With a college friend via Oneverce (side hustle, not employer work): shipped a production travel platform with a 19-pattern AI intent detector, 18 chat cards, Playwright E2E, PWA, and React Native admin companion. Live access is currently paused pending client payment; studio: oneverce-solutions.vercel.app.',
     tags: ['Next.js App Router', 'TypeScript', 'Gemini AI SDK', 'PostgreSQL', 'Supabase', 'Prisma ORM', 'Playwright E2E', 'PWA'],
     github: 'https://github.com/Poojan2107/Tripzy_Oneverce.git',
     live: 'https://www.travebie.com/',

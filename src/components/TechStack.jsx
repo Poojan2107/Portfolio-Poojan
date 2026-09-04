@@ -103,9 +103,9 @@ const TechStack = () => {
         {/* Massive Header */}
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: '2rem', marginBottom: '6rem' }}>
            <h2 style={{ fontSize: 'clamp(3rem, 8vw, 10rem)', fontWeight: '900', color: '#ffffff', margin: 0, lineHeight: 0.8, fontFamily: 'var(--font-display)', letterSpacing: '-3px' }}>
-              ARSENAL
+              SKILLS
            </h2>
-           <span style={{ fontSize: '1.2rem', color: '#666666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ / Core Tech Capabilities ]</span>
+           <span style={{ fontSize: '1.2rem', color: '#666666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ Tech Stack ]</span>
         </div>
 
         {/* Skill Category Grid */}
@@ -121,7 +121,7 @@ const TechStack = () => {
             >
               <div style={{ borderLeft: '3px solid #ffffff', paddingLeft: '1rem' }}>
                 <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-code)', color: '#666666', letterSpacing: '2px', textTransform: 'uppercase' }}>
-                  // CATEGORY 0{catIdx + 1}
+                  Category 0{catIdx + 1}
                 </span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: '800', color: '#ffffff', fontFamily: 'var(--font-display)', margin: '0.2rem 0 0 0', textTransform: 'uppercase', letterSpacing: '-1px' }}>
                   {category.title}

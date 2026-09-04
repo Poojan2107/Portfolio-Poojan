@@ -5,10 +5,10 @@ const Dossier = () => {
   const [activeTab, setActiveTab] = useState('about');
 
   const tabs = [
-    { id: 'about', label: 'ABOUT.sys' },
-    { id: 'skills', label: 'SKILLS.cfg' },
-    { id: 'journey', label: 'JOURNEY.log' },
-    { id: 'missions', label: 'ACTIVE_MISSIONS.sh' }
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'journey', label: 'Journey' },
+    { id: 'missions', label: 'Focus' }
   ];
 
   const currentlyLearning = [
@@ -33,21 +33,21 @@ const Dossier = () => {
   const activeMissions = [
     { label: "Dual intern — KaryaUp SaaS + 13 UTOPIA agency", status: true },
     { label: "FormX · AIA · Navkar — greenfield client builds shipped", status: true },
-    { label: "Travebie — college freelancing side hustle (live)", status: true },
+    { label: "Travebie — college side hustle (delivered; access paused pending client payment)", status: true },
     { label: "Deepen System Design & Advanced DSA", status: false },
     { label: "Target product-based software engineering roles", status: false }
   ];
 
   return (
-    <section id="dossier" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0', background: 'var(--bg-primary)' }}>
+    <section id="about" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0', background: 'var(--bg-primary)' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1400px', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
         
         {/* Section Header */}
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
            <h2 style={{ fontSize: 'clamp(3rem, 8vw, 10rem)', fontWeight: '900', color: '#fff', margin: 0, lineHeight: 0.8, fontFamily: 'var(--font-display)', letterSpacing: '-3px' }}>
-              DOSSIER
+              ABOUT
            </h2>
-           <span style={{ fontSize: '1.2rem', color: '#666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ / System Index ]</span>
+           <span style={{ fontSize: '1.2rem', color: '#666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ Profile ]</span>
         </div>
 
         {/* Outer Split Layout */}
@@ -79,7 +79,7 @@ const Dossier = () => {
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
               </div>
               <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.75rem', color: '#666', letterSpacing: '1px' }}>
-                GUEST@OS-POOJAN: ~
+                GUEST@POOJAN:~
               </span>
             </div>
 
@@ -130,7 +130,7 @@ const Dossier = () => {
                   >
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                       <p style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 'bold' }}>
-                        // IDENTITY: POOJAN P. SHRIVASTAV
+                        Poojan P. Shrivastav
                       </p>
                       <p>
                         B.Tech AI student (GIT, 2024–2028). Dual internship under one organization: KaryaUp (company SaaS) + 13 UTOPIA (digital agency clients). Separate college freelancing side hustle: Oneverce / Travebie.
@@ -139,7 +139,7 @@ const Dossier = () => {
                         Now: KaryaUp primary web contributor (~96% post-join) · 13 UTOPIA greenfield clients FormX, AIA, Navkar + agency portal · Oneverce side hustle (Travebie) · OpenBridge Runner-Up.
                       </p>
                       <p style={{ color: '#666', marginTop: '1rem' }}>
-                        &gt; CORE_BELIEF: Real software is measured by production impact and shipping, not demos.
+                        Real software is measured by production impact and shipping — not demos.
                       </p>
                     </div>
                   </motion.div>
@@ -154,7 +154,7 @@ const Dossier = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                      <p style={{ color: '#fff', fontWeight: 'bold' }}>// PRIMARY STACK CAPABILITIES</p>
+                      <p style={{ color: '#fff', fontWeight: 'bold' }}>Primary stack</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                         <p><span style={{ color: '#fff' }}>Frontend:</span> React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS</p>
                         <p><span style={{ color: '#fff' }}>Backend:</span> Node.js, Express.js, REST APIs, Authentication, WebSockets</p>
@@ -175,7 +175,7 @@ const Dossier = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxHeight: '300px', overflowY: 'auto', paddingRight: '1rem' }}>
-                      <p style={{ color: '#fff', fontWeight: 'bold' }}>// CHRONOLOGICAL SHIPPING LOG</p>
+                      <p style={{ color: '#fff', fontWeight: 'bold' }}>Timeline</p>
                       {journeyLog.map((log, idx) => (
                         <div key={idx} style={{ display: 'flex', gap: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingBottom: '0.6rem' }}>
                           <span style={{ color: '#fff', fontWeight: 'bold' }}>[{log.year}]</span>
@@ -195,7 +195,7 @@ const Dossier = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                      <p style={{ color: '#fff', fontWeight: 'bold' }}>// ACTIVE MISSIONS & ROADMAP</p>
+                      <p style={{ color: '#fff', fontWeight: 'bold' }}>Current focus</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                         {activeMissions.map((mission, idx) => (
                           <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -218,7 +218,7 @@ const Dossier = () => {
                         ))}
                       </div>
                       <p style={{ color: '#666', fontSize: '0.75rem', marginTop: '1rem' }}>
-                        * Goals represent target zones of exploration and production shipping.
+                        Checked items are shipped; open items are active goals.
                       </p>
                     </div>
                   </motion.div>
@@ -238,10 +238,10 @@ const Dossier = () => {
             justifyContent: 'center'
           }} className="currently-learning-card">
             <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.7rem', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>
-              [ PIPELINE GROWTH ]
+              [ Learning ]
             </span>
             <h4 style={{ color: '#fff', fontSize: '1.5rem', fontFamily: 'var(--font-display)', marginTop: '0.5rem', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '-1px' }}>
-              CURRENTLY LEARNING
+              Currently learning
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', fontFamily: 'var(--font-code)', fontSize: '0.85rem' }}>
               {currentlyLearning.map((item, idx) => (

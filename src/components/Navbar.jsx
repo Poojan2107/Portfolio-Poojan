@@ -18,12 +18,12 @@ const Navbar = ({ onOpenResume }) => {
   });
 
   const navLinks = [
-    { name: 'INDEX', href: '#home' },
-    { name: 'ARSENAL', href: '#skills' },
-    { name: 'ORIGIN', href: '#education' },
-    { name: 'MISSIONS', href: '#missions' },
-    { name: 'ARCHIVE', href: '#projects' },
-    { name: 'PLAYBOOK', href: '#playbook' },
+    { name: 'ABOUT', href: '#about' },
+    { name: 'SKILLS', href: '#skills' },
+    { name: 'EDUCATION', href: '#education' },
+    { name: 'EXPERIENCE', href: '#experience' },
+    { name: 'WORK', href: '#projects' },
+    { name: 'PRINCIPLES', href: '#playbook' },
     { name: 'RESUME', href: '#resume', isAction: true },
     { name: 'CONTACT', href: '#contact' },
   ];
@@ -89,52 +89,30 @@ const Navbar = ({ onOpenResume }) => {
               position: 'relative',
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
-              overflow: 'hidden' // For the neon scanner
+              gap: '6px'
           }}>
-              {/* Neon Scanning Bar */}
-              <motion.div
-                  animate={{ left: ['-100%', '200%'] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
-                  style={{
-                      position: 'absolute',
-                      top: 0,
-                      width: '30px',
-                      height: '100%',
-                      background: 'linear-gradient(90deg, transparent, #ffffff, transparent)',
-                      opacity: 0.3,
-                      zIndex: 0,
-                      pointerEvents: 'none',
-                      skewX: -20
-                  }}
-              />
               <motion.div
                   whileHover="hover"
                   style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}
               >
                   <motion.span 
-                      variants={{ hover: { x: -2, skewX: -10, color: '#fff' } }}
+                      variants={{ hover: { x: -2, color: '#fff' } }}
                       style={{ color: 'var(--accent-cyber)', zIndex: 1, letterSpacing: '-2px' }}
                   >
                       POOJAN
                   </motion.span>
                   <motion.span 
-                      variants={{ hover: { scaleY: 0.8, opacity: 0.5 } }}
+                      variants={{ hover: { opacity: 0.5 } }}
                       style={{ color: '#fff', zIndex: 1, letterSpacing: '-2px', marginLeft: '2px' }}
                   >
                       P.
                   </motion.span>
                   <motion.span 
-                      variants={{ hover: { x: 2, skewX: 10, color: 'var(--accent-cyber)' } }}
+                      variants={{ hover: { x: 2, color: 'var(--accent-cyber)' } }}
                       style={{ color: '#fff', zIndex: 1, letterSpacing: '-2px', opacity: 0.8 }}
                   >
                       SHRIVASTAV
                   </motion.span>
-                  <motion.div 
-                      animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                      style={{ width: '6px', height: '6px', background: 'var(--accent-cyber)', borderRadius: '50%', marginLeft: '6px', zIndex: 1 }}
-                  />
               </motion.div>
           </a>
 
@@ -293,7 +271,7 @@ const Navbar = ({ onOpenResume }) => {
                  key={link.name}
                  href={link.href}
                  onClick={(e) => {
-                     scrollToSection(e, link.href);
+                     scrollToSection(e, link.href, link.isAction);
                      setIsOpen(false);
                  }}
                  initial={{ opacity: 0, y: 20 }}

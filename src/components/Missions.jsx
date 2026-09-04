@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const Missions = () => {
   const activeMissions = [
     {
-      symbol: "⚡",
+      symbol: "01",
       title: "KARYAUP",
       role: "Developer Intern · SaaS Track",
       status: "NOW · COMPANY PRODUCT",
@@ -11,7 +11,7 @@ const Missions = () => {
       description: "Same org, product track: joined Jul 2026 on an existing MVP; became primary engineering contributor on karyaUp_Website (~96% post-join). Analytics HQ, S3/CDN, Vercel, KAI, geo pricing, SPA SEO.",
     },
     {
-      symbol: "🎨",
+      symbol: "02",
       title: "13 UTOPIA",
       role: "Developer Intern · Agency Track",
       status: "NOW · CLIENT DELIVERY",
@@ -19,15 +19,15 @@ const Missions = () => {
       description: "Same org, agency track: built FormX, AIA, and Navkar client platforms from scratch; also shipped the 13 UTOPIA agency portal.",
     },
     {
-      symbol: "🚀",
+      symbol: "03",
       title: "ONEVERCE / TRAVEBIE",
       role: "College Freelancing Side Hustle",
-      status: "NOW · LIVE PRODUCT",
+      status: "DELIVERED · ACCESS PAUSED",
       link: "https://www.travebie.com/",
-      description: "Side hustle with a college friend (not internship): shipped Travebie (travebie.com) — 19-intent AI itinerary engine, 18 chat cards, Playwright E2E, PWA, React Native admin companion.",
+      description: "Side hustle with a college friend (not internship): shipped Travebie (travebie.com) — 19-intent AI itinerary engine, 18 chat cards, Playwright E2E, PWA. Live access currently paused pending client payment.",
     },
     {
-      symbol: "🏆",
+      symbol: "04",
       title: "OPENBRIDGE",
       role: "AI Open Source Platform",
       status: "RECENT · RUNNER-UP",
@@ -37,19 +37,17 @@ const Missions = () => {
   ];
 
   return (
-    <section id="missions" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0', background: 'var(--bg-primary)' }}>
+    <section id="experience" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0', background: 'var(--bg-primary)' }}>
       
       <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1400px', display: 'flex', flexDirection: 'column', gap: '8rem' }}>
         
-        {/* Massive Header */}
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
            <h2 style={{ fontSize: 'clamp(3rem, 8vw, 10rem)', fontWeight: '900', color: '#fff', margin: 0, lineHeight: 0.8, fontFamily: 'var(--font-display)', letterSpacing: '-3px' }}>
-              MISSIONS
+              EXPERIENCE
            </h2>
-           <span style={{ fontSize: '1.2rem', color: '#666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ / Current Status ]</span>
+           <span style={{ fontSize: '1.2rem', color: '#666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ Current Work ]</span>
         </div>
 
-        {/* Missions Timeline Row */}
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           {activeMissions.map((mission, index) => (
             <motion.div 
@@ -69,10 +67,9 @@ const Missions = () => {
               }}
               className="group"
             >
-               {/* Icon / Status */}
                <div style={{ flex: '0 0 auto', width: '300px' }}>
                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                   <span style={{ fontSize: '2.5rem' }}>{mission.symbol}</span>
+                   <span style={{ fontSize: '1.5rem', fontFamily: 'var(--font-code)', color: '#555', fontWeight: '700' }}>{mission.symbol}</span>
                    <div>
                      <p style={{ fontSize: '1rem', color: '#555', fontFamily: 'var(--font-code)', letterSpacing: '1px', fontWeight: 'bold', margin: 0 }}>
                        {mission.role}
@@ -85,7 +82,6 @@ const Missions = () => {
                  </div>
                </div>
 
-               {/* Title & Description Container */}
                <div style={{ flex: '1', display: 'flex', flexDirection: 'column', gap: '1rem', minWidth: '300px' }}>
                   <a
                     href={mission.link}

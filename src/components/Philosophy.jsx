@@ -27,7 +27,7 @@ const Philosophy = () => {
           <div style={{ position: 'absolute', inset: 0, opacity: 0.02, backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '15px 15px', pointerEvents: 'none' }} />
           
           <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.75rem', color: '#666', letterSpacing: '3px', textTransform: 'uppercase' }}>
-            [ MINDSET LOGIC ]
+            Mindset
           </span>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '800px' }}>
