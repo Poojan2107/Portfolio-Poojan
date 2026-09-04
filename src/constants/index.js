@@ -7,10 +7,9 @@ export const PERSONAL_DETAILS = {
   roles: [
     "Developer Intern @ KaryaUp (SaaS)",
     "Developer Intern @ 13 UTOPIA (Agency)",
-    "Oneverce — college freelancing side hustle",
-    "B.Tech AI Student @ GIT"
+    "Oneverce — college freelancing side hustle"
   ],
-  bio: "B.Tech AI student on a dual internship: engineering KaryaUp (company SaaS) and shipping client platforms for 13 UTOPIA (agency) — plus a college freelancing side hustle with Oneverce / Travebie.",
+  bio: "Third-year B.Tech AI student shipping production software across a dual internship — KaryaUp (company SaaS) and 13 UTOPIA (agency clients) — plus a college freelancing side hustle.",
   email: "poojanshrivastav21@gmail.com",
   phone: "+91 9023362134",
   location: "Ahmedabad, Gujarat",
@@ -21,12 +20,10 @@ export const PERSONAL_DETAILS = {
 };
 
 export const SOCIAL_PROOF_BADGES = [
-  { text: "Dual Intern — KaryaUp SaaS + 13 UTOPIA agency clients", category: "status" },
+  { text: "Dual Intern — KaryaUp SaaS + 13 UTOPIA agency", category: "status" },
   { text: "KaryaUp — primary web contributor (~96% post-join)", category: "status" },
-  { text: "13 UTOPIA — FormX, AIA & Navkar built from scratch", category: "status" },
-  { text: "Oneverce side hustle — Travebie (travebie.com)", category: "role" },
-  { text: "Build With AI Ahmedabad — Runner-Up (OpenBridge)", category: "award" },
-  { text: "B.Tech AI — Gandhinagar Institute of Technology (2024–2028)", category: "academic" }
+  { text: "FormX · AIA · Navkar — built from scratch", category: "status" },
+  { text: "OpenBridge — Build With AI Runner-Up", category: "award" }
 ];
 
 export const SKILL_CATEGORIES = [

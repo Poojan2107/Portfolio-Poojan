@@ -94,12 +94,12 @@ function App() {
         </motion.div>
 
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
+        <Projects activeTech={activeTech} />
+        <Missions />
         <Dossier />
         <Philosophy />
         <TechStack setActiveTech={setActiveTech} />
         <Education />
-        <Missions />
-        <Projects activeTech={activeTech} />
         <Playbook />
         <Contact />
 

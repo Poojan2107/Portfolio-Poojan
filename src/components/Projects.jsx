@@ -5,7 +5,18 @@ import { PROJECTS } from '../constants';
 
 const formatIndex = (num) => String(num).padStart(2, '0');
 
-const FILTER_CATEGORIES = ['ALL', 'AI & SAAS PRODUCTS', 'AGENCY & CLIENT WEB', 'OPEN SOURCE & FINTECH'];
+const FILTER_CATEGORIES = ['ALL', 'INTERNSHIP', 'AGENCY CLIENTS', 'SIDE HUSTLE & HACKS'];
+
+const PLACEMENT_ORDER = [
+  'KaryaUp',
+  'FormX',
+  'AIA',
+  'Navkar',
+  '13 UTOPIA',
+  'OpenBridge',
+  'Travebie',
+  'NeuralCredit'
+];
 
 const ARCHITECTURE_TOPOLOGIES = {
   'KaryaUp AI CRM': [
@@ -64,19 +75,24 @@ const Projects = () => {
 
   const filterProject = (project) => {
     if (activeFilter === 'ALL') return true;
-    if (activeFilter === 'AI & SAAS PRODUCTS') {
-      return project.title.includes('KaryaUp') || project.title.includes('Travebie');
+    if (activeFilter === 'INTERNSHIP') {
+      return project.title.includes('KaryaUp') || project.title.includes('13 UTOPIA');
     }
-    if (activeFilter === 'AGENCY & CLIENT WEB') {
-      return project.title.includes('FormX') || project.title.includes('AIA') || project.title.includes('Navkar') || project.title.includes('13 UTOPIA');
+    if (activeFilter === 'AGENCY CLIENTS') {
+      return project.title.includes('FormX') || project.title.includes('AIA') || project.title.includes('Navkar');
     }
-    if (activeFilter === 'OPEN SOURCE & FINTECH') {
-      return project.title.includes('OpenBridge') || project.title.includes('NeuralCredit');
+    if (activeFilter === 'SIDE HUSTLE & HACKS') {
+      return project.title.includes('Travebie') || project.title.includes('OpenBridge') || project.title.includes('NeuralCredit');
     }
     return true;
   };
 
-  const filteredProjects = PROJECTS.filter(filterProject);
+  const rank = (project) => {
+    const idx = PLACEMENT_ORDER.findIndex((key) => project.title.includes(key));
+    return idx === -1 ? 99 : idx;
+  };
+
+  const filteredProjects = PROJECTS.filter(filterProject).sort((a, b) => rank(a) - rank(b));
   const flagshipProject = filteredProjects[0] || PROJECTS[0];
   const gridProjects = filteredProjects.slice(1);
 
@@ -105,7 +121,7 @@ const Projects = () => {
                   lineHeight: 0.9,
                   letterSpacing: '-2px',
                   marginTop: '0.5rem'
-              }}>ARCHIVE</div>
+              }}>WORK</div>
            </div>
 
            {/* Monochrome Category Filter Pills */}
