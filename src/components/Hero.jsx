@@ -384,8 +384,8 @@ const Hero = ({ onOpenResume }) => {
                 className="metrics-grid"
               >
                 {[
-                  { value: "170", label: "KaryaUp Commits", desc: "Jul 7 → Sep 2, 2026" },
-                  { value: "~80%", label: "Payload Cut", desc: "PageSpeed · TBT Sprint" },
+                  { value: "~96%", label: "Post-Join Ownership", desc: "154 / 160 KaryaUp commits" },
+                  { value: "MVP→PROD", label: "KaryaUp Arc", desc: "Inherited site, primary contributor" },
                   { value: "TRAVEBIE", label: "Live AI Product", desc: "19-Intent Engine Shipped" },
                   { value: "FORMX+", label: "Client Platforms", desc: "FormX & Navkar @ 13 UTOPIA" },
                   { value: "RUNNER-UP", label: "Build With AI", desc: "OpenBridge Platform" }

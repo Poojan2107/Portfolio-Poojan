@@ -21,7 +21,7 @@ export const PERSONAL_DETAILS = {
 };
 
 export const SOCIAL_PROOF_BADGES = [
-  { text: "Developer Intern @ KaryaUp — 170 commits (Jul–Sep 2026)", category: "status" },
+  { text: "Developer Intern @ KaryaUp — primary web contributor (~96% post-join)", category: "status" },
   { text: "Full Stack @ 13 UTOPIA — FormX & Navkar shipped", category: "status" },
   { text: "Co-Founder @ Oneverce — Travebie (travebie.com)", category: "role" },
   { text: "Build With AI Ahmedabad — Runner-Up (OpenBridge)", category: "award" },
@@ -94,60 +94,58 @@ export const SKILL_CATEGORIES = [
 export const PROJECTS = [
   {
     title: 'KaryaUp AI CRM',
-    subtitle: 'Production SaaS — 170 commits on karyaUp_Website (Jul 7 → Sep 2, 2026)',
+    subtitle: 'Primary engineering contributor — joined Jul 2026 MVP, 154/160 post-join commits (~96%)',
     status: 'In Production · Developer Intern',
-    problem: 'Live business SaaS needed production-grade KAI chatbot streaming, first-party analytics, IP geo pricing, blog/media CDN migration, SPA SEO, mobile stability, and a sustained PageSpeed/TBT optimization campaign without gutting visuals.',
-    solution: 'Over ~8 weeks shipped 170 commits across KAI streaming (1KB proxy flush), Analytics HQ + bot filtering, INR/USD geo pricing, MongoDB→S3/CloudFront, lean blog projections, SPA crawl SEO/prerender, KAI Agent experience, and Render→Vercel migration.',
+    problem: 'Joined an existing marketing/SaaS MVP (built Feb–Jul 2026 by prior contributors) that was live but uneven: open mobile/SEO/deploy/blog reliability issues, buffered AI streams, screenshot-based product marketing, and no first-party analytics or object-storage media pipeline.',
+    solution: 'Became the primary engineer on karyaUp_Website after Jul 7, 2026 (~96% of commits in that window). Shipped net-new systems (Analytics HQ, S3/CDN, Vercel migration, app-mock chrome, Calling/Affiliates) while productionizing KAI, homepage, chatbot streaming, blog, pricing, and SPA SEO.',
     tags: ['React 19', 'Node.js', 'MongoDB Atlas', 'AWS S3/CloudFront', 'Analytics HQ', 'KAI Agent', 'IP Geo Pricing', 'Vercel'],
     github: 'https://github.com/KaryaUp/karyaUp_Website.git',
     live: 'https://karyaup.com',
     image: '/assets/karyaup_crm.png',
     metrics: {
-      "Commits": "170 (Jul 7 – Sep 2, 2026)",
+      "Ownership": "154 / 160 commits after join (~96%)",
+      "Window": "Jul 7 – Sep 2, 2026",
+      "Inherited": "MVP (166 commits before join)",
       "Analytics": "First-Party Analytics HQ",
       "Media CDN": "MongoDB → AWS S3 + CloudFront",
-      "Geo Pricing": "Auto INR / USD ($20 Pro)",
-      "Optimization": "PageSpeed · TBT · ~80% payload cut",
-      "Role": "Developer Intern"
+      "Role": "Developer Intern · Primary web contributor"
     },
     highlights: [
-      "170 production commits on KaryaUp/karyaUp_Website from Jul 7–Sep 2, 2026 (internship trail)",
-      "Hardened KAI chatbot streaming: 1KB whitespace proxy flush, abort/timeouts, voice engines, suggestion chips",
-      "Built First-Party Analytics HQ with real client-IP geo, demographics, and bot/junk filtering",
-      "Shipped IP-based geo pricing (INR in India, USD internationally; Pro $20)",
-      "Migrated blog images MongoDB → AWS S3/CloudFront; fixed admin hangs with projected lean card queries",
-      "PageSpeed/TBT sprint: deferred i18n hydrate, route CSS split, critical-path cuts while restoring full visuals",
-      "SPA crawl SEO: unique canonicals, prerendered pricing/demo, sitemap dates, Helmet title dedupe",
-      "Shipped KAI Agent experience (particles/silk hero, Calling page) and migrated hosting Render → Vercel SPA"
+      "Joined Jul 7, 2026 on an existing MVP; became primary engineering contributor (~96% of 160 post-join commits; prior phase: 166 commits by others)",
+      "Built net-new systems: Analytics HQ + bot/geo filtering, blog→S3/CloudFront pipeline, Vercel SPA migration, live app-mock chrome, Calling & Affiliates surfaces",
+      "Productionized KAI: streaming 1KB proxy flush, timeouts/fallbacks, Agent silk/particle UX, compositor flicker fixes, mobile tour",
+      "Hardened homepage/mobile (GSAP white-void iterations), PageSpeed/TBT without gutting visuals, SPA crawl SEO (canonicals, prerender, sitemap)",
+      "Unblocked blog admin with projected lean card queries; fixed deploy persistence, publish sync, and seed resurfacing",
+      "Shipped IP geo pricing (INR / USD) and commercial pricing/showcase surfaces on the live product"
     ],
     caseStudy: {
-      summary: "Developer Intern on KaryaUp — 170 commits in eight weeks shipping production marketing SaaS, AI streaming, analytics, and performance work for a live Startup India / GUSEC-connected product.",
-      problem: "Chat streams buffered behind proxies, blog admin hung on full-HTML payloads, media lived in MongoDB, pricing ignored visitor geography, SPA SEO collapsed to homepage canonicals, and mobile/GSAP pins caused white voids and crashes.",
-      solution: "Iterated in production: streaming flush + chatbot stability, Analytics HQ, geo pricing, S3/CloudFront, lean DB projections, SEO prerender, homepage/mobile hardening, KAI Agent UI, and Vercel deep-link fallbacks.",
-      research: "Debugged network waterfalls, Cloudflare/Nginx buffering, React 19 chunk order, GSAP pin blank screens, PageSpeed TBT, and real client-IP headers for geo accuracy.",
-      architecture: "React 19 + Vite marketing/app shell, Express/MongoDB Atlas, AWS S3/CloudFront media, first-party analytics pipeline, KAI streaming with 1KB padding, Vercel SPA rewrites after Render migration.",
-      challenges: "Balancing PageSpeed cuts against visual fidelity; Team Solutions GSAP pin white voids required multiple production rollbacks and sticky/scrub redesigns; blog seed resurfacing after deploys.",
+      summary: "Developer Intern who inherited a 4-month-old KaryaUp marketing MVP and became its primary website/product-surface engineer for the next ~2 months — acceleration and productionization, not greenfield creation of the whole site.",
+      problem: "The pre-join site was a real product (homepage, KAI v1, blog admin, chatbot, i18n, Render) with uneven polish and open launch blockers across streaming, mobile, SEO, deploy, and blog reliability.",
+      solution: "Owned the day-to-day engineering loop: diagnose production failures, ship fixes, add missing systems (analytics, CDN, Vercel), rebuild KAI Agent/marketing fidelity, and keep the live site shipping.",
+      research: "Read existing Vite/React/Mongo architecture, reproduced stream buffering and React 19 chunk crashes, profiled PageSpeed/TBT, and mapped SPA crawl failures to shared homepage canonicals.",
+      architecture: "React 19 + Vite product/marketing shell, Express/MongoDB Atlas, first-party analytics pipeline, S3/CloudFront media, KAI streaming with 1KB padding, Vercel SPA rewrites after Render.",
+      challenges: "Balancing Lighthouse wins against visual fidelity; Team Solutions GSAP pin blank screens required multiple ship/revert cycles; blog seeds resurfacing after deploys; Hobby-plan Vercel rewrite limits.",
       roadmap: [
+        "Deepen MongoDB → S3 storage architecture (verification, rollback, lifecycle, cost)",
         "Scale KAI voice calling workflow triggers",
-        "Expand Analytics HQ demographic dashboards",
-        "Continue affiliate program and pricing packaging"
+        "Expand Analytics HQ demographic dashboards"
       ],
       lessonsLearned: [
+        "Inheriting an MVP and becoming primary contributor is a stronger, more defensible story than claiming greenfield ownership.",
         "1KB whitespace padding forces reverse proxies to flush AI tokens immediately.",
-        "Projecting lean card fields beats shipping full HTML blobs to admin lists.",
         "Performance work that guts visuals gets reverted — measure TBT without deleting the product."
       ],
       technicalHighlights: [
-        "170-commit internship trail (Jul–Sep 2026)",
-        "KAI streaming + 1KB proxy flush",
-        "First-Party Analytics HQ + bot filter",
-        "IP geo pricing (INR / USD)",
+        "Primary post-join contributor (~96%)",
+        "Analytics HQ + bot/geo filtering",
+        "KAI streaming + Agent rebuild",
         "S3/CloudFront media CDN",
         "Lean MongoDB list projections",
-        "PageSpeed / TBT optimization sprint",
-        "SPA SEO prerender + Vercel migration"
+        "PageSpeed / TBT with visual restore",
+        "SPA SEO prerender + Vercel migration",
+        "Live product mock system (20+ shells)"
       ],
-      impact: "Stabilized live SaaS UX on mobile and desktop, unblocked blog admin, enabled accurate first-party analytics and regional pricing, and kept shipping KAI Agent features through a hosting migration."
+      impact: "Transformed an early MVP into a more production-hardened live SaaS surface: accurate analytics, regional pricing, reliable blog/media, stable mobile/homepage, and modern deploy path — while remaining honest that the foundation was built by the prior team."
     }
   },
   {

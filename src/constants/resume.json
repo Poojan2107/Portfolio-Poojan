@@ -10,7 +10,7 @@
       "linkedin": "https://www.linkedin.com/in/poojanshrivastav21/",
       "github": "https://github.com/Poojan2107"
     },
-    "summary": "B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028) shipping production full-stack and AI products. Developer Intern at KaryaUp with 170 commits on karyaUp_Website (Jul–Sep 2026): KAI streaming, Analytics HQ, S3/CloudFront, geo pricing, PageSpeed/TBT, SPA SEO, Vercel migration. Also Full Stack at 13 UTOPIA (FormX & Navkar) and Co-Founder at Oneverce (Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
+    "summary": "B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028). Developer Intern at KaryaUp: joined an existing marketing MVP in Jul 2026 and became the primary engineering contributor on karyaUp_Website (~96% of post-join commits), shipping Analytics HQ, S3/CloudFront media, Vercel migration, KAI streaming/Agent productionization, geo pricing, and SPA SEO. Also Full Stack at 13 UTOPIA across client products (FormX, Navkar, AIA, and more) and Co-Founder at Oneverce (Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
   },
   "skills": {
     "languages": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL", "Python", "C++"],
@@ -27,11 +27,10 @@
       "period": "Jul 2026 – Present",
       "location": "Ahmedabad",
       "bullets": [
-        "Authored 170 production commits on KaryaUp/karyaUp_Website (Jul 7–Sep 2, 2026) across AI streaming, analytics, performance, SEO, and hosting migration.",
-        "Hardened KAI chatbot streaming with 1KB reverse-proxy flush, timeouts/abort signals, voice engines, and suggestion-chip UX.",
-        "Built first-party Analytics HQ (client-IP geo, demographics, bot filtering) and IP-based INR/USD geo pricing for live visitors.",
-        "Migrated blog media MongoDB → AWS S3/CloudFront; unblocked admin lists with projected lean card queries; ran PageSpeed/TBT optimization without gutting visuals.",
-        "Fixed SPA crawl SEO (canonicals, prerender, sitemaps), shipped KAI Agent surfaces, and migrated deep-link hosting from Render to Vercel."
+        "Joined KaryaUp in Jul 2026 on an existing website MVP; became primary engineering contributor on karyaUp_Website (~96% of commits after join; prior phase ~166 commits by other authors).",
+        "Built net-new production systems: first-party Analytics HQ (geo + bot filtering), blog media MongoDB→S3/CloudFront, Vercel SPA migration/deep links, and live app-mock chrome replacing static screenshots.",
+        "Productionized KAI chatbot/Agent (1KB proxy stream flush, timeouts/fallbacks, silk/particle UX, mobile tour) and hardened homepage/mobile after GSAP and React 19 production failures.",
+        "Shipped IP geo pricing (INR/USD), SPA crawl SEO (canonicals, prerender, sitemap), lean blog list projections, and PageSpeed/TBT work while restoring visuals when deferrals went too far."
       ]
     },
     {
@@ -61,7 +60,7 @@
       "period": "Jul 2026 – Present",
       "link": "https://karyaup.com",
       "tech": "React 19, Node.js, MongoDB Atlas, AWS S3, CloudFront, Vite, Vercel",
-      "description": "170 commits (Jul–Sep 2026): KAI streaming, Analytics HQ, geo pricing, S3/CloudFront, lean blog queries, PageSpeed/TBT, SPA SEO, KAI Agent, Vercel migration."
+      "description": "Joined existing MVP Jul 2026; primary post-join contributor (~96%). Analytics HQ, S3/CDN, Vercel migration, KAI productionization, geo pricing, SPA SEO — acceleration of a live product, not greenfield creation of the whole site."
     },
     {
       "name": "Travebie — AI Travel Platform",

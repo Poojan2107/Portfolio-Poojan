@@ -8,7 +8,7 @@ const Missions = () => {
       role: "Developer Intern",
       status: "NOW · PRODUCTION SAAS",
       link: "https://karyaup.com",
-      description: "170 commits on karyaUp_Website (Jul 7–Sep 2, 2026): KAI chatbot streaming + 1KB proxy flush, Analytics HQ + bot filter, INR/USD geo pricing, MongoDB→S3/CloudFront, lean blog queries, PageSpeed/TBT sprint, SPA SEO, KAI Agent UI, Render→Vercel migration.",
+      description: "Joined Jul 2026 on an existing MVP; became primary engineering contributor on karyaUp_Website (~96% of post-join commits). Built Analytics HQ, S3/CDN, Vercel migration, and live app mocks; productionized KAI streaming/Agent, homepage, blog, geo pricing, and SPA SEO.",
     },
     {
       symbol: "🎨",
