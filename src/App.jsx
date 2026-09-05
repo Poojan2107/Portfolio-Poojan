@@ -99,8 +99,8 @@ function App() {
         <Dossier />
         <Philosophy />
         <TechStack setActiveTech={setActiveTech} />
-        <Education />
         <Playbook />
+        <Education />
         <Contact />
 
         <div

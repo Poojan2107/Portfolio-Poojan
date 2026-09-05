@@ -5,17 +5,15 @@ import { PROJECTS } from '../constants';
 
 const formatIndex = (num) => String(num).padStart(2, '0');
 
-const FILTER_CATEGORIES = ['ALL', 'INTERNSHIP', 'AGENCY CLIENTS', 'SIDE HUSTLE & HACKS'];
+const FILTER_CATEGORIES = ['ALL', 'INTERNSHIP', 'AGENCY', 'FREELANCE & OS'];
 
 const PLACEMENT_ORDER = [
   'KaryaUp',
   'FormX',
   'AIA',
   'Navkar',
-  '13 UTOPIA',
   'OpenBridge',
-  'Travebie',
-  'NeuralCredit'
+  'Travebie'
 ];
 
 const ARCHITECTURE_TOPOLOGIES = {
@@ -49,23 +47,11 @@ const ARCHITECTURE_TOPOLOGIES = {
     { step: '03', title: 'Bracketed Section Typography', desc: '[ PROVEN ADVANTAGE ] & [ TECHNICAL INSPECTION ] specification UI' },
     { step: '04', title: 'Express Serverless Backend', desc: 'Vercel API routing with JSONL inquiry logging and Zod schema validation' }
   ],
-  '13 UTOPIA Portal': [
-    { step: '01', title: 'Static Agency Portal', desc: 'Multi-page production site with relative links and clean Vercel static deploy' },
-    { step: '02', title: 'Awwwards Mobile Nav', desc: 'Fullscreen menu, accordion Services, capture-phase toggle, tablet breakpoints' },
-    { step: '03', title: 'On-Page SEO', desc: 'Accessible H1 per page + metadata for crawler-visible structure' },
-    { step: '04', title: 'Build Path Remediation', desc: 'Convert directory hrefs to index.html to eliminate EISDIR build failures' }
-  ],
   'OpenBridge': [
     { step: '01', title: 'Onboarding Companion UI', desc: 'Next.js frontend with skill profiling and repository matching tools' },
     { step: '02', title: 'GitHub OAuth & Security', desc: 'AES-256-CBC encrypted token storage with GitHub GraphQL API client' },
     { step: '03', title: 'Gemini Issue Parser', desc: 'Google Gemini SDK translating complex issues & generating 4-week roadmaps' },
     { step: '04', title: 'Fellowship Discovery Engine', desc: 'Aggregates GSoC, LFX, and Outreachy open-source fellowship search' }
-  ],
-  'NeuralCredit': [
-    { step: '01', title: 'Explainable FinTech Portal', desc: 'React 19 dashboard with Recharts XAI radar feature importances' },
-    { step: '02', title: 'Express API Server', desc: 'Coordinates REST underwriting requests without main thread blocking' },
-    { step: '03', title: 'JSON-RPC Pipe Broker', desc: 'Standard I/O IPC channel spawning Python sub-daemons asynchronously' },
-    { step: '04', title: 'Scikit-Learn ML Estimator', desc: 'Random Forest risk classification model returning feature contributions' }
   ]
 };
 
@@ -76,13 +62,13 @@ const Projects = () => {
   const filterProject = (project) => {
     if (activeFilter === 'ALL') return true;
     if (activeFilter === 'INTERNSHIP') {
-      return project.title.includes('KaryaUp') || project.title.includes('13 UTOPIA');
+      return project.title.includes('KaryaUp');
     }
-    if (activeFilter === 'AGENCY CLIENTS') {
+    if (activeFilter === 'AGENCY') {
       return project.title.includes('FormX') || project.title.includes('AIA') || project.title.includes('Navkar');
     }
-    if (activeFilter === 'SIDE HUSTLE & HACKS') {
-      return project.title.includes('Travebie') || project.title.includes('OpenBridge') || project.title.includes('NeuralCredit');
+    if (activeFilter === 'FREELANCE & OS') {
+      return project.title.includes('Travebie') || project.title.includes('OpenBridge');
     }
     return true;
   };
@@ -246,12 +232,12 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Highlights bullet points */}
+              {/* Highlights bullet points — top 3 on card; full list in case study */}
               {flagshipProject.highlights && (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '2rem' }}>
                   <span style={{ color: '#666666', fontFamily: 'var(--font-code)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px' }}>[ KEY IMPLEMENTATIONS ]</span>
                   <ul style={{ color: '#aaaaaa', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '20px', listStyleType: 'square', display: 'flex', flexDirection: 'column', gap: '0.4rem', margin: 0 }}>
-                    {flagshipProject.highlights.map((highlight, idx) => (
+                    {flagshipProject.highlights.slice(0, 3).map((highlight, idx) => (
                       <li key={idx}>{highlight}</li>
                     ))}
                   </ul>
@@ -288,10 +274,10 @@ const Projects = () => {
                   >
                     Case study
                   </button>
-                  <a href={flagshipProject.github} target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.25)', transition: 'all 0.3s' }}>
+                  <a href={flagshipProject.github} target="_blank" rel="noopener noreferrer" aria-label={`${flagshipProject.title} on GitHub`} style={{ color: '#ffffff', fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.25)', transition: 'all 0.3s' }}>
                     <FaGithub />
                   </a>
-                  <a href={flagshipProject.live} target="_blank" rel="noopener noreferrer" style={{ color: '#000000', background: '#ffffff', fontSize: '1.1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', borderRadius: '50%', transition: 'all 0.3s' }}>
+                  <a href={flagshipProject.live} target="_blank" rel="noopener noreferrer" aria-label={`Open live site for ${flagshipProject.title}`} style={{ color: '#000000', background: '#ffffff', fontSize: '1.1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', borderRadius: '50%', transition: 'all 0.3s' }}>
                     <FaArrowRight style={{ transform: 'rotate(-45deg)' }} />
                   </a>
                 </div>
@@ -423,10 +409,10 @@ const Projects = () => {
                 </button>
 
                 <div style={{ display: 'flex', gap: '0.8rem' }}>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" style={{ color: '#888888', fontSize: '1.1rem', transition: 'color 0.3s' }}>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} on GitHub`} style={{ color: '#888888', fontSize: '1.1rem', transition: 'color 0.3s' }}>
                     <FaGithub />
                   </a>
-                  <a href={project.live} target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', fontSize: '1rem', transition: 'color 0.3s' }}>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Open live site for ${project.title}`} style={{ color: '#ffffff', fontSize: '1rem', transition: 'color 0.3s' }}>
                     <FaExternalLinkAlt />
                   </a>
                 </div>

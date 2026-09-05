@@ -21,8 +21,6 @@ const Navbar = ({ onOpenResume }) => {
     { name: 'WORK', href: '#projects' },
     { name: 'EXPERIENCE', href: '#experience' },
     { name: 'ABOUT', href: '#about' },
-    { name: 'SKILLS', href: '#skills' },
-    { name: 'EDUCATION', href: '#education' },
     { name: 'RESUME', href: '#resume', isAction: true },
     { name: 'CONTACT', href: '#contact' },
   ];

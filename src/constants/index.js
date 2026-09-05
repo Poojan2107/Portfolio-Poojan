@@ -7,9 +7,10 @@ export const PERSONAL_DETAILS = {
   roles: [
     "Developer Intern @ KaryaUp (SaaS)",
     "Developer Intern @ 13 UTOPIA (Agency)",
-    "Oneverce — college freelancing side hustle"
+    "Co-Founder & Full Stack — Oneverce (freelance)"
   ],
-  bio: "Third-year B.Tech AI student shipping production software across a dual internship — KaryaUp (company SaaS) and 13 UTOPIA (agency clients) — plus a college freelancing side hustle.",
+  roleLine: "Dual intern · KaryaUp SaaS + 13 UTOPIA agency · Oneverce freelance",
+  bio: "Third-year B.Tech AI student shipping production software — dual intern on KaryaUp SaaS and 13 UTOPIA agency clients, plus freelance work under Oneverce.",
   email: "poojanshrivastav21@gmail.com",
   phone: "+91 9023362134",
   location: "Ahmedabad, Gujarat",
@@ -94,8 +95,8 @@ export const PROJECTS = [
     title: 'KaryaUp AI CRM',
     subtitle: 'Company SaaS track — primary contributor after joining Jul 2026 MVP (~96% post-join)',
     status: 'In Production · Dual Intern (KaryaUp SaaS)',
-    problem: 'Joined an existing marketing/SaaS MVP (built Feb–Jul 2026 by prior contributors) that was live but uneven: open mobile/SEO/deploy/blog reliability issues, buffered AI streams, screenshot-based product marketing, and no first-party analytics or object-storage media pipeline.',
-    solution: 'Became the primary engineer on karyaUp_Website after Jul 7, 2026 (~96% of commits in that window). Shipped net-new systems (Analytics HQ, S3/CDN, Vercel migration, app-mock chrome, Calling/Affiliates) while productionizing KAI, homepage, chatbot streaming, blog, pricing, and SPA SEO.',
+    problem: 'Joined a live marketing/SaaS MVP with open gaps: buffered AI streams, weak mobile/SEO/deploy reliability, no first-party analytics, and no object-storage media pipeline.',
+    solution: 'Became primary engineer on karyaUp_Website (~96% post-join). Shipped Analytics HQ, S3/CDN, Vercel migration, and productionized KAI, homepage, streaming, geo pricing, and SPA SEO.',
     tags: ['React 19', 'Node.js', 'MongoDB Atlas', 'AWS S3/CloudFront', 'Analytics HQ', 'KAI Agent', 'IP Geo Pricing', 'Vercel'],
     github: 'https://github.com/KaryaUp/karyaUp_Website.git',
     live: 'https://karyaup.com',
@@ -151,7 +152,7 @@ export const PROJECTS = [
     subtitle: 'Greenfield agency client — built from scratch @ 13 UTOPIA',
     status: 'Production (13 UTOPIA Client)',
     problem: 'FormX Consultants needed a premium digital web presence reflecting their architectural consulting, multi-sector expertise, and engineering portfolio.',
-    solution: 'Built the platform from scratch for 13 UTOPIA: 40+ page Next.js 16 / React 19 site with a custom brand system (Chakra Petch, logo-cut geometry, branded mega menus), production SEO, and contact API fail-safes.',
+    solution: 'Built from scratch for 13 UTOPIA: 40+ page Next.js site with custom brand system, mega menus, production SEO, and contact API fail-safes.',
     tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Framer Motion 12', 'SEO'],
     github: 'https://github.com/Poojan2107/FormX.git',
     live: 'https://formxconsultants.com/',
@@ -200,7 +201,7 @@ export const PROJECTS = [
     subtitle: 'Greenfield industrial showcase — built from scratch @ 13 UTOPIA',
     status: 'Production (13 UTOPIA Client)',
     problem: 'AIA needed a Figma-faithful industrial engineering showcase: hero mill film, mega menu, product/service offerings, metrics, and a Present-complete homepage clients could review and ship.',
-    solution: 'Built the AIA portal from scratch for 13 UTOPIA — pixel-aligned Figma sections, hero/about films, Reveal motion, MetricGauge, dual-palette client review prototypes, and production typecheck/layout hardening.',
+    solution: 'Built from scratch for 13 UTOPIA — Figma-faithful homepage with hero films, Reveal motion, MetricGauge, and production hardening.',
     tags: ['Next.js', 'React', 'Figma Implementation', 'Motion', 'Video/Film', 'Responsive'],
     github: 'https://github.com/Poojan2107/Aia.git',
     live: 'https://aia-engineering.vercel.app/',
@@ -249,7 +250,7 @@ export const PROJECTS = [
     subtitle: 'Greenfield industrial B2B — built from scratch @ 13 UTOPIA',
     status: 'Production (13 UTOPIA Client)',
     problem: 'Authorized Jindal steel pipes dealer (serving procurement teams since 1995) needed a digital web presence to display technical specs, stock availability, and Jindal authorization credibility.',
-    solution: 'Built from scratch for 13 UTOPIA: industrial React/Vite platform with pipe weight calculator, MTC inspection UI, Express serverless inquiry APIs, dynamic sitemap/SEO, and launch-blocker fixes to go live.',
+    solution: 'Built from scratch for 13 UTOPIA: React/Vite industrial platform with pipe calculator, MTC UI, serverless inquiries, and SEO/launch hardening.',
     tags: ['React 19', 'Vite 7', 'TypeScript', 'Tailwind CSS 4', 'Express.js', 'Zod', 'SEO'],
     github: 'https://github.com/Poojan2107/Navkar.git',
     live: 'https://navkar-tubes-and-pipes.vercel.app/',
@@ -294,79 +295,31 @@ export const PROJECTS = [
     }
   },
   {
-    title: '13 UTOPIA Portal',
-    subtitle: 'Agency production site — responsive, SEO, Vercel shipping',
-    status: 'Production (13 UTOPIA)',
-    problem: 'The agency needed its own production portal: correct static routing, mobile/tablet navigation, on-page SEO, and a deployable Vercel static site without EISDIR/build path failures.',
-    solution: 'Shipped the 13 UTOPIA agency portal — Awwwards-style fullscreen mobile menu, accordion services nav, responsive typography, hidden accessible H1s per page, vercel.json routing, and large-scale static href fixes for clean builds.',
-    tags: ['Static Site', 'Responsive', 'SEO', 'Vercel', 'Mobile Nav'],
-    github: 'https://github.com/13utopia/13utopia',
-    live: 'https://13-utopia.vercel.app/',
-    image: '/assets/13utopia_portal.png',
-    metrics: {
-      "Surface": "Agency portal",
-      "Nav": "Awwwards-style mobile menu",
-      "Deploy": "Vercel static",
-      "Studio": "13 UTOPIA"
-    },
-    highlights: [
-      "Built/shipped the 13 UTOPIA production portal as part of the agency track",
-      "Added Awwwards-style fullscreen mobile menu with staggered links and accordion Services",
-      "Fixed mobile menu double-click, logo scaling, and tablet breakpoint (<=1024px)",
-      "Optimized on-page SEO with accessible H1 + metadata per page",
-      "Resolved EISDIR build errors (directory hrefs → index.html) and configured Vercel routing"
-    ],
-    caseStudy: {
-      summary: "Production portal work for 13 UTOPIA itself — responsive nav, SEO, and static Vercel deployment hardening.",
-      problem: "Static agency site broke on build (EISDIR), lacked modern mobile nav, and needed crawler-ready headings.",
-      solution: "Re-fetched live pages, converted absolute links, added mobile nav system, SEO H1s, and Vercel config.",
-      research: "Reproduced build failures from directory hrefs and validated mobile breakpoints across tablet widths.",
-      architecture: "Static multi-page site deployed on Vercel with explicit output directory and SPA-safe routing where needed.",
-      challenges: "Large legacy static tree; converting ~1000 directory refs without breaking navigation.",
-      roadmap: [
-        "Keep portal content synced with live agency offerings",
-        "Continue performance/SEO passes as pages grow"
-      ],
-      lessonsLearned: [
-        "Agency portfolio sites still need production engineering — routing, SEO, and mobile are launch blockers.",
-        "Capture-phase mobile menu handling prevents double-toggle bugs."
-      ],
-      technicalHighlights: [
-        "Awwwards-style mobile navigation",
-        "Static Vercel deployment",
-        "Accessible H1 SEO pattern",
-        "EISDIR / href path remediation",
-        "Responsive typography enforcement"
-      ],
-      impact: "Gave 13 UTOPIA a deployable, mobile-ready agency portal instead of a fragile static export."
-    }
-  },
-  {
     title: 'Travebie',
-    subtitle: 'College freelancing side hustle — Oneverce (travebie.com)',
+    subtitle: 'Co-Founder & Full Stack — Oneverce (freelance)',
     status: 'Delivered · Access paused (client payment)',
-    problem: 'A tourism business with 15+ years of experience needed a modern platform to replace manual spreadsheet itinerary creation and fragmented package distribution.',
-    solution: 'With a college friend via Oneverce (side hustle, not employer work): shipped a production travel platform with a 19-pattern AI intent detector, 18 chat cards, Playwright E2E, PWA, and React Native admin companion. Live access is currently paused pending client payment; studio: oneverce-solutions.vercel.app.',
+    problem: 'A tourism business needed a modern platform to replace manual spreadsheet itineraries and fragmented package distribution.',
+    solution: 'Shipped with Oneverce (freelance, not internship): 19-intent AI planner, 18 chat cards, Playwright E2E, PWA. Live access paused pending client payment.',
     tags: ['Next.js App Router', 'TypeScript', 'Gemini AI SDK', 'PostgreSQL', 'Supabase', 'Prisma ORM', 'Playwright E2E', 'PWA'],
     github: 'https://github.com/Poojan2107/Tripzy_Oneverce.git',
     live: 'https://www.travebie.com/',
     image: '/assets/traveling_tent.png',
     metrics: {
       "Domain": "travebie.com",
-      "Lane": "College freelancing",
+      "Lane": "Freelance · Oneverce",
       "Studio": "oneverce-solutions.vercel.app",
       "AI Engine": "19 Intent Patterns",
       "QA": "Playwright E2E"
     },
     highlights: [
-      "College freelancing venture (Oneverce) with a friend — separate from KaryaUp / 13 UTOPIA internship work",
+      "Freelance venture with Oneverce — separate from KaryaUp / 13 UTOPIA internship work",
       "Built Phase 1 AI Intelligence Upgrade: 19 intent patterns + composable prompt modules",
       "Engineered 18 custom chat card components (HotelGrid, ExperiencesCard, TimelineCard, BudgetCard, etc.)",
       "Implemented Gemini streaming with race-condition safeguards, model fallbacks, and offline notes",
       "Playwright E2E + PWA offline caching + Schema.org JSON-LD / dynamic sitemap"
     ],
     caseStudy: {
-      summary: "College side hustle with a friend under Oneverce: AI travel platform at travebie.com — not company internship work.",
+      summary: "Freelance co-founder work under Oneverce: AI travel platform at travebie.com — not company internship work.",
       problem: "Manual spreadsheet booking workflows caused communication overhead, delayed package distribution, and limited custom itinerary scaling.",
       solution: "Shipped a unified solution: a Next.js web application for travelers, a React Native mobile companion, and a Supabase-backed admin dashboard.",
       research: "Analyzed traveler booking journeys and mapped out 19 distinct intent patterns for personalized itinerary generation.",
@@ -397,8 +350,8 @@ export const PROJECTS = [
     title: 'OpenBridge',
     subtitle: 'AI-Powered Open Source Onboarding Platform',
     status: 'Active Development (Runner-Up Award)',
-    problem: 'Open Source is intimidating for newcomers. Developers struggle to discover appropriate repositories, comprehend complex GitHub issues, and navigate GSoC/LFX fellowship pathways.',
-    solution: 'An AI-powered onboarding platform that recommends repositories based on skill profiles, translates difficult issues via Gemini AI SDK, synthesizes 4-week roadmaps, and aggregates fellowship opportunities.',
+    problem: 'Open source is intimidating for newcomers — hard to find repos, understand issues, and navigate GSoC/LFX pathways.',
+    solution: 'AI onboarding platform: skill-based repo matching, Gemini issue translation, 4-week roadmaps, and fellowship discovery.',
     tags: ['Next.js', 'TypeScript', 'Gemini AI SDK', 'GitHub GraphQL APIs', 'MongoDB', 'TailwindCSS'],
     github: 'https://github.com/Poojan2107/OpenBridge',
     live: 'https://openbridge-in.vercel.app/',
@@ -442,46 +395,6 @@ export const PROJECTS = [
         "4-week contribution roadmaps"
       ],
       impact: "Reduces the barrier to entry for new contributors by transforming complex open-source onboarding workflows into structured contribution pathways."
-    }
-  },
-  {
-    title: 'NeuralCredit',
-    subtitle: 'Explainable AI FinTech Platform',
-    status: 'Completed',
-    problem: 'Traditional financial credit scoring models operate as black boxes, providing predictions without giving underwriters or applicants interpretability.',
-    solution: 'Built an explainable AI fintech platform with credit risk prediction, financial dashboards, and feature explainability radar charts.',
-    tags: ['React', 'Python', 'Machine Learning', 'Scikit-Learn', 'SQLite', 'Recharts'],
-    github: 'https://github.com/Poojan2107/NeuralCredit_',
-    live: 'https://neuralcredit.onrender.com/',
-    image: '/assets/neural_credit.png',
-    metrics: {
-      "Status": "Completed",
-      "Model": "Scikit-Learn Random Forest",
-      "Interpretability": "XAI Radar Dashboard"
-    },
-    highlights: [
-      "Implemented a Scikit-Learn Random Forest model to predict credit risk from financial parameters",
-      "Designed feature explainability dashboards displaying feature importances via Recharts radar charts",
-      "Secured inter-process data flows between Python machine learning daemon and Express Node.js API backend"
-    ],
-    caseStudy: {
-      summary: "A fintech dashboard demonstrating explainable credit scoring model parameters to underwriting operators.",
-      problem: "Traditional credit scoring models operate as black boxes, providing predictions without giving underwriters any interpretability.",
-      solution: "Built NeuralCredit, incorporating feature explainability to show exactly which parameters (income, history, etc.) affected the credit score.",
-      research: "Audited standard risk compliance criteria and designed feature visualizations that highlight feature importance factors.",
-      architecture: "Express API server coordinating REST requests, spawning Python sub-daemons running Scikit-Learn Random Forest estimators.",
-      techStack: ['React', 'Python', 'Machine Learning', 'SQLite', 'Recharts'],
-      challenges: "Bridging data flows securely and asynchronously between React, Express API layers, and a Python Machine Learning daemon without blockages.",
-      solution: "Established a JSON-RPC broker architecture using standard I/O pipes to run Python inference asynchronously, ensuring Express handles API requests without locking the main thread.",
-      roadmap: [
-        "Integrate SHAP value calculations for individual predictions",
-        "Add deep-learning classification options",
-        "Secure pipeline parameters validation"
-      ],
-      lessonsLearned: [
-        "Node subprocess management requires recycling daemons to prevent memory leaks.",
-        "Visualizing feature contributions via Radar charts helps underwriters make decisions faster."
-      ]
     }
   }
 ];

@@ -17,21 +17,9 @@ const Playbook = () => {
     },
     {
       number: "03",
-      title: "Domain-Tailored UX",
-      subtitle: "Proof Architecture & Specification Tools",
-      description: "Architecture must match domain psychology. S3M proof structures for FormX, Figma-faithful film/motion for AIA, pipe calculators for Navkar, and 19 intent patterns for Travebie (side hustle)."
-    },
-    {
-      number: "04",
-      title: "Resilient Fallbacks",
-      subtitle: "Local Data & Offline Guards",
-      description: "Production software cannot fail when network links degrade. Building JSON local fallbacks for cloud databases (MongoDB Atlas) and offline error boundaries ensures uninterrupted user experiences."
-    },
-    {
-      number: "05",
       title: "Production Delivery",
       subtitle: "Real Users > Tutorial Clones",
-      description: "Shipping production software to active production users teaches real engineering: debugging race conditions, cross-browser audits across 58 files, and measuring code by user volume and business impact."
+      description: "Shipping production software teaches real engineering: race conditions, cross-browser audits, and measuring code by user impact — not demos."
     }
   ];
 
@@ -41,7 +29,7 @@ const Playbook = () => {
       style={{ 
         position: 'relative', 
         overflow: 'hidden', 
-        padding: '10rem 0', 
+        padding: '6rem 0', 
         background: 'var(--bg-primary)' 
       }}
     >
@@ -53,84 +41,70 @@ const Playbook = () => {
           maxWidth: '1400px', 
           display: 'flex', 
           flexDirection: 'column', 
-          gap: '6rem' 
+          gap: '4rem' 
         }}
       >
         
-        {/* Section Header */}
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem' }}>
-           <h2 style={{ fontSize: 'clamp(3rem, 8vw, 10rem)', fontWeight: '900', color: '#fff', margin: 0, lineHeight: 0.8, fontFamily: 'var(--font-display)', letterSpacing: '-3px' }}>
+           <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 7rem)', fontWeight: '900', color: '#fff', margin: 0, lineHeight: 0.8, fontFamily: 'var(--font-display)', letterSpacing: '-3px' }}>
               PRINCIPLES
            </h2>
-           <span style={{ fontSize: '1.2rem', color: '#666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ How I Engineer ]</span>
+           <span style={{ fontSize: '1rem', color: '#666', fontFamily: 'var(--font-code)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ How I Engineer ]</span>
         </div>
 
-        {/* Principles Grid */}
-        <div className="modal-grid-2">
+        <div className="modal-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           {principles.map((principle, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: idx * 0.15 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ 
-                y: -6, 
+                y: -4, 
                 borderColor: 'rgba(255, 255, 255, 0.2)',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.6)' 
               }}
               style={{
                 background: 'rgba(255, 255, 255, 0.01)',
                 border: '1px solid rgba(255, 255, 255, 0.05)',
-                padding: '3rem',
-                borderRadius: '16px',
+                padding: '2rem',
+                borderRadius: '12px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1.5rem',
+                gap: '1.1rem',
                 cursor: 'default',
-                transition: 'border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+                transition: 'border-color 0.3s ease'
               }}
             >
-              {/* Card Header (Number & Top Accent Line) */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <span style={{ 
                   fontFamily: 'var(--font-code)', 
-                  fontSize: '3.5rem', 
+                  fontSize: '2.2rem', 
                   color: 'rgba(255, 255, 255, 0.08)', 
                   fontWeight: '700', 
                   lineHeight: 1,
-                  letterSpacing: '-2px'
                 }}>
                   {principle.number}
                 </span>
-                <span style={{ 
-                  fontFamily: 'var(--font-code)', 
-                  fontSize: '0.7rem', 
-                  color: '#444', 
-                  letterSpacing: '2px' 
-                }}>
-                  [ RULE // 0{idx + 1} ]
-                </span>
               </div>
 
-              {/* Title & Subtitle */}
-              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '1.5rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '1.1rem' }}>
                 <h3 style={{ 
                   fontFamily: 'var(--font-display)', 
-                  fontSize: '1.4rem', 
+                  fontSize: '1.1rem', 
                   fontWeight: '900', 
                   color: '#fff', 
                   margin: 0, 
-                  letterSpacing: '-1px',
+                  letterSpacing: '-0.5px',
                   textTransform: 'uppercase'
                 }}>
                   {principle.title}
                 </h3>
                 <p style={{ 
                   fontFamily: 'var(--font-code)', 
-                  fontSize: '0.8rem', 
+                  fontSize: '0.72rem', 
                   color: '#666', 
-                  marginTop: '0.4rem', 
+                  marginTop: '0.35rem', 
                   textTransform: 'uppercase', 
                   letterSpacing: '1px' 
                 }}>
@@ -138,12 +112,11 @@ const Playbook = () => {
                 </p>
               </div>
 
-              {/* Description */}
               <p style={{ 
                 fontFamily: 'var(--font-main)', 
-                fontSize: '0.95rem', 
+                fontSize: '0.9rem', 
                 color: '#aaa', 
-                lineHeight: '1.6',
+                lineHeight: '1.55',
                 margin: 0
               }}>
                 {principle.description}

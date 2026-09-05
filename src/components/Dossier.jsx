@@ -23,9 +23,9 @@ const Dossier = () => {
     { year: "2024", text: "Started B.Tech in Artificial Intelligence at Gandhinagar Institute of Technology (2024–2028)." },
     { year: "2024–25", text: "Built full-stack foundations: React, Node, Express, MongoDB, and early AI API integrations." },
     { year: "2026 Q2–Q3", text: "Shipped OpenBridge — Runner-Up at Build With AI Ahmedabad." },
-    { year: "2026 Q2–Q3", text: "College side hustle: Oneverce with a friend — launched Travebie (travebie.com)." },
+    { year: "2026 Q2–Q3", text: "Oneverce freelance — launched Travebie (travebie.com)." },
     { year: "2026", text: "Joined as Developer Intern — dual track: KaryaUp (SaaS) + 13 UTOPIA (agency clients)." },
-    { year: "2026", text: "Agency track: built FormX, AIA, and Navkar from scratch; shipped 13 UTOPIA portal." },
+    { year: "2026", text: "Agency track: built FormX, AIA, and Navkar from scratch." },
     { year: "2026 Jul–Sep", text: "SaaS track @ KaryaUp — inherited MVP → primary web contributor (~96% post-join commits)." },
     { year: "2026 NOW", text: "Owning productionization on KaryaUp; continue client delivery on 13 UTOPIA." }
   ];
@@ -33,7 +33,7 @@ const Dossier = () => {
   const activeMissions = [
     { label: "Dual intern — KaryaUp SaaS + 13 UTOPIA agency", status: true },
     { label: "FormX · AIA · Navkar — greenfield client builds shipped", status: true },
-    { label: "Travebie — college side hustle (delivered; access paused pending client payment)", status: true },
+    { label: "Travebie — Oneverce freelance (delivered; access paused pending payment)", status: true },
     { label: "Deepen System Design & Advanced DSA", status: false },
     { label: "Target product-based software engineering roles", status: false }
   ];
@@ -133,10 +133,10 @@ const Dossier = () => {
                         Poojan P. Shrivastav
                       </p>
                       <p>
-                        B.Tech AI student (GIT, 2024–2028). Dual internship under one organization: KaryaUp (company SaaS) + 13 UTOPIA (digital agency clients). Separate college freelancing side hustle: Oneverce / Travebie.
+                        B.Tech AI student (GIT, 2024–2028). Dual internship under one organization: KaryaUp (company SaaS) + 13 UTOPIA (digital agency clients). Freelance co-founder work under Oneverce / Travebie.
                       </p>
                       <p style={{ borderLeft: '2px solid #fff', paddingLeft: '1rem', color: '#fff' }}>
-                        Now: KaryaUp primary web contributor (~96% post-join) · 13 UTOPIA greenfield clients FormX, AIA, Navkar + agency portal · Oneverce side hustle (Travebie) · OpenBridge Runner-Up.
+                        Now: KaryaUp primary web contributor (~96% post-join) · 13 UTOPIA greenfield clients FormX, AIA, Navkar · Oneverce freelance (Travebie) · OpenBridge Runner-Up.
                       </p>
                       <p style={{ color: '#666', marginTop: '1rem' }}>
                         Real software is measured by production impact and shipping — not demos.

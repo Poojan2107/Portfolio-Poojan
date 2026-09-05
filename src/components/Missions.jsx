@@ -16,15 +16,15 @@ const Missions = () => {
       role: "Developer Intern · Agency Track",
       status: "NOW · CLIENT DELIVERY",
       link: "https://13-utopia.vercel.app/",
-      description: "Same org, agency track: built FormX, AIA, and Navkar client platforms from scratch; also shipped the 13 UTOPIA agency portal.",
+      description: "Same org, agency track: built FormX, AIA, and Navkar client platforms from scratch.",
     },
     {
       symbol: "03",
       title: "ONEVERCE / TRAVEBIE",
-      role: "College Freelancing Side Hustle",
+      role: "Co-Founder & Full Stack · Freelance",
       status: "DELIVERED · ACCESS PAUSED",
       link: "https://www.travebie.com/",
-      description: "Side hustle with a college friend (not internship): shipped Travebie (travebie.com) — 19-intent AI itinerary engine, 18 chat cards, Playwright E2E, PWA. Live access currently paused pending client payment.",
+      description: "Freelance with Oneverce (not internship): shipped Travebie (travebie.com) — 19-intent AI itinerary engine, 18 chat cards, Playwright E2E, PWA. Live access currently paused pending client payment.",
     },
     {
       symbol: "04",

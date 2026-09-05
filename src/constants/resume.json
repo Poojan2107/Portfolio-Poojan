@@ -10,7 +10,7 @@
       "linkedin": "https://www.linkedin.com/in/poojanshrivastav21/",
       "github": "https://github.com/Poojan2107"
     },
-    "summary": "Third-year B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028). Dual Developer Intern under one organization: KaryaUp (company SaaS) and 13 UTOPIA (digital agency). On KaryaUp, joined an existing marketing MVP in Jul 2026 and became primary engineering contributor (~96% post-join commits), shipping Analytics HQ, S3/CloudFront, Vercel migration, and KAI productionization. On 13 UTOPIA, built FormX, AIA, and Navkar from scratch and shipped the agency portal. Separately runs a college freelancing side hustle (Oneverce / Travebie). Runner-Up at Build With AI Ahmedabad for OpenBridge."
+    "summary": "Third-year B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028). Dual Developer Intern under one organization: KaryaUp (company SaaS) and 13 UTOPIA (digital agency). On KaryaUp, joined an existing marketing MVP in Jul 2026 and became primary engineering contributor (~96% post-join commits), shipping Analytics HQ, S3/CloudFront, Vercel migration, and KAI productionization. On 13 UTOPIA, built FormX, AIA, and Navkar from scratch. Co-Founder & Full Stack at Oneverce (freelance) — Travebie. Runner-Up at Build With AI Ahmedabad for OpenBridge."
   },
   "skills": {
     "languages": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL", "Python", "C++"],
@@ -29,16 +29,16 @@
       "bullets": [
         "Dual internship in one organization: KaryaUp SaaS product engineering + 13 UTOPIA digital agency client delivery.",
         "KaryaUp (SaaS): joined Jul 2026 on an existing website MVP; became primary engineering contributor (~96% of post-join commits). Built Analytics HQ, S3/CloudFront media, Vercel SPA migration; productionized KAI, homepage, geo pricing, and SPA SEO.",
-        "13 UTOPIA (Agency): built FormX, AIA, and Navkar client platforms from scratch; also shipped the 13 UTOPIA agency portal (mobile nav, SEO, Vercel static deploy)."
+        "13 UTOPIA (Agency): built FormX, AIA, and Navkar client platforms from scratch."
       ]
     },
     {
-      "company": "Oneverce (College Side Hustle)",
-      "position": "Co-Founder & Product Engineer",
+      "company": "Oneverce",
+      "position": "Co-Founder & Full Stack Developer",
       "period": "2026 – Present",
       "location": "Ahmedabad",
       "bullets": [
-        "College freelancing venture with a friend (separate from internship): shipped Travebie (travebie.com), an AI travel platform with a 19-intent engine and 18 chat card UI components.",
+        "Freelance venture (separate from internship): shipped Travebie (travebie.com), an AI travel platform with a 19-intent engine and 18 chat card UI components.",
         "Added Playwright E2E coverage across booking/planner flows and PWA offline caching with a React Native admin companion. Live access currently paused pending client payment."
       ]
     }
@@ -73,13 +73,6 @@
       "description": "13 UTOPIA agency client — built from scratch. Pipe weight calculator, serverless inquiry APIs, SEO/sitemap launch hardening."
     },
     {
-      "name": "13 UTOPIA Portal — Agency Site",
-      "period": "2026",
-      "link": "https://13-utopia.vercel.app",
-      "tech": "Static Site, Responsive Nav, SEO, Vercel",
-      "description": "Agency production portal: Awwwards-style mobile menu, accessible H1 SEO, EISDIR build fixes, Vercel static deploy."
-    },
-    {
       "name": "OpenBridge — AI Open Source Onboarding",
       "period": "2026",
       "link": "https://openbridge-in.vercel.app",
@@ -91,7 +84,7 @@
       "period": "2026 – Present",
       "link": "https://www.travebie.com",
       "tech": "Next.js, TypeScript, Gemini AI SDK, PostgreSQL, Supabase, Prisma, Playwright",
-      "description": "College freelancing side hustle (Oneverce). 19 intent patterns, 18 chat cards, Playwright E2E, PWA. Access paused pending client payment."
+      "description": "Oneverce freelance. 19 intent patterns, 18 chat cards, Playwright E2E, PWA. Access paused pending client payment."
     }
   ],
   "education": {

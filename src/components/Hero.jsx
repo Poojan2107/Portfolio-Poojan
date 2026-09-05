@@ -4,7 +4,6 @@ import { PERSONAL_DETAILS } from '../constants';
 const HERO_PROOF = [
   { value: '~96%', label: 'KaryaUp ownership', desc: 'Primary post-join contributor' },
   { value: '3', label: 'Clients from scratch', desc: 'FormX · AIA · Navkar' },
-  { value: 'Dual', label: 'Internship tracks', desc: 'SaaS + agency' },
   { value: '1×', label: 'Hackathon', desc: 'OpenBridge Runner-Up' },
 ];
 
@@ -27,7 +26,7 @@ const Hero = ({ onOpenResume }) => {
         position: 'relative',
         overflow: 'hidden',
         background: 'var(--bg-primary)',
-        padding: '8rem 0 5rem'
+        padding: '7rem 0 4.5rem'
       }}
     >
       <div
@@ -43,11 +42,12 @@ const Hero = ({ onOpenResume }) => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          opacity: 0.04
+          opacity: 0.055
         }}
+        aria-hidden="true"
       >
-        <h1 style={{ fontSize: '25vw', margin: '-5vw 0', fontWeight: '900', lineHeight: 0.8, color: '#ffffff', fontFamily: 'var(--font-display)', whiteSpace: 'nowrap' }}>POOJAN</h1>
-        <h1 style={{ fontSize: '25vw', margin: '-5vw 0', fontWeight: '900', lineHeight: 0.8, fontFamily: 'var(--font-display)', whiteSpace: 'nowrap', WebkitTextStroke: '2px #fff', color: 'transparent' }}>SHRIVASTAV</h1>
+        <div style={{ fontSize: '18vw', margin: '-3vw 0', fontWeight: '900', lineHeight: 0.8, color: '#ffffff', fontFamily: 'var(--font-display)', whiteSpace: 'nowrap' }}>POOJAN</div>
+        <div style={{ fontSize: '18vw', margin: '-3vw 0', fontWeight: '900', lineHeight: 0.8, fontFamily: 'var(--font-display)', whiteSpace: 'nowrap', WebkitTextStroke: '1.5px #fff', color: 'transparent' }}>SHRIVASTAV</div>
       </div>
 
       <div
@@ -70,10 +70,10 @@ const Hero = ({ onOpenResume }) => {
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.08, delayChildren: 0.15 }
+              transition: { staggerChildren: 0.08, delayChildren: 0.12 }
             }
           }}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem', maxWidth: '920px' }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem', maxWidth: '860px' }}
         >
           <motion.p
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
@@ -116,7 +116,7 @@ const Hero = ({ onOpenResume }) => {
                 lineHeight: 1,
                 margin: 0,
                 letterSpacing: '-1px',
-                color: 'rgba(255,255,255,0.55)',
+                color: 'rgba(255,255,255,0.7)',
                 fontFamily: 'var(--font-display)',
                 textTransform: 'uppercase'
               }}
@@ -128,51 +128,37 @@ const Hero = ({ onOpenResume }) => {
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
             style={{
-              maxWidth: '640px',
+              maxWidth: '560px',
               color: '#aaa',
-              fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
-              lineHeight: 1.65,
+              fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
+              lineHeight: 1.6,
               fontFamily: 'var(--font-main)',
-              margin: '0.5rem 0 0'
+              margin: '0.25rem 0 0'
             }}
           >
             {PERSONAL_DETAILS.bio}
           </motion.p>
 
-          <motion.div
+          <motion.p
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
             style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-              gap: '0.75rem',
-              marginTop: '0.25rem'
+              margin: 0,
+              color: '#777',
+              fontFamily: 'var(--font-code)',
+              fontSize: '0.78rem',
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase'
             }}
           >
-            {PERSONAL_DETAILS.roles.slice(0, 3).map((role) => (
-              <span
-                key={role}
-                style={{
-                  padding: '0.45rem 0.9rem',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  borderRadius: '999px',
-                  color: '#bbb',
-                  fontFamily: 'var(--font-code)',
-                  fontSize: '0.72rem',
-                  letterSpacing: '0.04em'
-                }}
-              >
-                {role}
-              </span>
-            ))}
-          </motion.div>
+            {PERSONAL_DETAILS.roleLine}
+          </motion.p>
 
           <motion.div
             variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
             style={{
               display: 'flex',
               gap: '0.9rem',
-              marginTop: '0.75rem',
+              marginTop: '0.5rem',
               flexWrap: 'wrap',
               justifyContent: 'center'
             }}
@@ -240,14 +226,15 @@ const Hero = ({ onOpenResume }) => {
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-              gap: '1rem',
+              gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+              gap: '1.25rem',
               width: '100%',
-              maxWidth: '860px',
-              marginTop: '2.5rem',
+              maxWidth: '720px',
+              marginTop: '2rem',
               borderTop: '1px solid rgba(255,255,255,0.1)',
-              paddingTop: '2rem'
+              paddingTop: '1.75rem'
             }}
+            className="hero-proof"
           >
             {HERO_PROOF.map((stat) => (
               <div key={stat.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.35rem', textAlign: 'center' }}>
