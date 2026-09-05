@@ -10,15 +10,15 @@
       "linkedin": "https://www.linkedin.com/in/poojanshrivastav21/",
       "github": "https://github.com/Poojan2107"
     },
-    "summary": "Third-year B.Tech Artificial Intelligence student (Gandhinagar Institute of Technology, 2024–2028). Dual Developer Intern under one organization: KaryaUp (company SaaS) and 13 UTOPIA (digital agency). On KaryaUp, joined an existing marketing MVP in Jul 2026 and became primary engineering contributor (~96% post-join commits), shipping Analytics HQ, S3/CloudFront, Vercel migration, and KAI productionization. On 13 UTOPIA, built FormX, AIA, and Navkar from scratch. Co-Founder & Full Stack at Oneverce (freelance) — Travebie. Runner-Up at Build With AI Ahmedabad for OpenBridge."
+    "summary": "Third-year B.Tech AI student (GIT, 2024–2028). Dual Developer Intern: KaryaUp (SaaS) and 13 UTOPIA (agency). Primary post-join contributor on KaryaUp (~96%) — Analytics HQ, S3/CDN, Vercel, KAI. Built FormX, AIA, and Navkar from scratch. OpenBridge Runner-Up (Build With AI Ahmedabad). Co-Founder, Oneverce (freelance)."
   },
   "skills": {
-    "languages": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL", "Python", "C++"],
-    "frontend": ["React.js", "Next.js (App Router)", "Redux / Context API", "Tailwind CSS", "Framer Motion", "Radix UI", "Vite"],
-    "backend": ["Node.js", "Express.js", "RESTful APIs", "WebSockets", "Nginx", "Serverless Functions"],
-    "databases_cloud": ["MongoDB & Atlas", "PostgreSQL", "Supabase", "Prisma ORM", "AWS S3", "CloudFront CDN"],
-    "ai_ml": ["Generative AI APIs (Gemini / OpenAI)", "LLM Prompt Architecture", "Intent Detection", "RAG Systems", "Scikit-Learn"],
-    "tools_qa": ["Git", "Playwright E2E Testing", "Postman", "PWA / Service Workers", "Vercel"]
+    "languages": ["JavaScript", "TypeScript", "Python", "C++", "SQL"],
+    "frontend": ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Vite"],
+    "backend": ["Node.js", "Express.js", "REST APIs", "Nginx", "Serverless"],
+    "databases_cloud": ["MongoDB", "PostgreSQL", "Supabase", "Prisma", "AWS S3", "CloudFront"],
+    "ai_ml": ["Gemini / OpenAI APIs", "Intent detection", "Prompt architecture"],
+    "tools_qa": ["Git", "Playwright", "Postman", "PWA", "Vercel"]
   },
   "experience": [
     {
@@ -38,8 +38,8 @@
       "period": "2026 – Present",
       "location": "Ahmedabad",
       "bullets": [
-        "Freelance venture (separate from internship): shipped Travebie (travebie.com), an AI travel platform with a 19-intent engine and 18 chat card UI components.",
-        "Added Playwright E2E coverage across booking/planner flows and PWA offline caching with a React Native admin companion. Live access currently paused pending client payment."
+        "Freelance venture (separate from internship): shipped Travebie — AI travel platform with 19-intent engine and 18 chat card components.",
+        "Playwright E2E, PWA offline caching, React Native admin companion."
       ]
     }
   ],
@@ -48,43 +48,36 @@
       "name": "KaryaUp AI CRM & Marketing Platform",
       "period": "Jul 2026 – Present",
       "link": "https://karyaup.com",
-      "tech": "React 19, Node.js, MongoDB Atlas, AWS S3, CloudFront, Vite, Vercel",
-      "description": "Company SaaS track. Joined existing MVP Jul 2026; primary post-join contributor (~96%). Analytics HQ, S3/CDN, Vercel migration, KAI productionization, geo pricing, SPA SEO."
+      "tech": "React, Node, MongoDB, S3, CloudFront, Vercel",
+      "description": "Joined existing MVP Jul 2026; primary post-join contributor (~96%). Analytics HQ, S3/CDN, Vercel migration, KAI streaming, geo pricing, SPA SEO."
     },
     {
-      "name": "FormX Consultants — Architectural Web Platform",
+      "name": "FormX Consultants",
       "period": "2026",
       "link": "https://formxconsultants.com",
-      "tech": "Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion",
-      "description": "13 UTOPIA agency client — built from scratch. 40+ page enterprise site with custom brand system and mega-menu portals."
+      "tech": "Next.js, React, TypeScript, Tailwind",
+      "description": "13 UTOPIA client — built from scratch. 40+ page enterprise site with custom brand system and mega-menu portals."
     },
     {
-      "name": "AIA Engineering — Industrial Showcase",
+      "name": "AIA Engineering",
       "period": "2026",
       "link": "https://aia-engineering.vercel.app",
-      "tech": "Next.js, React, Figma Implementation, Motion, Video",
-      "description": "13 UTOPIA agency client — built from scratch. Figma-faithful Present homepage with hero films, Reveal motion, and dual-palette client review."
+      "tech": "Next.js, React, Motion, Video",
+      "description": "13 UTOPIA client — built from scratch. Figma-faithful Present homepage with hero films and Reveal motion."
     },
     {
-      "name": "Navkar Tubes & Tools — B2B Procurement Platform",
+      "name": "Navkar Tubes & Tools",
       "period": "2026",
       "link": "https://navkar-tubes-and-pipes.vercel.app",
-      "tech": "React 19, Express.js, Vite, Radix UI, Zod, Vercel",
-      "description": "13 UTOPIA agency client — built from scratch. Pipe weight calculator, serverless inquiry APIs, SEO/sitemap launch hardening."
+      "tech": "React, Express, Vite, Zod, Vercel",
+      "description": "13 UTOPIA client — built from scratch. Pipe calculator, serverless inquiries, SEO/sitemap launch hardening."
     },
     {
-      "name": "OpenBridge — AI Open Source Onboarding",
+      "name": "OpenBridge",
       "period": "2026",
       "link": "https://openbridge-in.vercel.app",
-      "tech": "Next.js, TypeScript, Gemini AI SDK, GitHub GraphQL, MongoDB",
-      "description": "Runner-Up at Build With AI Ahmedabad. Repo matching, issue translation, and 4-week contribution roadmaps."
-    },
-    {
-      "name": "Travebie — AI Travel Platform",
-      "period": "2026 – Present",
-      "link": "https://www.travebie.com",
-      "tech": "Next.js, TypeScript, Gemini AI SDK, PostgreSQL, Supabase, Prisma, Playwright",
-      "description": "Oneverce freelance. 19 intent patterns, 18 chat cards, Playwright E2E, PWA. Access paused pending client payment."
+      "tech": "Next.js, TypeScript, Gemini, GitHub GraphQL",
+      "description": "Runner-Up, Build With AI Ahmedabad. Repo matching, issue translation, 4-week contribution roadmaps."
     }
   ],
   "education": {
