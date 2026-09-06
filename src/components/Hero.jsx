@@ -18,6 +18,7 @@ const Hero = ({ onOpenResume }) => {
   return (
     <section
       id="home"
+      className="hero-section"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -26,28 +27,18 @@ const Hero = ({ onOpenResume }) => {
         position: 'relative',
         overflow: 'hidden',
         background: 'var(--bg-primary)',
-        padding: '7rem 0 4.5rem'
+        padding: '7rem 0 5rem'
       }}
     >
+      {/* Soft monochrome atmosphere */}
+      <div className="hero-atmosphere" aria-hidden="true" />
+
       <div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '100vw',
-          zIndex: 0,
-          pointerEvents: 'none',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          opacity: 0.055
-        }}
+        className="hero-watermark"
         aria-hidden="true"
       >
-        <div style={{ fontSize: '18vw', margin: '-3vw 0', fontWeight: '900', lineHeight: 0.8, color: '#ffffff', fontFamily: 'var(--font-display)', whiteSpace: 'nowrap' }}>POOJAN</div>
-        <div style={{ fontSize: '18vw', margin: '-3vw 0', fontWeight: '900', lineHeight: 0.8, fontFamily: 'var(--font-display)', whiteSpace: 'nowrap', WebkitTextStroke: '1.5px #fff', color: 'transparent' }}>SHRIVASTAV</div>
+        <div className="hero-watermark-line">POOJAN</div>
+        <div className="hero-watermark-line outline">SHRIVASTAV</div>
       </div>
 
       <div
@@ -70,56 +61,31 @@ const Hero = ({ onOpenResume }) => {
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.08, delayChildren: 0.12 }
+              transition: { staggerChildren: 0.09, delayChildren: 0.1 }
             }
           }}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem', maxWidth: '860px' }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.15rem', maxWidth: '880px' }}
         >
           <motion.p
-            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
-            style={{
-              fontFamily: 'var(--font-code)',
-              color: '#888',
-              fontSize: '0.75rem',
-              letterSpacing: '0.25em',
-              textTransform: 'uppercase',
-              margin: 0
-            }}
+            variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0 } }}
+            className="hero-eyebrow"
           >
             B.Tech AI · GIT · Class of 2028
           </motion.p>
 
-          <div style={{ overflow: 'hidden', padding: '0 1rem' }}>
+          <div style={{ overflow: 'hidden', padding: '0 0.5rem' }}>
             <motion.h1
-              variants={{ hidden: { y: '100%', opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } } }}
-              style={{
-                fontSize: 'clamp(3.5rem, 11vw, 8.5rem)',
-                fontWeight: '900',
-                lineHeight: 0.9,
-                margin: 0,
-                letterSpacing: '-0.03em',
-                fontFamily: 'var(--font-display)',
-                textTransform: 'uppercase',
-                color: '#fff'
-              }}
+              variants={{ hidden: { y: '110%', opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.95, ease: [0.16, 1, 0.3, 1] } } }}
+              className="hero-title"
             >
               POOJAN
             </motion.h1>
           </div>
 
-          <div style={{ overflow: 'hidden', padding: '0 1rem' }}>
+          <div style={{ overflow: 'hidden', padding: '0 0.5rem' }}>
             <motion.h2
-              variants={{ hidden: { y: '100%', opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } } }}
-              style={{
-                fontSize: 'clamp(1.6rem, 4.5vw, 3.2rem)',
-                fontWeight: '700',
-                lineHeight: 1,
-                margin: 0,
-                letterSpacing: '-1px',
-                color: 'rgba(255,255,255,0.7)',
-                fontFamily: 'var(--font-display)',
-                textTransform: 'uppercase'
-              }}
+              variants={{ hidden: { y: '110%', opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.95, ease: [0.16, 1, 0.3, 1] } } }}
+              className="hero-subtitle"
             >
               P. Shrivastav
             </motion.h2>
@@ -127,96 +93,43 @@ const Hero = ({ onOpenResume }) => {
 
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
-            style={{
-              maxWidth: '560px',
-              color: '#aaa',
-              fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
-              lineHeight: 1.6,
-              fontFamily: 'var(--font-main)',
-              margin: '0.25rem 0 0'
-            }}
+            className="hero-bio"
           >
             {PERSONAL_DETAILS.bio}
           </motion.p>
 
           <motion.p
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-            style={{
-              margin: 0,
-              color: '#777',
-              fontFamily: 'var(--font-code)',
-              fontSize: '0.78rem',
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase'
-            }}
+            className="hero-role-line"
           >
             {PERSONAL_DETAILS.roleLine}
           </motion.p>
 
           <motion.div
             variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
-            style={{
-              display: 'flex',
-              gap: '0.9rem',
-              marginTop: '0.5rem',
-              flexWrap: 'wrap',
-              justifyContent: 'center'
-            }}
+            className="hero-ctas"
           >
             <motion.button
               onClick={onOpenResume}
-              whileHover={{ scale: 1.03, backgroundColor: '#fff', color: '#000' }}
+              whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              style={{
-                padding: '0.85rem 1.75rem',
-                background: '#fff',
-                border: '1px solid #fff',
-                borderRadius: '999px',
-                color: '#000',
-                fontSize: '0.8rem',
-                fontWeight: '700',
-                fontFamily: 'var(--font-code)',
-                letterSpacing: '1px',
-                cursor: 'pointer'
-              }}
+              className="btn-primary"
             >
               Resume
             </motion.button>
             <motion.button
               onClick={() => scrollTo('projects')}
-              whileHover={{ scale: 1.03, borderColor: '#fff', color: '#fff' }}
+              whileHover={{ scale: 1.03, y: -2, borderColor: '#fff', color: '#fff' }}
               whileTap={{ scale: 0.97 }}
-              style={{
-                padding: '0.85rem 1.75rem',
-                background: 'transparent',
-                border: '1px solid rgba(255,255,255,0.25)',
-                borderRadius: '999px',
-                color: '#ccc',
-                fontSize: '0.8rem',
-                fontWeight: '700',
-                fontFamily: 'var(--font-code)',
-                letterSpacing: '1px',
-                cursor: 'pointer'
-              }}
+              className="btn-ghost"
             >
               Selected work
             </motion.button>
             <motion.button
               onClick={() => scrollTo('contact')}
-              whileHover={{ scale: 1.03, borderColor: '#fff', color: '#fff' }}
+              whileHover={{ scale: 1.03, y: -2, borderColor: '#fff', color: '#fff' }}
               whileTap={{ scale: 0.97 }}
-              style={{
-                padding: '0.85rem 1.75rem',
-                background: 'transparent',
-                border: '1px solid rgba(255,255,255,0.25)',
-                borderRadius: '999px',
-                color: '#ccc',
-                fontSize: '0.8rem',
-                fontWeight: '700',
-                fontFamily: 'var(--font-code)',
-                letterSpacing: '1px',
-                cursor: 'pointer'
-              }}
+              className="btn-ghost"
             >
               Contact
             </motion.button>
@@ -224,34 +137,38 @@ const Hero = ({ onOpenResume }) => {
 
           <motion.div
             variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-              gap: '1.25rem',
-              width: '100%',
-              maxWidth: '720px',
-              marginTop: '2rem',
-              borderTop: '1px solid rgba(255,255,255,0.1)',
-              paddingTop: '1.75rem'
-            }}
             className="hero-proof"
           >
-            {HERO_PROOF.map((stat) => (
-              <div key={stat.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.35rem', textAlign: 'center' }}>
-                <span style={{ fontSize: 'clamp(1.4rem, 2.2vw, 1.9rem)', fontWeight: '900', color: '#fff', fontFamily: 'var(--font-display)', lineHeight: 1, letterSpacing: '-1px' }}>
-                  {stat.value}
-                </span>
-                <span style={{ fontSize: '0.7rem', color: '#fff', fontFamily: 'var(--font-code)', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: '700' }}>
-                  {stat.label}
-                </span>
-                <span style={{ fontSize: '0.7rem', color: '#666', fontFamily: 'var(--font-code)' }}>
-                  {stat.desc}
-                </span>
+            {HERO_PROOF.map((stat, i) => (
+              <div key={stat.label} className="hero-proof-item">
+                {i > 0 && <span className="hero-proof-rule" aria-hidden="true" />}
+                <span className="hero-proof-value">{stat.value}</span>
+                <span className="hero-proof-label">{stat.label}</span>
+                <span className="hero-proof-desc">{stat.desc}</span>
               </div>
             ))}
           </motion.div>
         </motion.div>
       </div>
+
+      <motion.button
+        type="button"
+        className="hero-scroll-cue"
+        onClick={() => scrollTo('projects')}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.1, duration: 0.6 }}
+        aria-label="Scroll to selected work"
+      >
+        <span>Scroll</span>
+        <motion.span
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+          aria-hidden="true"
+        >
+          ↓
+        </motion.span>
+      </motion.button>
     </section>
   );
 };

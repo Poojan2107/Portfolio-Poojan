@@ -146,34 +146,28 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              whileHover={{ y: -4 }}
+              className="project-card"
               style={{
-                background: '#0a0a0a',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: '16px',
-                padding: '3rem',
+                padding: '2.5rem',
                 position: 'relative',
-                boxShadow: '0 20px 50px rgba(0,0,0,0.9)',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '2.5rem'
+                gap: '2.25rem'
               }}
             >
               {/* Cover Screenshot Image Showcase */}
               {flagshipProject.image && (
-                <div style={{
+                <div className="project-media" style={{
                   width: '100%',
-                  height: '380px',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
-                  background: '#121212'
+                  height: 'min(42vw, 420px)',
+                  minHeight: '240px'
                 }}>
                   <motion.img 
                     src={flagshipProject.image} 
                     alt={flagshipProject.title}
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.5 }}
+                    whileHover={{ scale: 1.04 }}
+                    transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                     style={{
                       width: '100%',
                       height: '100%',
@@ -181,12 +175,6 @@ const Projects = () => {
                       display: 'block'
                     }}
                   />
-                  <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 60%)',
-                    pointerEvents: 'none'
-                  }} />
                 </div>
               )}
 
@@ -296,35 +284,27 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
+              whileHover={{ y: -5 }}
+              className="project-card"
               style={{
-                background: '#0a0a0a',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                borderRadius: '16px',
-                padding: '2.2rem',
+                padding: '1.85rem',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1.8rem',
-                justifyContent: 'space-between',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.6)',
-                transition: 'border-color 0.3s, box-shadow 0.3s'
+                gap: '1.5rem',
+                justifyContent: 'space-between'
               }}
             >
               {/* Cover Screenshot Image Showcase */}
               {project.image && (
-                <div style={{
+                <div className="project-media" style={{
                   width: '100%',
-                  height: '220px',
-                  borderRadius: '10px',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  background: '#121212'
+                  height: '210px'
                 }}>
                   <motion.img 
                     src={project.image} 
                     alt={project.title}
                     whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                     style={{
                       width: '100%',
                       height: '100%',
@@ -332,12 +312,6 @@ const Projects = () => {
                       display: 'block'
                     }}
                   />
-                  <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%)',
-                    pointerEvents: 'none'
-                  }} />
                 </div>
               )}
 
@@ -345,7 +319,7 @@ const Projects = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: '1rem' }}>
                 <div>
                   <span style={{ fontFamily: 'var(--font-code)', fontSize: '0.7rem', color: '#666666', letterSpacing: '1px' }}>
-                    [ ARCHIVE // {formatIndex(index + 2)} ]
+                    [ {formatIndex(index + 2)} ]
                   </span>
                   <h4 style={{ fontSize: '1.8rem', fontWeight: '800', color: '#ffffff', fontFamily: 'var(--font-display)', margin: '0.4rem 0 0 0', textTransform: 'uppercase', letterSpacing: '-1px' }}>
                     {project.title}
